@@ -1,42 +1,36 @@
 # حالة الاختبار — ما اختُبر وما لم يُختبر
 
-آخر تحديث: عند إنشاء الفرع `feature/ecommerce-starter`.
-
 ## السياق
 
-كُتب القالب في بيئة محظور فيها `repo.packagist.org` و`api.github.com` و`codeload.github.com`، لذلك **لم يُنزَّل أي حزمة** (لا Composer ولا مرايا ولا تنزيل يدوي). هذا يعني أن Laravel وFilament لم يكونا موجودين وقت الكتابة.
+كُتب القالب في بيئة محظور فيها `repo.packagist.org` و`api.github.com` و`codeload.github.com`، فلم تُنزَّل أي حزمة هناك (لا Composer ولا مرايا). بعد رفع الفرع شغّلت GitHub Actions الـ workflow `CI` على خوادمها (حيث Packagist متاح) وسُجّلت النتائج أدناه.
 
-## ما تم فحصه فعليًا (لا يحتاج تنزيلًا)
+## ما اختُبر فعليًا
 
-| الفحص | النتيجة |
-|---|---|
-| `php -l` على كل ملفات PHP | انظر ملخص الالتزام (commit) |
-| صحة `composer.json` و`package.json` كـ JSON | ✔︎ |
-| `node --check` على `resources/js/app.js` و`vite.config.js` | ✔︎ |
-| فحص أسرار (كلمات مرور/مفاتيح/.env) داخل الملفات المتتبَّعة | ✔︎ |
-| اختبار منطق الألوان والـ slug بسكربت PHP مستقل | ✔︎ (انظر `tests/Unit/SupportTest.php` — نفس الحالات) |
-
-## ما **لم** يُختبر
-
-| البند | السبب | ما يجب فعله |
+| الفحص | أين | النتيجة |
 |---|---|---|
-| `composer install` وحل الإصدارات | Packagist محظور | شغّله؛ قد يلزم تعديل القيود (خاصة Filament 5 مع Laravel 13) |
-| `php artisan migrate`، الإقلاع، الـ service providers | لا إطار | شغّل `php artisan migrate` و`php artisan about` |
-| اختبارات PHPUnit (`tests/`) | لا إطار | `php artisan test`؛ **كُتبت دون تشغيل وقد تحتاج تصحيحًا** |
-| واجهات Blade (تجميعها وعرضها) | لا إطار | افتح كل صفحة يدويًا |
-| لوحة Filament (الموارد، الصفحة، الودجات) | لا Filament | واجهات Filament 4/5 اعتمدتُها من الوثائق دون تجربة؛ توقّع تعديلات بسيطة في الأصناف/الأسماء |
-| `npm install` / `npm run build` / Tailwind 4 | لم يُنفَّذ بقرار (لا تنزيل) | `npm install && npm run build`؛ تحقق من إصدارات `laravel-vite-plugin` و`vite` |
-| RTL والألوان على الهاتف/الكمبيوتر | لا متصفح | افحص بصريًا على الهاتف والكمبيوتر |
-| رفع الصور وعرضها (`storage:link`) | لا إطار | جرّب رفع شعار وصورة منتج |
-| النشر على Hostinger | لا وصول | جرّب على نسخة تجريبية؛ الخطوات منقولة من وثائق ومصادر عامة |
-| إعادة المخزون عند الإلغاء، منع التكرار، سباق التثبيت | لا إطار | تغطيها اختبارات مكتوبة لكن غير مشغّلة |
+| `php -l` على كل ملفات PHP | محليًا | ✔︎ بلا أخطاء |
+| صحة `composer.json` و`package.json`، و`node --check` للـ JS | محليًا | ✔︎ |
+| فحص الأسرار في الملفات المرفوعة | محليًا | ✔︎ لا شيء |
+| `composer install` (PHP 8.3) | CI | ✔︎ Laravel 13.43.0 + Filament 5.11.4 — لا تعارض |
+| `npm install && npm run build` (Vite 7.3 + Tailwind 4) | CI | ✔︎ أُنتج `public/build/manifest.json` |
+| `php artisan test` على SQLite | CI | ✔︎ **30 اختبارًا / 124 تأكيدًا** نجحت |
 
-## نقاط مخاطرة معروفة (راجعها أولًا إن ظهرت أخطاء)
+**الاختبارات الناجحة تغطي:** التثبيت لمرة واحدة (إغلاقه بعد النجاح، قفل الملف، رمز التثبيت، رفض المدخلات الخاطئة)، الطلب (أسعار الخادم، المخزون، منع التكرار، مصيدة الروبوتات، طريقة دفع معطّلة، عدم كشف طلبات الآخرين، إعادة المخزون عند الإلغاء)، الواجهة (RTL والألوان، البحث والتصفية، المنتجات غير الفعّالة، Markdown دون HTML خام)، والصلاحيات (دخول اللوحة، منع الموظف من المستخدمين والإعدادات، السياسات).
 
-1. **Filament 5 + Laravel 13:** التوافق لم يُتحقق منه. إن فشل Composer جرّب `filament/filament:^4.5`.
-2. **أسماء أصناف Filament 4/5:** `Filament\Schemas\Components\Section`، `Filament\Schemas\Components\Utilities\Set`، `recordActions()` / `toolbarActions()`، `Filament\Actions\*`، `Filament\Widgets\StatsOverviewWidget\Stat`، وصفحة الإعدادات (`HasSchemas` + `$this->form`).
-3. **Middleware الـ CSRF في Laravel 13:** استُعمل `Illuminate\Foundation\Http\Middleware\VerifyCsrfToken` في `AdminPanelProvider`؛ إن أعيدت تسميته فاستخدم الاسم الجديد.
-4. **`$this->form` في صفحة الإعدادات** يعتمد على دالة `form(Schema $schema)`؛ تحقق من وثائق Filament للإصدار المثبّت.
-5. **`phpunit/phpunit ^12.0` و`laravel/tinker ^3.0`** افتراضات من مصادر عامة.
-6. اختبارات Filament تعتمد على أن slug صفحة الإعدادات `store-settings` (مضبوط يدويًا في الصفحة).
-7. `ApplyStoreSettings` يغيّر المنطقة الزمنية لكل طلب؛ لم يُختبر تأثيره على عرض التواريخ في Filament.
+## ما **لم** يُختبر بعد
+
+| البند | ما يجب فعله |
+|---|---|
+| MySQL/MariaDB الحقيقية (CI يستعمل SQLite) | شغّل `php artisan migrate` على MySQL وجرّب طلبًا كاملًا |
+| المتصفح: RTL والألوان على الهاتف والكمبيوتر، معاينة الألوان في `/install` | افحص بصريًا |
+| رفع الصور وعرضها (`storage:link`) من لوحة Filament | ارفع شعارًا وصورة منتج |
+| تفاعل لوحة Filament يدويًا (حفظ الإعدادات، تعديل حالة الطلب، الفلاتر، الودجات) — الاختبارات تتحقق من فتح الصفحات فقط | جرّب كل مورد |
+| النشر على Hostinger (الجذر، الرابط الرمزي، PHP في SSH، SSL) | جرّب على نسخة تجريبية؛ الخطوات منقولة من وثائق ومصادر عامة |
+| workflow الإصدار `release.yml` | لم يُشغَّل |
+| `composer.lock` | غير موجود في المستودع؛ أنشئه وارفعه لتثبيت الإصدارات |
+
+## نقاط انتبه لها
+
+1. `ApplyStoreSettings` يغيّر المنطقة الزمنية لكل طلب؛ لم يُختبر تأثيره على عرض التواريخ في Filament.
+2. بدون `composer.lock` قد ينزّل كل نشر إصدارات أحدث قليلًا من التي اختُبرت.
+3. نجاح الاختبارات على SQLite لا يضمن سلوك قفل الصفوف (`lockForUpdate`) على MySQL تحت الضغط.

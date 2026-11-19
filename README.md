@@ -1,9 +1,9 @@
 # قالب متجر إلكتروني عربي (Laravel + Filament)
 
 > ⚠️ **حالة الاختبار — اقرأ هذا أولًا**
-> كُتب هذا القالب في بيئة لا تستطيع الوصول إلى Packagist، فلم يُنفَّذ `composer install` ولا `php artisan` ولا اختبارات PHPUnit ولا `npm run build`.
-> الكود **غير مختبر تشغيليًا**. الذي فُحص فقط: صياغة PHP (`php -l`) وصحة JSON وJavaScript وفحص عدم وجود أسرار.
-> تفاصيل ما اختُبر وما لم يُختبر في [`docs/TESTING_STATUS.md`](docs/TESTING_STATUS.md). **شغّل الخطوات في القسم 3 واجعل الاختبارات تمرّ قبل تجهيز أي عميل.**
+> كُتب القالب في بيئة محظور فيها Packagist، ثم شغّلته GitHub Actions (CI): `composer install` (Laravel 13.43 + Filament 5.11) و`npm run build` و`php artisan test` — **30 اختبارًا نجحت** على SQLite.
+> **لم يُختبر بعد:** MySQL الحقيقي، المتصفح (RTL والألوان على الهاتف)، رفع الصور، صفحات Filament بالتفاعل اليدوي، والنشر على Hostinger. لا يوجد `composer.lock` في المستودع بعد (أنشئه بـ `composer install` وارفعه).
+> التفاصيل في [`docs/TESTING_STATUS.md`](docs/TESTING_STATUS.md). **جرّب على نسخة تجريبية قبل تجهيز أي عميل.**
 
 ## 1. فكرة المشروع ومميزاته
 
@@ -23,13 +23,13 @@
 |---|---|---|
 | PHP | **8.3 أو أحدث** | Laravel 13 يتطلب 8.3 كحد أدنى |
 | Laravel | `^13.0` | |
-| Filament | `^5.0` | يتطلب PHP 8.2+ وLaravel 11.28+؛ **توافقه مع Laravel 13 لم يُتحقق منه بعد** (يظهر عند أول `composer install`) |
+| Filament | `^5.0` | حُلّ فعليًا في CI مع Laravel 13 (Filament 5.11.4 / Laravel 13.43.0) |
 | Node.js | 20 أو أحدث | لبناء الواجهة فقط (Vite 7 + Tailwind 4) |
 | قاعدة البيانات | MySQL 8 / MariaDB 10.6+ | SQLite للاختبارات |
 
 إضافات PHP: `ctype curl dom fileinfo filter hash intl mbstring openssl pdo_mysql session tokenizer xml zip gd`.
 
-> **ما الذي تحقّقتُ منه فعلًا؟** البيئة التي كُتب فيها القالب فيها PHP 8.3.6 وNode 22 فقط. إصدارات Laravel 13 / Filament 5 / PHPUnit 12 / Vite 7 مأخوذة من الوثائق الرسمية والمصادر العامة، ولم تُثبَّت فعليًا. إن فشل `composer install` بسبب تعارض إصدارات، عدّل القيود في `composer.json` وفق رسالة Composer.
+> **ما الذي تحقّقتُ منه فعلًا؟** تثبيت الاعتماديات (PHP 8.3، Laravel 13، Filament 5، PHPUnit 12، Vite 7) وبناء الواجهة والاختبارات نجحت في CI. التشغيل على Hostinger لم يُجرَّب.
 > إن كانت خطة الاستضافة محصورة بـ PHP 8.2 فاستخدم Laravel 12 + Filament 4 (غيّر القيود في `composer.json` وراجع الفروق).
 
 ## 3. تشغيل المشروع محليًا
