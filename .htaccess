@@ -1,0 +1,22 @@
+# ===========================================================================
+# شبكة أمان فقط — الأفضل دائمًا أن يشير جذر الموقع (document root) إلى مجلد public.
+# إذا اضطررت لجعل جذر الموقع هو جذر المشروع (استضافة لا تسمح بتغييره)،
+# فهذا الملف يمنع كشف الملفات الحساسة ويحوّل الزيارات إلى public/.
+# راجع DEPLOYMENT.md قبل الاعتماد عليه.
+# ===========================================================================
+
+# منع الوصول المباشر لأي ملف أو مجلد حساس
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    RewriteRule ^(\.env.*|\.git.*|composer\.(json|lock)|package(-lock)?\.json|artisan|phpunit\.xml|vite\.config\.js)$ - [F,L,NC]
+    RewriteRule ^(app|bootstrap|config|database|docs|lang|resources|routes|storage|tests|vendor|node_modules)(/|$) - [F,L,NC]
+
+    # كل ما عدا ذلك يُخدَّم من public/
+    RewriteCond %{REQUEST_URI} !^/public/
+    RewriteRule ^(.*)$ public/$1 [L]
+</IfModule>
+
+<FilesMatch "^\.(?!well-known)">
+    Require all denied
+</FilesMatch>

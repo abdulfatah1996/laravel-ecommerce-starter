@@ -1,0 +1,81 @@
+@import "tailwindcss";
+
+@source "../views";
+
+/* ألوان المتجر تُحقن من إعدادات المتجر في قالب الصفحة (layouts/app.blade.php)؛
+   هذه قيم احتياطية فقط. */
+:root {
+    --store-primary: #0f766e;
+    --store-secondary: #e7e5e4;
+    --store-accent: #f59e0b;
+    --store-on-primary: #ffffff;
+    --store-on-accent: #1c1917;
+}
+
+@theme inline {
+    --color-primary: var(--store-primary);
+    --color-secondary: var(--store-secondary);
+    --color-accent: var(--store-accent);
+    --color-on-primary: var(--store-on-primary);
+    --color-on-accent: var(--store-on-accent);
+    --font-sans: "Segoe UI", Tahoma, "Noto Sans Arabic", "Noto Naskh Arabic", system-ui, sans-serif;
+}
+
+@layer base {
+    html {
+        font-family: var(--font-sans);
+        -webkit-text-size-adjust: 100%;
+    }
+}
+
+@layer components {
+    .btn {
+        @apply inline-flex items-center justify-center gap-2 rounded-lg px-5 py-2.5 text-sm font-semibold transition focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary disabled:cursor-not-allowed disabled:opacity-50;
+    }
+
+    .btn-primary {
+        @apply bg-primary text-on-primary hover:brightness-90;
+    }
+
+    .btn-accent {
+        @apply bg-accent text-on-accent hover:brightness-95;
+    }
+
+    .btn-outline {
+        @apply border border-stone-300 bg-white text-stone-700 hover:bg-stone-100;
+    }
+
+    .input {
+        @apply block w-full rounded-lg border border-stone-300 bg-white px-3 py-2 text-sm text-stone-800 shadow-sm focus:border-primary focus:outline-2 focus:outline-primary;
+    }
+
+    .label {
+        @apply mb-1 block text-sm font-medium text-stone-700;
+    }
+
+    .card {
+        @apply rounded-xl border border-stone-200 bg-white shadow-sm;
+    }
+
+    .prose-ar {
+        @apply leading-8 text-stone-700;
+    }
+
+    .prose-ar h1,
+    .prose-ar h2,
+    .prose-ar h3 {
+        @apply mt-6 mb-2 font-bold text-stone-900;
+    }
+
+    .prose-ar ul {
+        @apply my-3 list-disc ps-6;
+    }
+
+    .prose-ar p {
+        @apply my-3;
+    }
+
+    .prose-ar a {
+        @apply text-primary underline;
+    }
+}

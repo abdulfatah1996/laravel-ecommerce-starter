@@ -1,0 +1,40 @@
+# يبني حزمة جاهزة للرفع على استضافة بدون Node/Composer (تحتوي vendor و public/build).
+# تُشغَّل عند إنشاء وسم (tag) مثل v1.0.0. لم تُجرَّب بعد.
+name: Release package
+
+on:
+  push:
+    tags: ['v*']
+
+jobs:
+  package:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.3'
+          extensions: mbstring, intl, zip, gd, xml, curl
+          coverage: none
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - run: composer install --no-dev --optimize-autoloader --no-interaction --prefer-dist
+      - run: |
+          npm install
+          npm run build
+
+      - name: Create archive (without secrets or dev files)
+        run: |
+          zip -r store-release.zip . \
+            -x ".git/*" ".github/*" "node_modules/*" "tests/*" ".env" ".env.*" "storage/logs/*" "storage/framework/cache/data/*" "storage/framework/sessions/*" "storage/framework/views/*" "storage/app/installed.lock"
+          # .env.example مطلوب في الحزمة: أعد إضافته صراحة
+          zip store-release.zip .env.example
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: store-release
+          path: store-release.zip
