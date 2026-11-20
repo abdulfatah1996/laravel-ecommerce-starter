@@ -1,0 +1,91 @@
+# اختبار حقيقي في متصفح: يشغّل المتجر على MariaDB منفصلة، ينفّذ سيناريو الشراء، ويحفظ اللقطات.
+name: E2E (متصفح + MariaDB)
+
+on:
+  push:
+    branches: ['feature/storefront-ux']
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  e2e:
+    runs-on: ubuntu-latest
+    services:
+      mariadb:
+        image: mariadb:10.11
+        env:
+          MARIADB_ROOT_PASSWORD: root
+          MARIADB_DATABASE: store_e2e
+        ports: ['3306:3306']
+        options: >-
+          --health-cmd="healthcheck.sh --connect --innodb_initialized"
+          --health-interval=5s --health-timeout=5s --health-retries=20
+    env:
+      ADMIN_EMAIL: admin@example.test
+      ADMIN_PASSWORD: E2e-Passw0rd-2026
+    steps:
+      - uses: actions/checkout@v4
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.3'
+          extensions: mbstring, intl, pdo_mysql, zip, gd, xml, curl
+          coverage: none
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - run: composer install --no-interaction --prefer-dist
+      - name: Env (قاعدة اختبار منفصلة)
+        run: |
+          cp .env.example .env
+          sed -i 's|^APP_URL=.*|APP_URL=http://127.0.0.1:8000|' .env
+          sed -i 's|^DB_DATABASE=.*|DB_DATABASE=store_e2e|; s|^DB_USERNAME=.*|DB_USERNAME=root|; s|^DB_PASSWORD=.*|DB_PASSWORD=root|' .env
+          sed -i 's|^SESSION_SECURE_COOKIE=.*|SESSION_SECURE_COOKIE=false|' .env
+          grep -q '^APP_ENV=' .env && sed -i 's|^APP_ENV=.*|APP_ENV=local|' .env || echo 'APP_ENV=local' >> .env
+          php artisan key:generate
+      - run: php artisan migrate --force
+      - name: Seed (رِواق التجريبي + مدير)
+        run: |
+          php artisan storage:link
+          php artisan db:seed --class=RiwaqDemoSeeder --force
+          php artisan tinker --execute="App\Models\User::create(['name'=>'Admin','email'=>getenv('ADMIN_EMAIL'),'password'=>getenv('ADMIN_PASSWORD'),'role'=>App\Enums\UserRole::Admin,'is_active'=>true,'email_verified_at'=>now()]);"
+      - run: npm install && npm run build
+      - name: Run store
+        run: |
+          nohup php artisan serve --host=127.0.0.1 --port=8000 > serve.log 2>&1 &
+          for i in $(seq 1 30); do curl -sf http://127.0.0.1:8000/ >/dev/null && break || sleep 1; done
+          curl -sI http://127.0.0.1:8000/ | head -1
+      - run: npx playwright install --with-deps chromium
+      - name: Browser scenario
+        id: e2e
+        continue-on-error: true
+        run: node e2e/run.mjs | tee e2e-output-log.txt
+        env:
+          BASE_URL: http://127.0.0.1:8000
+      - name: Laravel log on failure
+        if: always()
+        run: |
+          mkdir -p e2e-output
+          cp storage/logs/laravel.log e2e-output/laravel.log 2>/dev/null || true
+          cp serve.log e2e-output/serve.log 2>/dev/null || true
+          cp e2e-output-log.txt e2e-output/ 2>/dev/null || true
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: e2e-screenshots
+          path: e2e-output
+      - name: Publish screenshots to branch ci-screenshots
+        if: always()
+        run: |
+          git config user.name "ci"; git config user.email "ci@users.noreply.github.com"
+          git checkout --orphan ci-screenshots
+          git rm -rf -q . || true
+          cp -r e2e-output/. . 
+          git add -A -- '*.png' '*.json' '*.txt' '*.log'
+          git commit -qm "e2e results for ${GITHUB_SHA}"
+          git push -f origin ci-screenshots
+      - name: Fail if scenario failed
+        if: steps.e2e.outcome == 'failure'
+        run: exit 1
