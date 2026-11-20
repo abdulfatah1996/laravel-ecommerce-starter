@@ -7,42 +7,45 @@
 
     @if ($lines->isEmpty())
         <div class="card p-8 text-center">
-            <p class="text-stone-500">سلتك فارغة.</p>
+            <p class="text-stone-600">سلتك فارغة.</p>
             <a href="{{ route('products.index') }}" class="btn btn-primary mt-4">تصفّح المنتجات</a>
         </div>
     @else
-        <div class="grid gap-6 md:grid-cols-3">
+        <div class="grid gap-5 md:grid-cols-3">
             <div class="space-y-3 md:col-span-2">
                 @foreach ($lines as $line)
                     @php($product = $line['product'])
-                    <div class="card flex gap-3 p-3">
-                        <a href="{{ route('products.show', $product->slug) }}" class="block h-20 w-20 shrink-0 overflow-hidden rounded-lg bg-secondary/40">
+                    <div class="card flex gap-3 p-3" data-cart-line>
+                        <a href="{{ route('products.show', $product->slug) }}" class="block size-24 shrink-0 overflow-hidden rounded-xl bg-secondary/40">
                             @if ($product->primary_image_url)
                                 <img src="{{ $product->primary_image_url }}" alt="{{ $product->name }}" class="h-full w-full object-cover">
                             @endif
                         </a>
-                        <div class="flex-1">
-                            <a href="{{ route('products.show', $product->slug) }}" class="font-semibold hover:text-primary">{{ $product->name }}</a>
-                            <p class="text-sm text-stone-500">{{ $store->money($line['unit_price']) }}</p>
-                            @if ($line['exceeds_stock'])
-                                <p class="mt-1 text-xs text-red-600">المتاح من هذا المنتج {{ $product->stock }} فقط — عدّل الكمية.</p>
+                        <div class="flex min-w-0 flex-1 flex-col">
+                            <a href="{{ route('products.show', $product->slug) }}" class="line-clamp-2 font-semibold leading-6 hover:text-primary">{{ $product->name }}</a>
+                            @if ($line['variant'])
+                                <p class="text-sm text-stone-600">{{ $product->option_name ?: 'الخيار' }}: {{ $line['variant']->label }}</p>
                             @endif
-                            <div class="mt-2 flex flex-wrap items-center gap-2">
-                                <form action="{{ route('cart.update', $product->id) }}" method="post" class="flex items-center gap-2">
+                            <p class="text-sm text-stone-600"><bdi>{{ $store->money($line['unit_price']) }}</bdi></p>
+                            @if ($line['exceeds_stock'])
+                                <p class="mt-1 text-xs font-semibold text-red-700">المتاح <bdi>{{ $line['stock'] }}</bdi> فقط — عدّل الكمية.</p>
+                            @endif
+                            <div class="mt-auto flex flex-wrap items-center justify-between gap-2 pt-2">
+                                <form action="{{ route('cart.update', $line['key']) }}" method="post" class="flex items-center gap-2" data-autosubmit>
                                     @csrf
                                     @method('PATCH')
-                                    <label for="qty-{{ $product->id }}" class="sr-only">الكمية</label>
-                                    <input id="qty-{{ $product->id }}" type="number" name="quantity" value="{{ $line['quantity'] }}" min="1" max="{{ config('store.max_cart_quantity') }}" class="input w-20">
+                                    <label for="qty-{{ $loop->index }}" class="sr-only">الكمية</label>
+                                    <input id="qty-{{ $loop->index }}" type="number" name="quantity" value="{{ $line['quantity'] }}" min="1" max="{{ min(config('store.max_cart_quantity'), max(1, $line['stock'])) }}" inputmode="numeric" class="input w-20 text-center">
                                     <button type="submit" class="btn btn-outline">تحديث</button>
                                 </form>
-                                <form action="{{ route('cart.remove', $product->id) }}" method="post">
+                                <form action="{{ route('cart.remove', $line['key']) }}" method="post">
                                     @csrf
                                     @method('DELETE')
-                                    <button type="submit" class="text-sm text-red-600 hover:underline">إزالة</button>
+                                    <button type="submit" class="min-h-11 px-2 text-sm font-semibold text-red-700 hover:underline">حذف</button>
                                 </form>
                             </div>
                         </div>
-                        <p class="font-bold">{{ $store->money($line['line_total']) }}</p>
+                        <p class="shrink-0 font-bold"><bdi>{{ $store->money($line['line_total']) }}</bdi></p>
                     </div>
                 @endforeach
             </div>
@@ -50,11 +53,20 @@
             <aside class="card h-fit space-y-3 p-4" aria-label="ملخص الطلب">
                 <h2 class="font-bold">ملخص الطلب</h2>
                 <dl class="space-y-2 text-sm">
-                    <div class="flex justify-between"><dt>المجموع الفرعي</dt><dd>{{ $store->money($subtotal) }}</dd></div>
-                    <div class="flex justify-between"><dt>الشحن</dt><dd>{{ $shipping > 0 ? $store->money($shipping) : 'مجاني' }}</dd></div>
-                    <div class="flex justify-between border-t border-stone-200 pt-2 text-base font-bold"><dt>الإجمالي</dt><dd>{{ $store->money($total) }}</dd></div>
+                    <div class="flex justify-between"><dt>المجموع الفرعي</dt><dd><bdi>{{ $store->money($subtotal) }}</bdi></dd></div>
+                    <div class="flex justify-between gap-3">
+                        <dt>الشحن</dt>
+                        <dd class="text-end">
+                            @if ($shippingRange['uses_zones'])
+                                يُحدَّد حسب منطقتك ({{ $shippingRange['min'] === $shippingRange['max'] ? $store->money($shippingRange['min']) : $store->money($shippingRange['min']).' – '.$store->money($shippingRange['max']) }})
+                            @else
+                                <bdi>{{ $shippingRange['min'] > 0 ? $store->money($shippingRange['min']) : 'مجاني' }}</bdi>
+                            @endif
+                        </dd>
+                    </div>
                 </dl>
-                <a href="{{ route('checkout.show') }}" class="btn btn-primary w-full">إتمام الطلب</a>
+                <a href="{{ route('checkout.show') }}" class="btn btn-primary btn-lg w-full">إتمام الطلب</a>
+                <p class="text-center text-xs text-stone-600">يمكنك إتمام الطلب كضيف بدون حساب.</p>
             </aside>
         </div>
     @endif

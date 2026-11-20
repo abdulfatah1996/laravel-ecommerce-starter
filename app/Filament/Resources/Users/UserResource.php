@@ -69,7 +69,7 @@ class UserResource extends Resource
                 TextColumn::make('role')
                     ->label('الدور')
                     ->badge()
-                    ->formatStateUsing(fn (UserRole $state) => $state->label()),
+                    ->formatStateUsing(fn (?UserRole $state) => $state?->label() ?? 'زبون'),
                 IconColumn::make('is_active')->label('مفعّل')->boolean(),
             ])
             ->recordActions([EditAction::make()]);

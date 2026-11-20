@@ -27,6 +27,7 @@ class ItemsRelationManager extends RelationManager
             ->recordTitleAttribute('name')
             ->columns([
                 TextColumn::make('name')->label('المنتج'),
+                TextColumn::make('variant_label')->label('الخيار')->placeholder('—'),
                 TextColumn::make('sku')->label('الرمز'),
                 TextColumn::make('unit_price')->label('سعر الوحدة')->formatStateUsing($money),
                 TextColumn::make('quantity')->label('الكمية'),

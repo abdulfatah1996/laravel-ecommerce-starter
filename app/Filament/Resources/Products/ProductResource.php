@@ -13,6 +13,7 @@ use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
 use Filament\Forms\Components\FileUpload;
+use Filament\Forms\Components\Repeater;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
@@ -76,10 +77,32 @@ class ProductResource extends Resource
                 Textarea::make('description')->label('الوصف')->rows(5)->maxLength(5000)->columnSpanFull(),
             ])->columns(2),
 
+            Section::make('خيارات المنتج (مقاس / لون)')
+                ->description('اختياري. إن أضفت خيارات يصبح المخزون لكل خيار، ويمكن لكل خيار سعر خاص (اتركه فارغًا لاستخدام سعر المنتج).')
+                ->schema([
+                    TextInput::make('option_name')->label('اسم الخيار (مثال: المقاس أو اللون)')->maxLength(40),
+                    Repeater::make('variants')
+                        ->label('الخيارات')
+                        ->relationship()
+                        ->schema([
+                            TextInput::make('label')->label('الخيار')->required()->maxLength(80),
+                            TextInput::make('price')->label('السعر (اختياري)')->numeric()->minValue(0)->maxValue(9999999),
+                            TextInput::make('stock')->label('المخزون')->required()->numeric()->integer()->minValue(0)->default(0),
+                            TextInput::make('sku')->label('رمز (SKU)')->maxLength(64),
+                            Toggle::make('is_active')->label('مفعّل')->default(true),
+                        ])
+                        ->columns(5)
+                        ->orderColumn('sort_order')
+                        ->reorderable()
+                        ->addActionLabel('إضافة خيار')
+                        ->defaultItems(0)
+                        ->collapsible(),
+                ]),
+
             Section::make('السعر والمخزون')->schema([
                 TextInput::make('price')->label('السعر')->required()->numeric()->minValue(0)->maxValue(9999999),
                 TextInput::make('compare_at_price')->label('السعر قبل الخصم (اختياري)')->numeric()->minValue(0)->maxValue(9999999),
-                TextInput::make('stock')->label('الكمية في المخزون')->required()->numeric()->integer()->minValue(0)->default(0),
+                TextInput::make('stock')->label('الكمية في المخزون (لمنتج بلا خيارات)')->required()->numeric()->integer()->minValue(0)->default(0),
             ])->columns(3),
 
             Section::make('الصور')->schema([
@@ -95,6 +118,11 @@ class ProductResource extends Resource
                     ->directory('products')
                     ->visibility('public'),
             ]),
+
+            Section::make('التوصيل والعرض')->schema([
+                TextInput::make('delivery_note')->label('ملاحظة توصيل لهذا المنتج (اختياري)')->maxLength(255),
+                Select::make('preview_3d')->label('عرض ثلاثي الأبعاد')->options(['lamp' => 'مصباح (قاعدة وغطاء)'])->placeholder('بدون')->native(false),
+            ])->columns(2),
 
             Section::make('الظهور')->schema([
                 Toggle::make('is_active')->label('ظاهر في المتجر')->default(true),
@@ -118,6 +146,7 @@ class ProductResource extends Resource
                     ->label('المخزون')
                     ->sortable()
                     ->badge()
+                    ->state(fn (Product $record): int => $record->hasVariants() ? (int) $record->variants()->where('is_active', true)->sum('stock') : (int) $record->stock)
                     ->color(fn (int $state): string => match (true) {
                         $state <= 0 => 'danger',
                         $state <= (int) config('store.low_stock_threshold') => 'warning',

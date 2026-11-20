@@ -70,6 +70,7 @@ class OrderResource extends Resource
                 TextInput::make('address')->label('العنوان')->disabled()->columnSpanFull(),
                 Textarea::make('notes')->label('ملاحظات الزبون')->disabled()->columnSpanFull(),
                 TextInput::make('subtotal')->label('المجموع الفرعي')->disabled(),
+                TextInput::make('shipping_zone')->label('منطقة الشحن')->disabled(),
                 TextInput::make('shipping_fee')->label('الشحن')->disabled(),
                 TextInput::make('total')->label('الإجمالي')->disabled(),
             ])->columns(2),

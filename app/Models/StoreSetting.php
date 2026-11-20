@@ -16,7 +16,7 @@ class StoreSetting extends Model
         'name', 'description', 'logo', 'email', 'phone', 'country', 'city', 'address',
         'currency_code', 'currency_symbol', 'timezone', 'locale',
         'primary_color', 'secondary_color', 'accent_color',
-        'shipping_fee', 'cod_enabled', 'manual_payment_enabled',
+        'shipping_fee', 'whatsapp_number', 'delivery_info', 'tagline', 'hero_product_id', 'cod_enabled', 'manual_payment_enabled',
         'manual_payment_label', 'manual_payment_instructions', 'installed_at',
     ];
 
@@ -104,6 +104,17 @@ class StoreSetting extends Model
     public function money(float|int|string|null $amount): string
     {
         return number_format((float) $amount, 2).' '.$this->currency_symbol;
+    }
+
+    /** رابط واتساب (أرقام فقط بصيغة دولية)، أو null إن لم يُضبط الرقم. */
+    public function whatsappUrl(?string $text = null): ?string
+    {
+        $digits = preg_replace('/\D+/', '', (string) $this->whatsapp_number);
+        if ($digits === '' || $digits === null) {
+            return null;
+        }
+
+        return 'https://wa.me/'.$digits.($text ? '?text='.rawurlencode($text) : '');
     }
 
     public function fullAddress(): string

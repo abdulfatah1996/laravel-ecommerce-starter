@@ -5,6 +5,7 @@ namespace App\Observers;
 use App\Enums\OrderStatus;
 use App\Models\Order;
 use App\Models\Product;
+use App\Models\ProductVariant;
 use Illuminate\Support\Facades\DB;
 
 /** يعيد المخزون عند إلغاء الطلب، ويخصمه مجددًا إن أُعيد تفعيل طلب ملغي. */
@@ -31,11 +32,13 @@ class OrderObserver
     {
         DB::transaction(function () use ($order, $direction) {
             foreach ($order->items()->whereNotNull('product_id')->get() as $item) {
-                $product = Product::query()->lockForUpdate()->find($item->product_id);
-                if ($product === null) {
+                $target = $item->variant_id
+                    ? ProductVariant::query()->lockForUpdate()->find($item->variant_id)
+                    : Product::query()->lockForUpdate()->find($item->product_id);
+                if ($target === null) {
                     continue;
                 }
-                $product->update(['stock' => max(0, $product->stock + ($direction * $item->quantity))]);
+                $target->update(['stock' => max(0, $target->stock + ($direction * $item->quantity))]);
             }
         });
     }

@@ -1,0 +1,15 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Model;
+
+class ShippingZone extends Model
+{
+    protected $fillable = ['name', 'fee', 'sort_order', 'is_active'];
+
+    protected function casts(): array
+    {
+        return ['fee' => 'decimal:2', 'is_active' => 'boolean'];
+    }
+}

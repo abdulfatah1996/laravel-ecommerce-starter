@@ -9,6 +9,7 @@ use App\Models\StoreSetting;
 use App\Payments\PaymentRegistry;
 use App\Services\Cart;
 use App\Services\OrderPlacer;
+use App\Services\ShippingCalculator;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
@@ -41,8 +42,9 @@ class CheckoutController extends Controller
         return view('checkout', [
             'lines' => $this->cart->lines(),
             'subtotal' => $subtotal,
-            'shipping' => (float) $settings->shipping_fee,
-            'total' => round($subtotal + (float) $settings->shipping_fee, 2),
+            'zones' => ShippingCalculator::zones(),
+            'baseShipping' => (float) $settings->shipping_fee,
+            'user' => $request->user(),
             'methods' => $this->payments->enabled($settings),
             'settings' => $settings,
             'token' => $request->session()->get(self::TOKEN_KEY),
@@ -62,10 +64,11 @@ class CheckoutController extends Controller
 
         try {
             $order = $placer->place(
-                $request->safe()->only(['name', 'phone', 'email', 'city', 'address', 'notes', 'payment_method']),
+                $request->safe()->only(['name', 'phone', 'email', 'city', 'address', 'notes', 'payment_method', 'shipping_zone_id']),
                 $this->cart->items(),
                 $sessionToken,
                 StoreSetting::current(),
+                $request->user()?->id,
             );
         } catch (CheckoutException $e) {
             return redirect()->route('cart.index')->with('error', $e->getMessage());

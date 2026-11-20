@@ -21,6 +21,7 @@ class CheckoutRequest extends FormRequest
             'city' => ['required', 'string', 'max:100'],
             'address' => ['required', 'string', 'max:255'],
             'notes' => ['nullable', 'string', 'max:1000'],
+            'shipping_zone_id' => ['nullable', 'integer'],
             'payment_method' => ['required', 'string', 'max:30'],
             'checkout_token' => ['required', 'string', 'uuid'],
             // حقل مصيدة للروبوتات: يجب أن يبقى فارغًا

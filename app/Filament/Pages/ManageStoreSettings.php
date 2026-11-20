@@ -3,6 +3,7 @@
 namespace App\Filament\Pages;
 
 use App\Enums\UserRole;
+use App\Models\Product;
 use App\Models\StoreSetting;
 use App\Support\Colors;
 use BackedEnum;
@@ -70,6 +71,10 @@ class ManageStoreSettings extends Page implements HasSchemas
                     TextInput::make('name')->label('اسم المتجر')->required()->maxLength(100),
                     TextInput::make('email')->label('البريد الإلكتروني')->email()->maxLength(190),
                     TextInput::make('phone')->label('الهاتف')->tel()->maxLength(40),
+                    TextInput::make('whatsapp_number')->label('رقم واتساب (بصيغة دولية بلا + مثل 970599123456)')->regex('/^[0-9]{8,15}$/')->maxLength(15)->extraInputAttributes(['dir' => 'ltr']),
+                    TextInput::make('tagline')->label('عنوان الواجهة الرئيسية (جملة قصيرة)')->maxLength(120),
+                    TextInput::make('delivery_info')->label('معلومة التوصيل (تظهر في المتجر)')->maxLength(255),
+                    Select::make('hero_product_id')->label('منتج صورة الواجهة (اختياري)')->options(fn () => Product::query()->active()->orderBy('name')->pluck('name', 'id')->all())->searchable()->placeholder('تلقائي: أول منتج مميز بصورة')->native(false),
                     TextInput::make('country')->label('الدولة')->maxLength(100),
                     TextInput::make('city')->label('المدينة')->maxLength(100),
                     TextInput::make('address')->label('العنوان')->maxLength(255),
@@ -99,7 +104,7 @@ class ManageStoreSettings extends Page implements HasSchemas
                         ->required()
                         ->helperText('يُنصح بعدم تغييرها بعد بدء استقبال الطلبات.'),
                     Select::make('locale')->label('اللغة')->options(['ar' => 'العربية (RTL)'])->required()->native(false),
-                    TextInput::make('shipping_fee')->label('رسوم الشحن الثابتة')->numeric()->minValue(0)->required(),
+                    TextInput::make('shipping_fee')->label('رسوم الشحن الثابتة (تُستخدم إن لم تُعرَّف مناطق شحن)')->numeric()->minValue(0)->required(),
                 ])->columns(2),
 
                 Section::make('ألوان المتجر')->schema([

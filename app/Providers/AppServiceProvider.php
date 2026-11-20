@@ -15,6 +15,8 @@ use App\Policies\CatalogPolicy;
 use App\Policies\CustomerPolicy;
 use App\Policies\OrderPolicy;
 use App\Policies\PagePolicy;
+use App\Policies\ShippingZonePolicy;
+use App\Models\ShippingZone;
 use App\Policies\UserPolicy;
 use App\Services\Cart;
 use Illuminate\Cache\RateLimiting\Limit;
@@ -48,6 +50,7 @@ class AppServiceProvider extends ServiceProvider
         Gate::policy(Product::class, CatalogPolicy::class);
         Gate::policy(Category::class, CatalogPolicy::class);
         Gate::policy(Page::class, PagePolicy::class);
+        Gate::policy(ShippingZone::class, ShippingZonePolicy::class);
         Gate::policy(Order::class, OrderPolicy::class);
         Gate::policy(Customer::class, CustomerPolicy::class);
         Gate::policy(User::class, UserPolicy::class);
@@ -59,7 +62,7 @@ class AppServiceProvider extends ServiceProvider
 
         // $store متاح في كل قوالب الواجهة (الأبناء تُعرض قبل القالب الأب، لذا لا يكفي ربطه بالقالب الأب فقط).
         View::composer(
-            ['layouts.app', 'partials.*', 'home', 'products.*', 'cart', 'checkout', 'order-success', 'page'],
+            ['layouts.app', 'partials.*', 'home', 'products.*', 'cart', 'checkout', 'order-success', 'page', 'account.*'],
             fn ($view) => $view->with('store', StoreSetting::current())
         );
 
