@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('title', 'سلة المشتريات')
+@section('hide_wa', '1')
 
 @section('content')
     <h1 class="mb-4 text-xl font-bold">سلة المشتريات</h1>
@@ -15,7 +16,7 @@
             <div class="space-y-3 md:col-span-2">
                 @foreach ($lines as $line)
                     @php($product = $line['product'])
-                    <div class="card flex gap-3 p-3" data-cart-line>
+                    <div class="card flex min-w-0 gap-3 p-3" data-cart-line>
                         <a href="{{ route('products.show', $product->slug) }}" class="block size-24 shrink-0 overflow-hidden rounded-xl bg-secondary/40">
                             @if ($product->primary_image_url)
                                 <img src="{{ $product->primary_image_url }}" alt="{{ $product->name }}" class="h-full w-full object-cover">
@@ -45,7 +46,7 @@
                                 </form>
                             </div>
                         </div>
-                        <p class="shrink-0 font-bold"><bdi>{{ $store->money($line['line_total']) }}</bdi></p>
+                        <p class="shrink-0 whitespace-nowrap text-sm font-bold"><bdi>{{ $store->money($line['line_total']) }}</bdi></p>
                     </div>
                 @endforeach
             </div>
@@ -55,10 +56,10 @@
                 <dl class="space-y-2 text-sm">
                     <div class="flex justify-between"><dt>المجموع الفرعي</dt><dd><bdi>{{ $store->money($subtotal) }}</bdi></dd></div>
                     <div class="flex justify-between gap-3">
-                        <dt>الشحن</dt>
-                        <dd class="text-end">
+                        <dt class="shrink-0">الشحن</dt>
+                        <dd class="min-w-0 text-end">
                             @if ($shippingRange['uses_zones'])
-                                يُحدَّد حسب منطقتك ({{ $shippingRange['min'] === $shippingRange['max'] ? $store->money($shippingRange['min']) : $store->money($shippingRange['min']).' – '.$store->money($shippingRange['max']) }})
+                                حسب منطقتك، من <bdi>{{ $store->money($shippingRange['min']) }}</bdi>
                             @else
                                 <bdi>{{ $shippingRange['min'] > 0 ? $store->money($shippingRange['min']) : 'مجاني' }}</bdi>
                             @endif

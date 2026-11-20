@@ -43,8 +43,9 @@ class Order extends Model
     public static function generateNumber(): string
     {
         do {
-            $number = 'ORD-'.now()->format('ymd').'-'.strtoupper(Str::random(5));
-            $number = strtr($number, ['O' => 'X', '0' => '7', 'I' => 'Y', '1' => '8']);
+            // نستبدل الأحرف الملتبسة في الجزء العشوائي فقط (لا في البادئة ولا في التاريخ).
+            $random = strtr(strtoupper(Str::random(5)), ['O' => 'X', '0' => '7', 'I' => 'Y', '1' => '8']);
+            $number = 'ORD-'.now()->format('ymd').'-'.$random;
         } while (static::query()->where('number', $number)->exists());
 
         return $number;

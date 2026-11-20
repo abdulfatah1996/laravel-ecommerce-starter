@@ -61,7 +61,10 @@ jobs:
       - name: Browser scenario
         id: e2e
         continue-on-error: true
-        run: node e2e/run.mjs | tee e2e-output-log.txt
+        shell: bash
+        run: |
+          set -o pipefail
+          node e2e/run.mjs | tee e2e-output-log.txt
         env:
           BASE_URL: http://127.0.0.1:8000
       - name: Laravel log on failure
@@ -79,13 +82,13 @@ jobs:
       - name: Publish screenshots to branch ci-screenshots
         if: always()
         run: |
+          rm -rf /tmp/pub && mkdir /tmp/pub && cp -r e2e-output/. /tmp/pub/
+          cd /tmp/pub
+          git init -q -b ci-screenshots
           git config user.name "ci"; git config user.email "ci@users.noreply.github.com"
-          git checkout --orphan ci-screenshots
-          git rm -rf -q . || true
-          cp -r e2e-output/. . 
-          git add -A -- '*.png' '*.json' '*.txt' '*.log'
+          git add -A
           git commit -qm "e2e results for ${GITHUB_SHA}"
-          git push -f origin ci-screenshots
+          git push -f "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" ci-screenshots
       - name: Fail if scenario failed
         if: steps.e2e.outcome == 'failure'
         run: exit 1

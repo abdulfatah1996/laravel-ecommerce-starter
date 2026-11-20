@@ -41,11 +41,11 @@ class ProductController extends Controller
         $effective = "COALESCE((SELECT MIN(COALESCE(pv.price, products.price)) FROM product_variants pv WHERE pv.product_id = products.id AND pv.is_active = 1), products.price)";
 
         if (filled($filters['min_price'] ?? null)) {
-            $query->whereRaw("{$effective} >= ?", [$filters['min_price']]);
+            $query->whereRaw("{$effective} >= ?", [(float) $filters['min_price']]);
         }
 
         if (filled($filters['max_price'] ?? null)) {
-            $query->whereRaw("{$effective} <= ?", [$filters['max_price']]);
+            $query->whereRaw("{$effective} <= ?", [(float) $filters['max_price']]);
         }
 
         if (($filters['availability'] ?? null) === 'in_stock') {

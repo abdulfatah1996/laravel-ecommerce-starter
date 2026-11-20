@@ -114,8 +114,8 @@
                         <button type="button" data-qty-step="1" class="size-11 text-lg" aria-label="زيادة الكمية">+</button>
                     </div>
                     <button type="submit" data-add class="btn btn-primary btn-lg flex-1" @disabled($startStock < 1)>
-                        <span data-add-label>{{ $startStock < 1 ? 'غير متوفر' : 'أضف إلى السلة' }}</span>
-                        <span class="font-bold md:hidden" data-bar-price><bdi>{{ $store->money($startPrice) }}</bdi></span>
+                        <span class="whitespace-nowrap" data-add-label>{{ $startStock < 1 ? 'غير متوفر' : 'أضف إلى السلة' }}</span>
+                        <span class="whitespace-nowrap font-bold md:hidden" data-bar-price><bdi>{{ $store->money($startPrice) }}</bdi></span>
                     </button>
                 </div>
             </div>

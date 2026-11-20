@@ -61,7 +61,7 @@ class InstallerTest extends TestCase
         $this->assertSame(UserRole::Admin, $admin->role);
         $this->assertTrue($admin->is_active);
 
-        $this->assertSame(4, Page::query()->count());
+        $this->assertSame(count(Page::defaults()), Page::query()->count());
         $this->assertFileExists($this->lockPath);
     }
 

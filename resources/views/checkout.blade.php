@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('title', 'إتمام الطلب')
+@section('hide_wa', '1')
 
 @section('content')
     <h1 class="mb-4 text-xl font-bold">إتمام الطلب</h1>

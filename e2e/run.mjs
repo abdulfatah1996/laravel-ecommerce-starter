@@ -47,14 +47,14 @@ await step('admin-login', async () => {
 });
 await step('admin-edit-price', async () => {
     await a.goto(`${BASE}/admin/products/2/edit`);
-    const price = a.locator('input[id="data.price"]');
+    const price = a.locator('[wire\\:model="data.price"]');
     check('المنتج 2 قبل التعديل سعره 249', (await price.inputValue()).startsWith('249'), await price.inputValue());
     await price.fill(String(NEW_PRICE));
     await a.locator('form button[type="submit"]').first().click();
     await a.waitForTimeout(2500);
     await shot(a, '11-admin-product-saved');
     await a.reload();
-    check('السعر الجديد محفوظ في اللوحة', (await a.locator('input[id="data.price"]').inputValue()).startsWith(String(NEW_PRICE)));
+    check('السعر الجديد محفوظ في اللوحة', (await a.locator('[wire\\:model="data.price"]').inputValue()).startsWith(String(NEW_PRICE)));
 });
 
 // ---------- 2) الهاتف 360px: بحث ← سعر جديد ← سلة ← كمية ← طلب كضيف ----------
@@ -159,7 +159,7 @@ await step('admin-verify-order', async () => {
     check('إجمالي الطلب في اللوحة صحيح', rowText.includes(money(NEW_PRICE * 2 + 20)), rowText.replace(/\s+/g, ' '));
     check('طلب واحد فقط رغم الضغط المزدوج', rows === 1, `rows=${rows}`);
     await a.goto(`${BASE}/admin/products/2/edit`);
-    const stock = await a.locator('input[id="data.stock"]').inputValue();
+    const stock = await a.locator('[wire\\:model="data.stock"]').inputValue();
     check('المخزون خُصم مرة واحدة (7 − 2 = 5)', stock === '5', stock);
 });
 
