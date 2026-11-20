@@ -50,7 +50,7 @@ await step('admin-edit-price', async () => {
     const price = a.locator('[wire\\:model="data.price"]');
     check('المنتج 2 قبل التعديل سعره 249', (await price.inputValue()).startsWith('249'), await price.inputValue());
     await price.fill(String(NEW_PRICE));
-    await a.locator('form button[type="submit"]').first().click();
+    await a.getByRole('button', { name: /حفظ|Save/ }).first().click();
     await a.waitForTimeout(2500);
     await shot(a, '11-admin-product-saved');
     await a.reload();

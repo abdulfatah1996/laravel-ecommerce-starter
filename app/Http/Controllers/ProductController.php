@@ -41,11 +41,11 @@ class ProductController extends Controller
         $effective = "COALESCE((SELECT MIN(COALESCE(pv.price, products.price)) FROM product_variants pv WHERE pv.product_id = products.id AND pv.is_active = 1), products.price)";
 
         if (filled($filters['min_price'] ?? null)) {
-            $query->whereRaw("{$effective} >= ?", [(float) $filters['min_price']]);
+            $query->whereRaw("{$effective} >= ".$this->number($filters['min_price']));
         }
 
         if (filled($filters['max_price'] ?? null)) {
-            $query->whereRaw("{$effective} <= ?", [(float) $filters['max_price']]);
+            $query->whereRaw("{$effective} <= ".$this->number($filters['max_price']));
         }
 
         if (($filters['availability'] ?? null) === 'in_stock') {
@@ -76,5 +76,11 @@ class ProductController extends Controller
             ->latest()->take(4)->get();
 
         return view('products.show', ['product' => $product->load(['category', 'variants']), 'related' => $related->load('variants')]);
+    }
+
+    /** رقم آمن للتضمين في SQL (PDO يربط الأعداد العشرية كنص فيفسد مقارنة SQLite). */
+    private function number(mixed $value): string
+    {
+        return number_format((float) $value, 2, '.', '');
     }
 }
