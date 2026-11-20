@@ -20,10 +20,7 @@ class RiwaqDemoSeeder extends Seeder
 {
     public function run(): void
     {
-        $settings = StoreSetting::query()->first() ?? new StoreSetting(StoreSetting::defaults() + ['primary_color' => '#7C3F1D', 'secondary_color' => '#F3E9D8', 'accent_color' => '#E9A23B']);
-        if (! $settings->exists) {
-            $settings->fill(['primary_color' => '#7C3F1D', 'secondary_color' => '#F3E9D8', 'accent_color' => '#E9A23B']);
-        }
+        $settings = StoreSetting::query()->first() ?? new StoreSetting(array_merge(StoreSetting::defaults(), ['primary_color' => '#7C3F1D', 'secondary_color' => '#F3E9D8', 'accent_color' => '#E9A23B']));
         $settings->fill([
             'name' => $settings->exists ? $settings->name : 'رِواق',
             'tagline' => $settings->tagline ?: 'إضاءة دافئة لبيتك',

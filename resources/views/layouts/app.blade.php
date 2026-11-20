@@ -120,7 +120,7 @@
 
     @if ($store->whatsappUrl() && ! trim($__env->yieldContent('hide_wa')))
         <a href="{{ $store->whatsappUrl('مرحبًا، أريد الاستفسار عن منتج') }}" target="_blank" rel="noopener" aria-label="تواصل عبر واتساب"
-           class="fixed bottom-4 start-4 z-20 inline-flex h-12 items-center gap-2 rounded-full bg-[#1b7f4b] px-4 text-sm font-semibold text-white shadow-lg">واتساب</a>
+           class="fixed bottom-4 start-4 z-20 hidden h-12 items-center md:inline-flex gap-2 rounded-full bg-[#1b7f4b] px-4 text-sm font-semibold text-white shadow-lg">واتساب</a>
     @endif
 </body>
 </html>
