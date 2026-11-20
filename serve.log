@@ -1,0 +1,297 @@
+
+   INFO  Server running on [http://127.0.0.1:8000].  
+
+  Press Ctrl+C to stop the server
+
+  2026-11-20 21:18:25 / .......................................... ~ 500.34ms
+  2026-11-20 21:18:25 / ............................................ ~ 0.02ms
+  2026-11-20 21:18:47 /admin/login ................................. ~ 0.11ms
+  2026-11-20 21:18:47 /fonts/filament/filament/inter/index.css?v=5.11.4.0  ~ 0.05ms
+  2026-11-20 21:18:47 /fonts/filament/filament/inter/inter-latin-wght-normal-DIHYUR35.woff2  ~ 0.08ms
+  2026-11-20 21:18:47 /js/filament/actions/actions.js?v=5.11.4.0 ... ~ 0.11ms
+  2026-11-20 21:18:47 /css/filament/filament/app.css?v=5.11.4.0 .... ~ 0.17ms
+  2026-11-20 21:18:47 /js/filament/notifications/notifications.js?v=5.11.4.0  ~ 0.20ms
+  2026-11-20 21:18:47 /js/filament/schemas/schemas.js?v=5.11.4.0 ... ~ 0.23ms
+  2026-11-20 21:18:47 /livewire-a691d699/livewire.min.js ........... ~ 0.01ms
+  2026-11-20 21:18:47 /js/filament/tables/tables.js?v=5.11.4.0 ..... ~ 0.11ms
+  2026-11-20 21:18:47 /js/filament/filament/echo.js?v=5.11.4.0 ..... ~ 0.16ms
+  2026-11-20 21:18:47 /js/filament/support/support.js?v=5.11.4.0 ... ~ 0.34ms
+  2026-11-20 21:18:47 /js/filament/filament/app.js?v=5.11.4.0 ...... ~ 0.24ms
+  2026-11-20 21:18:47 /js/filament/forms/components/text-input/password-reveal.js?v=5.11.4.0  ~ 0.02ms
+  2026-11-20 21:18:47 /livewire-a691d699/update .................. ~ 500.36ms
+  2026-11-20 21:18:48 /admin ....................................... ~ 0.02ms
+  2026-11-20 21:18:48 /fonts/filament/filament/inter/index.css?v=5.11.4.0  ~ 0.06ms
+  2026-11-20 21:18:48 /fonts/filament/filament/inter/inter-latin-wght-normal-DIHYUR35.woff2  ~ 0.09ms
+  2026-11-20 21:18:48 /js/filament/actions/actions.js?v=5.11.4.0 ... ~ 0.14ms
+  2026-11-20 21:18:48 /js/filament/notifications/notifications.js?v=5.11.4.0  ~ 0.18ms
+  2026-11-20 21:18:48 /js/filament/schemas/schemas.js?v=5.11.4.0 ... ~ 0.23ms
+  2026-11-20 21:18:48 /css/filament/filament/app.css?v=5.11.4.0 .... ~ 0.30ms
+  2026-11-20 21:18:48 /js/filament/tables/tables.js?v=5.11.4.0 ..... ~ 0.03ms
+  2026-11-20 21:18:48 /js/filament/filament/echo.js?v=5.11.4.0 ..... ~ 0.08ms
+  2026-11-20 21:18:48 /js/filament/filament/app.js?v=5.11.4.0 ...... ~ 0.13ms
+  2026-11-20 21:18:48 /js/filament/support/support.js?v=5.11.4.0 ... ~ 0.31ms
+  2026-11-20 21:18:48 /livewire-a691d699/update .................. ~ 501.04ms
+  2026-11-20 21:18:48 /livewire-a691d699/update .................. ~ 501.25ms
+  2026-11-20 21:18:48 /admin/products/2/edit ....................... ~ 0.10ms
+  2026-11-20 21:18:49 /fonts/filament/filament/inter/inter-latin-ext-wght-normal-ZIT2UBIY.woff2  ~ 0.03ms
+  2026-11-20 21:18:49 /fonts/filament/filament/inter/index.css?v=5.11.4.0  ~ 0.04ms
+  2026-11-20 21:18:49 /fonts/filament/filament/inter/inter-latin-wght-normal-DIHYUR35.woff2  ~ 0.08ms
+  2026-11-20 21:18:49 /js/filament/actions/actions.js?v=5.11.4.0 ... ~ 0.11ms
+  2026-11-20 21:18:49 /js/filament/notifications/notifications.js?v=5.11.4.0  ~ 0.14ms
+  2026-11-20 21:18:49 /js/filament/schemas/schemas.js?v=5.11.4.0 ... ~ 0.13ms
+  2026-11-20 21:18:49 /css/filament/filament/app.css?v=5.11.4.0 .... ~ 0.24ms
+  2026-11-20 21:18:49 /js/filament/tables/tables.js?v=5.11.4.0 ..... ~ 0.11ms
+  2026-11-20 21:18:49 /js/filament/filament/echo.js?v=5.11.4.0 ..... ~ 0.18ms
+  2026-11-20 21:18:49 /js/filament/support/support.js?v=5.11.4.0 . ~ 500.72ms
+  2026-11-20 21:18:49 /js/filament/filament/app.js?v=5.11.4.0 ...... ~ 0.24ms
+  2026-11-20 21:18:49 /js/filament/forms/components/select.js?v=5.11.4.0  ~ 0.03ms
+  2026-11-20 21:18:49 /js/filament/forms/components/textarea.js?v=5.11.4.0  ~ 0.05ms
+  2026-11-20 21:18:49 /js/filament/forms/components/repeater.js?v=5.11.4.0  ~ 0.07ms
+  2026-11-20 21:18:49 /js/filament/forms/components/file-upload.js?v=5.11.4.0  ~ 0.12ms
+  2026-11-20 21:18:49 /livewire-a691d699/update .................... ~ 0.01ms
+  2026-11-20 21:18:49 /storage/products/demo-floor.jpg ............. ~ 0.01ms
+  2026-11-20 21:18:49 /livewire-a691d699/update .................... ~ 0.01ms
+  2026-11-20 21:18:49 /livewire-a691d699/update .................... ~ 0.01ms
+  2026-11-20 21:18:51 /admin/products/2/edit ....................... ~ 0.11ms
+  2026-11-20 21:18:52 /fonts/filament/filament/inter/index.css?v=5.11.4.0  ~ 0.07ms
+  2026-11-20 21:18:52 /fonts/filament/filament/inter/inter-latin-wght-normal-DIHYUR35.woff2  ~ 0.10ms
+  2026-11-20 21:18:52 /js/filament/actions/actions.js?v=5.11.4.0 ... ~ 0.13ms
+  2026-11-20 21:18:52 /js/filament/notifications/notifications.js?v=5.11.4.0  ~ 0.19ms
+  2026-11-20 21:18:52 /js/filament/schemas/schemas.js?v=5.11.4.0 ... ~ 0.21ms
+  2026-11-20 21:18:52 /css/filament/filament/app.css?v=5.11.4.0 .... ~ 0.29ms
+  2026-11-20 21:18:52 /js/filament/support/support.js?v=5.11.4.0 ... ~ 0.04ms
+  2026-11-20 21:18:52 /js/filament/tables/tables.js?v=5.11.4.0 ..... ~ 0.08ms
+  2026-11-20 21:18:52 /js/filament/filament/echo.js?v=5.11.4.0 ..... ~ 0.14ms
+  2026-11-20 21:18:52 /js/filament/filament/app.js?v=5.11.4.0 ...... ~ 0.19ms
+  2026-11-20 21:18:52 /js/filament/forms/components/select.js?v=5.11.4.0  ~ 0.11ms
+  2026-11-20 21:18:52 /js/filament/forms/components/textarea.js?v=5.11.4.0  ~ 0.17ms
+  2026-11-20 21:18:52 /js/filament/forms/components/repeater.js?v=5.11.4.0  ~ 0.19ms
+  2026-11-20 21:18:52 /js/filament/forms/components/file-upload.js?v=5.11.4.0  ~ 0.21ms
+  2026-11-20 21:18:52 / ............................................ ~ 0.03ms
+  2026-11-20 21:18:52 /livewire-a691d699/update .................... ~ 0.19ms
+  2026-11-20 21:18:52 /build/assets/app-Dq9X0muC.css ............... ~ 0.02ms
+  2026-11-20 21:18:52 /build/assets/app-tKO4o0Ht.js ................ ~ 0.08ms
+  2026-11-20 21:18:52 /storage/products/demo-lamp.jpg .............. ~ 0.15ms
+  2026-11-20 21:18:52 /storage/products/demo-floor.jpg ............. ~ 0.01ms
+  2026-11-20 21:18:52 /storage/categories/demo-lamp.jpg ............ ~ 0.03ms
+  2026-11-20 21:18:52 /storage/categories/demo-vase.jpg ............ ~ 0.08ms
+  2026-11-20 21:18:52 /storage/categories/demo-tray.jpg ............ ~ 0.14ms
+  2026-11-20 21:18:52 /storage/products/demo-floor.jpg ............. ~ 0.19ms
+  2026-11-20 21:18:52 /storage/products/demo-pendant.jpg ........... ~ 0.25ms
+  2026-11-20 21:18:52 /build/assets/ibm-plex-sans-arabic-latin-400-normal-Bo5KPYvw.woff2  ~ 0.30ms
+  2026-11-20 21:18:52 /build/assets/ibm-plex-sans-arabic-latin-700-normal-BzSf6GNr.woff2  ~ 0.02ms
+  2026-11-20 21:18:52 /build/assets/ibm-plex-sans-arabic-latin-600-normal-KrqB56Mw.woff2  ~ 0.05ms
+  2026-11-20 21:18:52 /storage/products/demo-candle.jpg ............ ~ 0.05ms
+  2026-11-20 21:18:52 /storage/products/demo-vase.jpg .............. ~ 0.11ms
+  2026-11-20 21:18:52 /storage/products/demo-cushion.jpg ........... ~ 0.20ms
+  2026-11-20 21:18:52 /storage/products/demo-mirror.jpg ............ ~ 0.22ms
+  2026-11-20 21:18:52 /storage/products/demo-tray.jpg .............. ~ 0.27ms
+  2026-11-20 21:18:52 /build/assets/ibm-plex-sans-arabic-arabic-700-normal-DrtBj6UE.woff2  ~ 0.02ms
+  2026-11-20 21:18:52 /build/assets/ibm-plex-sans-arabic-arabic-600-normal-0pRdybE_.woff2  ~ 0.04ms
+  2026-11-20 21:18:52 /build/assets/ibm-plex-sans-arabic-arabic-400-normal-CyU-ddYS.woff2  ~ 0.06ms
+  2026-11-20 21:18:53 /products .................................... ~ 0.09ms
+  2026-11-20 21:18:53 /build/assets/app-Dq9X0muC.css ............... ~ 0.03ms
+  2026-11-20 21:18:53 /build/assets/app-tKO4o0Ht.js ................ ~ 0.13ms
+  2026-11-20 21:18:53 /build/assets/ibm-plex-sans-arabic-latin-400-normal-Bo5KPYvw.woff2  ~ 0.03ms
+  2026-11-20 21:18:53 /build/assets/ibm-plex-sans-arabic-latin-700-normal-BzSf6GNr.woff2  ~ 0.06ms
+  2026-11-20 21:18:53 /build/assets/ibm-plex-sans-arabic-latin-600-normal-KrqB56Mw.woff2  ~ 0.08ms
+  2026-11-20 21:18:53 /storage/products/demo-cushion.jpg ........... ~ 0.02ms
+  2026-11-20 21:18:53 /storage/products/demo-pendant.jpg ........... ~ 0.08ms
+  2026-11-20 21:18:53 /storage/products/demo-floor.jpg ............. ~ 0.14ms
+  2026-11-20 21:18:53 /storage/products/demo-lamp.jpg .............. ~ 0.21ms
+  2026-11-20 21:18:53 /build/assets/ibm-plex-sans-arabic-arabic-700-normal-DrtBj6UE.woff2  ~ 0.02ms
+  2026-11-20 21:18:53 /build/assets/ibm-plex-sans-arabic-arabic-600-normal-0pRdybE_.woff2  ~ 0.05ms
+  2026-11-20 21:18:53 /build/assets/ibm-plex-sans-arabic-arabic-400-normal-CyU-ddYS.woff2  ~ 0.09ms
+  2026-11-20 21:18:53 /products .................................. ~ 500.43ms
+  2026-11-20 21:18:53 /build/assets/app-Dq9X0muC.css ............... ~ 0.03ms
+  2026-11-20 21:18:53 /build/assets/app-tKO4o0Ht.js ................ ~ 0.13ms
+  2026-11-20 21:18:53 /storage/products/demo-tray.jpg .............. ~ 0.03ms
+  2026-11-20 21:18:53 /storage/products/demo-mirror.jpg ............ ~ 0.13ms
+  2026-11-20 21:18:53 /storage/products/demo-vase.jpg .............. ~ 0.21ms
+  2026-11-20 21:18:53 /storage/products/demo-cushion.jpg ........... ~ 0.31ms
+  2026-11-20 21:18:53 /storage/products/demo-candle.jpg ............ ~ 0.05ms
+  2026-11-20 21:18:53 /storage/products/demo-pendant.jpg ........... ~ 0.13ms
+  2026-11-20 21:18:53 /storage/products/demo-floor.jpg ............. ~ 0.20ms
+  2026-11-20 21:18:53 /storage/products/demo-lamp.jpg .............. ~ 0.29ms
+  2026-11-20 21:18:53 /build/assets/ibm-plex-sans-arabic-latin-400-normal-Bo5KPYvw.woff2  ~ 0.38ms
+  2026-11-20 21:18:53 /build/assets/ibm-plex-sans-arabic-latin-700-normal-BzSf6GNr.woff2  ~ 0.40ms
+  2026-11-20 21:18:53 /build/assets/ibm-plex-sans-arabic-latin-600-normal-KrqB56Mw.woff2  ~ 0.01ms
+  2026-11-20 21:18:53 /build/assets/ibm-plex-sans-arabic-arabic-700-normal-DrtBj6UE.woff2  ~ 0.03ms
+  2026-11-20 21:18:53 /build/assets/ibm-plex-sans-arabic-arabic-600-normal-0pRdybE_.woff2  ~ 0.05ms
+  2026-11-20 21:18:53 /build/assets/ibm-plex-sans-arabic-arabic-400-normal-CyU-ddYS.woff2  ~ 0.08ms
+  2026-11-20 21:18:53 /products .................................... ~ 0.01ms
+  2026-11-20 21:18:53 /build/assets/app-Dq9X0muC.css ............... ~ 0.02ms
+  2026-11-20 21:18:53 /build/assets/app-tKO4o0Ht.js ................ ~ 0.13ms
+  2026-11-20 21:18:53 /build/assets/ibm-plex-sans-arabic-latin-400-normal-Bo5KPYvw.woff2  ~ 0.03ms
+  2026-11-20 21:18:53 /build/assets/ibm-plex-sans-arabic-latin-700-normal-BzSf6GNr.woff2  ~ 0.06ms
+  2026-11-20 21:18:53 /build/assets/ibm-plex-sans-arabic-latin-600-normal-KrqB56Mw.woff2  ~ 0.09ms
+  2026-11-20 21:18:53 /storage/products/demo-floor.jpg ............. ~ 0.11ms
+  2026-11-20 21:18:53 /build/assets/ibm-plex-sans-arabic-arabic-700-normal-DrtBj6UE.woff2  ~ 0.03ms
+  2026-11-20 21:18:53 /build/assets/ibm-plex-sans-arabic-arabic-600-normal-0pRdybE_.woff2  ~ 0.05ms
+  2026-11-20 21:18:53 /build/assets/ibm-plex-sans-arabic-arabic-400-normal-CyU-ddYS.woff2  ~ 0.08ms
+  2026-11-20 21:18:53 /products/riwaq-2 ............................ ~ 0.01ms
+  2026-11-20 21:18:53 /build/assets/app-Dq9X0muC.css ............... ~ 0.03ms
+  2026-11-20 21:18:53 /build/assets/app-tKO4o0Ht.js ................ ~ 0.12ms
+  2026-11-20 21:18:53 /storage/products/demo-floor.jpg ............. ~ 0.22ms
+  2026-11-20 21:18:54 /build/assets/ibm-plex-sans-arabic-latin-400-normal-Bo5KPYvw.woff2  ~ 0.05ms
+  2026-11-20 21:18:54 /build/assets/ibm-plex-sans-arabic-latin-700-normal-BzSf6GNr.woff2  ~ 0.09ms
+  2026-11-20 21:18:54 /storage/products/demo-lamp.jpg .............. ~ 0.10ms
+  2026-11-20 21:18:54 /storage/products/demo-pendant.jpg ........... ~ 0.19ms
+  2026-11-20 21:18:54 /storage/products/demo-candle.jpg ............ ~ 0.27ms
+  2026-11-20 21:18:54 /build/assets/ibm-plex-sans-arabic-latin-600-normal-KrqB56Mw.woff2  ~ 0.31ms
+  2026-11-20 21:18:54 /build/assets/ibm-plex-sans-arabic-arabic-700-normal-DrtBj6UE.woff2  ~ 0.03ms
+  2026-11-20 21:18:54 /build/assets/ibm-plex-sans-arabic-arabic-600-normal-0pRdybE_.woff2  ~ 0.05ms
+  2026-11-20 21:18:54 /build/assets/ibm-plex-sans-arabic-arabic-400-normal-CyU-ddYS.woff2  ~ 0.08ms
+  2026-11-20 21:18:54 /cart/add/2 .................................. ~ 0.09ms
+  2026-11-20 21:18:54 /products/riwaq-2 ............................ ~ 0.01ms
+  2026-11-20 21:18:54 /build/assets/app-Dq9X0muC.css ............... ~ 0.02ms
+  2026-11-20 21:18:54 /build/assets/app-tKO4o0Ht.js ................ ~ 0.08ms
+  2026-11-20 21:18:54 /storage/products/demo-floor.jpg ............. ~ 0.15ms
+  2026-11-20 21:18:54 /storage/products/demo-lamp.jpg .............. ~ 0.03ms
+  2026-11-20 21:18:54 /storage/products/demo-pendant.jpg ........... ~ 0.10ms
+  2026-11-20 21:18:54 /storage/products/demo-candle.jpg ............ ~ 0.15ms
+  2026-11-20 21:18:54 /build/assets/ibm-plex-sans-arabic-latin-400-normal-Bo5KPYvw.woff2  ~ 0.20ms
+  2026-11-20 21:18:54 /build/assets/ibm-plex-sans-arabic-latin-700-normal-BzSf6GNr.woff2  ~ 0.22ms
+  2026-11-20 21:18:54 /build/assets/ibm-plex-sans-arabic-latin-600-normal-KrqB56Mw.woff2  ~ 0.24ms
+  2026-11-20 21:18:54 /cart ........................................ ~ 0.01ms
+  2026-11-20 21:18:54 /build/assets/ibm-plex-sans-arabic-arabic-700-normal-DrtBj6UE.woff2  ~ 0.16ms
+  2026-11-20 21:18:54 /build/assets/ibm-plex-sans-arabic-arabic-600-normal-0pRdybE_.woff2  ~ 0.17ms
+  2026-11-20 21:18:54 /build/assets/ibm-plex-sans-arabic-arabic-400-normal-CyU-ddYS.woff2  ~ 0.19ms
+  2026-11-20 21:18:54 /build/assets/app-Dq9X0muC.css ............... ~ 0.02ms
+  2026-11-20 21:18:54 /build/assets/app-tKO4o0Ht.js ................ ~ 0.09ms
+  2026-11-20 21:18:54 /storage/products/demo-floor.jpg ............. ~ 0.15ms
+  2026-11-20 21:18:54 /build/assets/ibm-plex-sans-arabic-latin-400-normal-Bo5KPYvw.woff2  ~ 0.02ms
+  2026-11-20 21:18:54 /build/assets/ibm-plex-sans-arabic-latin-700-normal-BzSf6GNr.woff2  ~ 0.04ms
+  2026-11-20 21:18:54 /build/assets/ibm-plex-sans-arabic-latin-600-normal-KrqB56Mw.woff2  ~ 0.06ms
+  2026-11-20 21:18:54 /build/assets/ibm-plex-sans-arabic-arabic-700-normal-DrtBj6UE.woff2  ~ 0.02ms
+  2026-11-20 21:18:54 /build/assets/ibm-plex-sans-arabic-arabic-600-normal-0pRdybE_.woff2  ~ 0.04ms
+  2026-11-20 21:18:54 /build/assets/ibm-plex-sans-arabic-arabic-400-normal-CyU-ddYS.woff2  ~ 0.06ms
+  2026-11-20 21:18:54 /cart/2 ...................................... ~ 0.01ms
+  2026-11-20 21:18:54 /cart ........................................ ~ 0.01ms
+  2026-11-20 21:18:54 /build/assets/app-Dq9X0muC.css ............... ~ 0.02ms
+  2026-11-20 21:18:54 /build/assets/app-tKO4o0Ht.js ................ ~ 0.08ms
+  2026-11-20 21:18:54 /storage/products/demo-floor.jpg ............. ~ 0.14ms
+  2026-11-20 21:18:54 /build/assets/ibm-plex-sans-arabic-latin-400-normal-Bo5KPYvw.woff2  ~ 0.02ms
+  2026-11-20 21:18:54 /build/assets/ibm-plex-sans-arabic-latin-700-normal-BzSf6GNr.woff2  ~ 0.04ms
+  2026-11-20 21:18:54 /build/assets/ibm-plex-sans-arabic-latin-600-normal-KrqB56Mw.woff2  ~ 0.06ms
+  2026-11-20 21:18:54 /build/assets/ibm-plex-sans-arabic-arabic-700-normal-DrtBj6UE.woff2  ~ 0.01ms
+  2026-11-20 21:18:54 /build/assets/ibm-plex-sans-arabic-arabic-600-normal-0pRdybE_.woff2  ~ 0.01ms
+  2026-11-20 21:18:54 /build/assets/ibm-plex-sans-arabic-arabic-400-normal-CyU-ddYS.woff2  ~ 0.03ms
+  2026-11-20 21:18:55 /checkout .................................... ~ 0.07ms
+  2026-11-20 21:18:55 /build/assets/app-Dq9X0muC.css ............... ~ 0.02ms
+  2026-11-20 21:18:55 /build/assets/app-tKO4o0Ht.js ................ ~ 0.10ms
+  2026-11-20 21:18:55 /build/assets/ibm-plex-sans-arabic-latin-400-normal-Bo5KPYvw.woff2  ~ 0.03ms
+  2026-11-20 21:18:55 /build/assets/ibm-plex-sans-arabic-latin-700-normal-BzSf6GNr.woff2  ~ 0.05ms
+  2026-11-20 21:18:55 /build/assets/ibm-plex-sans-arabic-latin-600-normal-KrqB56Mw.woff2  ~ 0.09ms
+  2026-11-20 21:18:55 /build/assets/ibm-plex-sans-arabic-arabic-700-normal-DrtBj6UE.woff2  ~ 0.02ms
+  2026-11-20 21:18:55 /build/assets/ibm-plex-sans-arabic-arabic-600-normal-0pRdybE_.woff2  ~ 0.04ms
+  2026-11-20 21:18:55 /build/assets/ibm-plex-sans-arabic-arabic-400-normal-CyU-ddYS.woff2  ~ 0.06ms
+  2026-11-20 21:18:56 /checkout .................................. ~ 500.39ms
+  2026-11-20 21:18:56 /order/success ............................... ~ 0.02ms
+  2026-11-20 21:18:56 /build/assets/app-Dq9X0muC.css ............... ~ 0.05ms
+  2026-11-20 21:18:56 /build/assets/app-tKO4o0Ht.js ................ ~ 0.14ms
+  2026-11-20 21:18:56 /build/assets/ibm-plex-sans-arabic-latin-400-normal-Bo5KPYvw.woff2  ~ 0.03ms
+  2026-11-20 21:18:56 /build/assets/ibm-plex-sans-arabic-latin-700-normal-BzSf6GNr.woff2  ~ 0.06ms
+  2026-11-20 21:18:56 /build/assets/ibm-plex-sans-arabic-latin-600-normal-KrqB56Mw.woff2  ~ 0.09ms
+  2026-11-20 21:18:56 /build/assets/ibm-plex-sans-arabic-arabic-700-normal-DrtBj6UE.woff2  ~ 0.03ms
+  2026-11-20 21:18:56 /build/assets/ibm-plex-sans-arabic-arabic-600-normal-0pRdybE_.woff2  ~ 0.06ms
+  2026-11-20 21:18:56 /build/assets/ibm-plex-sans-arabic-arabic-400-normal-CyU-ddYS.woff2  ~ 0.08ms
+  2026-11-20 21:18:56 /products/riwaq-1 ............................ ~ 0.01ms
+  2026-11-20 21:18:56 /build/assets/app-Dq9X0muC.css ............... ~ 0.03ms
+  2026-11-20 21:18:56 /build/assets/app-tKO4o0Ht.js ................ ~ 0.12ms
+  2026-11-20 21:18:56 /storage/products/demo-lamp.jpg .............. ~ 0.22ms
+  2026-11-20 21:18:56 /storage/products/demo-floor.jpg ............. ~ 0.06ms
+  2026-11-20 21:18:56 /storage/products/demo-pendant.jpg ........... ~ 0.15ms
+  2026-11-20 21:18:56 /build/assets/ibm-plex-sans-arabic-latin-400-normal-Bo5KPYvw.woff2  ~ 0.22ms
+  2026-11-20 21:18:56 /build/assets/ibm-plex-sans-arabic-latin-700-normal-BzSf6GNr.woff2  ~ 0.24ms
+  2026-11-20 21:18:56 /build/assets/ibm-plex-sans-arabic-latin-600-normal-KrqB56Mw.woff2  ~ 0.27ms
+  2026-11-20 21:18:56 /storage/products/demo-candle.jpg ............ ~ 0.19ms
+  2026-11-20 21:18:56 /build/assets/ibm-plex-sans-arabic-arabic-700-normal-DrtBj6UE.woff2  ~ 0.03ms
+  2026-11-20 21:18:56 /build/assets/ibm-plex-sans-arabic-arabic-600-normal-0pRdybE_.woff2  ~ 0.05ms
+  2026-11-20 21:18:56 /build/assets/ibm-plex-sans-arabic-arabic-400-normal-CyU-ddYS.woff2  ~ 0.08ms
+  2026-11-20 21:18:56 /products/riwaq-8 ............................ ~ 0.01ms
+  2026-11-20 21:18:56 /build/assets/app-Dq9X0muC.css ............... ~ 0.03ms
+  2026-11-20 21:18:56 /build/assets/app-tKO4o0Ht.js ................ ~ 0.12ms
+  2026-11-20 21:18:56 /storage/products/demo-tray.jpg .............. ~ 0.21ms
+  2026-11-20 21:18:56 /build/assets/ibm-plex-sans-arabic-latin-400-normal-Bo5KPYvw.woff2  ~ 3.13ms
+  2026-11-20 21:18:56 /build/assets/ibm-plex-sans-arabic-latin-700-normal-BzSf6GNr.woff2  ~ 0.14ms
+  2026-11-20 21:18:56 /build/assets/ibm-plex-sans-arabic-latin-600-normal-KrqB56Mw.woff2  ~ 0.17ms
+  2026-11-20 21:18:56 /build/assets/ibm-plex-sans-arabic-arabic-700-normal-DrtBj6UE.woff2  ~ 0.03ms
+  2026-11-20 21:18:56 /build/assets/ibm-plex-sans-arabic-arabic-400-normal-CyU-ddYS.woff2  ~ 0.05ms
+  2026-11-20 21:18:56 /build/assets/ibm-plex-sans-arabic-arabic-600-normal-0pRdybE_.woff2  ~ 0.02ms
+  2026-11-20 21:18:56 /products/riwaq-5 .......................... ~ 500.40ms
+  2026-11-20 21:18:56 /build/assets/app-Dq9X0muC.css ............... ~ 0.03ms
+  2026-11-20 21:18:56 /build/assets/app-tKO4o0Ht.js ................ ~ 0.12ms
+  2026-11-20 21:18:56 /storage/products/demo-cushion.jpg ........... ~ 0.19ms
+  2026-11-20 21:18:56 /storage/products/demo-vase.jpg .............. ~ 0.03ms
+  2026-11-20 21:18:56 /storage/products/demo-mirror.jpg ............ ~ 0.09ms
+  2026-11-20 21:18:56 /build/assets/ibm-plex-sans-arabic-latin-400-normal-Bo5KPYvw.woff2  ~ 0.14ms
+  2026-11-20 21:18:56 /build/assets/ibm-plex-sans-arabic-latin-700-normal-BzSf6GNr.woff2  ~ 0.16ms
+  2026-11-20 21:18:56 /build/assets/ibm-plex-sans-arabic-latin-600-normal-KrqB56Mw.woff2  ~ 0.19ms
+  2026-11-20 21:18:56 /build/assets/ibm-plex-sans-arabic-arabic-700-normal-DrtBj6UE.woff2  ~ 0.02ms
+  2026-11-20 21:18:56 /build/assets/ibm-plex-sans-arabic-arabic-600-normal-0pRdybE_.woff2  ~ 0.04ms
+  2026-11-20 21:18:56 /build/assets/ibm-plex-sans-arabic-arabic-400-normal-CyU-ddYS.woff2  ~ 0.06ms
+  2026-11-20 21:18:56 /cart/add/8 .................................. ~ 0.01ms
+  2026-11-20 21:18:56 /admin/orders ................................ ~ 0.01ms
+  2026-11-20 21:18:56 /fonts/filament/filament/inter/index.css?v=5.11.4.0  ~ 0.03ms
+  2026-11-20 21:18:56 /fonts/filament/filament/inter/inter-latin-wght-normal-DIHYUR35.woff2  ~ 0.05ms
+  2026-11-20 21:18:56 /js/filament/actions/actions.js?v=5.11.4.0 ... ~ 0.07ms
+  2026-11-20 21:18:56 /js/filament/notifications/notifications.js?v=5.11.4.0  ~ 0.10ms
+  2026-11-20 21:18:56 /js/filament/schemas/schemas.js?v=5.11.4.0 ... ~ 0.11ms
+  2026-11-20 21:18:56 /css/filament/filament/app.css?v=5.11.4.0 .... ~ 0.16ms
+  2026-11-20 21:18:56 /js/filament/tables/tables.js?v=5.11.4.0 ..... ~ 0.02ms
+  2026-11-20 21:18:56 /js/filament/filament/echo.js?v=5.11.4.0 ..... ~ 0.05ms
+  2026-11-20 21:18:56 /js/filament/filament/app.js?v=5.11.4.0 ...... ~ 0.10ms
+  2026-11-20 21:18:56 /js/filament/support/support.js?v=5.11.4.0 ... ~ 0.32ms
+  2026-11-20 21:18:56 /fonts/filament/filament/inter/inter-latin-ext-wght-normal-ZIT2UBIY.woff2  ~ 0.01ms
+  2026-11-20 21:18:57 /admin/products/2/edit ....................... ~ 0.09ms
+  2026-11-20 21:18:57 /fonts/filament/filament/inter/index.css?v=5.11.4.0  ~ 0.07ms
+  2026-11-20 21:18:57 /fonts/filament/filament/inter/inter-latin-wght-normal-DIHYUR35.woff2  ~ 0.10ms
+  2026-11-20 21:18:57 /js/filament/actions/actions.js?v=5.11.4.0 ... ~ 0.14ms
+  2026-11-20 21:18:57 /js/filament/notifications/notifications.js?v=5.11.4.0  ~ 0.18ms
+  2026-11-20 21:18:57 /js/filament/schemas/schemas.js?v=5.11.4.0 ... ~ 0.21ms
+  2026-11-20 21:18:57 /css/filament/filament/app.css?v=5.11.4.0 .... ~ 0.28ms
+  2026-11-20 21:18:57 /js/filament/tables/tables.js?v=5.11.4.0 ..... ~ 0.02ms
+  2026-11-20 21:18:57 /js/filament/filament/echo.js?v=5.11.4.0 ..... ~ 0.06ms
+  2026-11-20 21:18:57 /js/filament/support/support.js?v=5.11.4.0 ... ~ 0.10ms
+  2026-11-20 21:18:57 /js/filament/filament/app.js?v=5.11.4.0 ...... ~ 0.13ms
+  2026-11-20 21:18:57 /js/filament/forms/components/select.js?v=5.11.4.0  ~ 0.11ms
+  2026-11-20 21:18:57 /js/filament/forms/components/textarea.js?v=5.11.4.0  ~ 0.17ms
+  2026-11-20 21:18:57 /js/filament/forms/components/repeater.js?v=5.11.4.0  ~ 0.19ms
+  2026-11-20 21:18:57 /js/filament/forms/components/file-upload.js?v=5.11.4.0  ~ 0.21ms
+  2026-11-20 21:18:57 / ............................................ ~ 0.01ms
+  2026-11-20 21:18:57 /livewire-a691d699/update .................... ~ 0.18ms
+  2026-11-20 21:18:57 /build/assets/app-Dq9X0muC.css ............... ~ 0.02ms
+  2026-11-20 21:18:57 /build/assets/app-tKO4o0Ht.js ................ ~ 0.08ms
+  2026-11-20 21:18:57 /storage/products/demo-lamp.jpg .............. ~ 0.14ms
+  2026-11-20 21:18:57 /storage/products/demo-floor.jpg ............. ~ 0.01ms
+  2026-11-20 21:18:57 /storage/categories/demo-lamp.jpg ............ ~ 0.02ms
+  2026-11-20 21:18:57 /storage/categories/demo-vase.jpg ............ ~ 0.08ms
+  2026-11-20 21:18:57 /storage/categories/demo-tray.jpg ............ ~ 0.13ms
+  2026-11-20 21:18:57 /storage/products/demo-floor.jpg ............. ~ 0.19ms
+  2026-11-20 21:18:57 /storage/products/demo-pendant.jpg ........... ~ 0.18ms
+  2026-11-20 21:18:57 /storage/products/demo-cushion.jpg ........... ~ 0.23ms
+  2026-11-20 21:18:57 /build/assets/ibm-plex-sans-arabic-latin-700-normal-BzSf6GNr.woff2  ~ 0.01ms
+  2026-11-20 21:18:57 /build/assets/ibm-plex-sans-arabic-latin-400-normal-Bo5KPYvw.woff2  ~ 0.03ms
+  2026-11-20 21:18:57 /build/assets/ibm-plex-sans-arabic-latin-600-normal-KrqB56Mw.woff2  ~ 0.05ms
+  2026-11-20 21:18:57 /storage/products/demo-candle.jpg ............ ~ 0.07ms
+  2026-11-20 21:18:57 /storage/products/demo-vase.jpg .............. ~ 0.12ms
+  2026-11-20 21:18:57 /storage/products/demo-mirror.jpg ............ ~ 0.18ms
+  2026-11-20 21:18:57 /storage/products/demo-tray.jpg .............. ~ 0.23ms
+  2026-11-20 21:18:57 /build/assets/ibm-plex-sans-arabic-arabic-700-normal-DrtBj6UE.woff2  ~ 0.02ms
+  2026-11-20 21:18:57 /build/assets/ibm-plex-sans-arabic-arabic-400-normal-CyU-ddYS.woff2  ~ 0.04ms
+  2026-11-20 21:18:57 /build/assets/ibm-plex-sans-arabic-arabic-600-normal-0pRdybE_.woff2  ~ 0.05ms
+  2026-11-20 21:18:58 /products/riwaq-1 ............................ ~ 0.09ms
+  2026-11-20 21:18:58 /build/assets/app-Dq9X0muC.css ............... ~ 0.03ms
+  2026-11-20 21:18:58 /build/assets/app-tKO4o0Ht.js ................ ~ 0.09ms
+  2026-11-20 21:18:58 /storage/products/demo-lamp.jpg .............. ~ 0.16ms
+  2026-11-20 21:18:58 /storage/products/demo-floor.jpg ............. ~ 0.03ms
+  2026-11-20 21:18:58 /storage/products/demo-pendant.jpg ........... ~ 0.09ms
+  2026-11-20 21:18:58 /storage/products/demo-candle.jpg ............ ~ 0.17ms
+  2026-11-20 21:18:58 /build/assets/ibm-plex-sans-arabic-latin-400-normal-Bo5KPYvw.woff2  ~ 0.22ms
+  2026-11-20 21:18:58 /build/assets/ibm-plex-sans-arabic-latin-700-normal-BzSf6GNr.woff2  ~ 0.26ms
+  2026-11-20 21:18:58 /build/assets/ibm-plex-sans-arabic-latin-600-normal-KrqB56Mw.woff2  ~ 0.21ms
+  2026-11-20 21:18:58 /build/assets/ibm-plex-sans-arabic-arabic-700-normal-DrtBj6UE.woff2  ~ 0.02ms
+  2026-11-20 21:18:58 /build/assets/ibm-plex-sans-arabic-arabic-400-normal-CyU-ddYS.woff2  ~ 0.04ms
+  2026-11-20 21:18:58 /build/assets/ibm-plex-sans-arabic-arabic-600-normal-0pRdybE_.woff2  ~ 0.06ms
+  2026-11-20 21:18:59 /build/assets/viewer3d-BLm_9dGg.js ........... ~ 0.11ms
