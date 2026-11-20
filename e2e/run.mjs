@@ -28,9 +28,10 @@ const a = await adminCtx.newPage();
 for (const p of [m, d, a]) p.setDefaultTimeout(20000);
 
 const shot = (p, name, full = false) => p.screenshot({ path: `${OUT}/${name}.png`, fullPage: full });
-const noOverflow = async (p, label) => {
-    const w = await p.evaluate(() => [document.documentElement.scrollWidth, window.innerWidth]);
-    check(`${label}: لا تمرير أفقي`, w[0] <= w[1], `${w[0]} / ${w[1]}`);
+const noOverflow = async (p, label, width) => {
+    // نقارن بعرض الجهاز الحقيقي (innerWidth يتمدد على الهاتف إذا فاض المحتوى فيخفي المشكلة)
+    const w = await p.evaluate(() => document.documentElement.scrollWidth);
+    check(`${label}: لا تمرير أفقي`, w <= width, `${w} / ${width}`);
 };
 const money = (n) => `${Number(n).toFixed(2)}`;
 
@@ -64,11 +65,12 @@ await step('mobile-home', async () => {
     await m.waitForLoadState('networkidle');
     await shot(m, '01-mobile-home');
     check('الرئيسية: زر «تسوّق المجموعة» ظاهر', await m.getByRole('link', { name: 'تسوّق المجموعة' }).isVisible());
-    await noOverflow(m, 'الرئيسية 360');
+    await noOverflow(m, 'الرئيسية 360', 360);
     await shot(m, '01b-mobile-home-full', true);
     await m.getByRole('link', { name: 'تسوّق المجموعة' }).click();
     await m.waitForURL(/collection=featured/);
     await shot(m, '02-mobile-collection');
+    await noOverflow(m, 'الكتالوج 360', 360);
     const cols = await m.evaluate(() => {
         const cards = [...document.querySelectorAll('article.card')];
         return new Set(cards.map((c) => Math.round(c.getBoundingClientRect().top))).size && cards.filter((c) => Math.abs(c.getBoundingClientRect().top - cards[0].getBoundingClientRect().top) < 4).length;
@@ -88,7 +90,7 @@ await step('mobile-search', async () => {
     await m.waitForURL(/riwaq-2/);
     await shot(m, '04-mobile-product');
     check('صفحة المنتج تعرض السعر الجديد', (await m.locator('[data-price]').innerText()).includes(money(NEW_PRICE)));
-    await noOverflow(m, 'صفحة المنتج 360');
+    await noOverflow(m, 'صفحة المنتج 360', 360);
     const bar = await m.locator('[data-buy-bar]').boundingBox();
     check('شريط الشراء ثابت أسفل الشاشة (قابل للوصول بالإبهام)', bar && bar.y + bar.height >= 730, JSON.stringify(bar));
     await m.locator('[data-add]').click();
@@ -103,7 +105,7 @@ await step('mobile-cart-edit', async () => {
     await shot(m, '05-mobile-cart');
     const text = await m.locator('[data-cart-line]').first().innerText();
     check('تعديل الكمية يحدّث إجمالي السطر', text.includes(money(NEW_PRICE * 2)), text.replace(/\s+/g, ' '));
-    await noOverflow(m, 'السلة 360');
+    await noOverflow(m, 'السلة 360', 360);
 });
 await step('mobile-checkout-guest', async () => {
     await m.goto(`${BASE}/checkout`);
@@ -116,6 +118,7 @@ await step('mobile-checkout-guest', async () => {
     const feeText = await m.locator('[data-shipping]').innerText();
     const totalText = await m.locator('[data-total]').innerText();
     check('الشحن والإجمالي ظاهران قبل التأكيد', feeText.includes('20.00') && totalText.includes(money(NEW_PRICE * 2 + 20)), `${feeText} | ${totalText}`);
+    await noOverflow(m, 'الدفع 360', 360);
     await shot(m, '06-mobile-checkout', true);
     // ضغط مزدوج سريع على زر التأكيد
     await m.getByRole('button', { name: /تأكيد الطلب/ }).dblclick();
@@ -171,7 +174,7 @@ await step('desktop', async () => {
     await d.goto(`${BASE}/products/riwaq-1`);
     await d.waitForLoadState('networkidle');
     await shot(d, '21-desktop-product');
-    await noOverflow(d, 'صفحة المنتج 1440');
+    await noOverflow(d, 'صفحة المنتج 1440', 1440);
     const btn = d.getByRole('button', { name: '3D' }).or(d.locator('[data-viewer-toggle]'));
     await btn.click();
     await d.waitForSelector('[data-viewer-stage] canvas', { timeout: 20000 });
@@ -182,7 +185,7 @@ await step('desktop', async () => {
     await d.locator('[data-add]').click();
     await d.goto(`${BASE}/cart`);
     await shot(d, '23-desktop-cart');
-    await noOverflow(d, 'السلة 1440');
+    await noOverflow(d, 'السلة 1440', 1440);
 });
 
 await browser.close();

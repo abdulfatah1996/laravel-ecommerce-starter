@@ -17,7 +17,7 @@
                 <label>لا تملأ هذا الحقل <input type="text" name="website" tabindex="-1" autocomplete="off"></label>
             </div>
 
-            <div class="space-y-4 md:col-span-2">
+            <div class="min-w-0 space-y-4 md:col-span-2">
                 @guest
                     <p class="card p-3 text-sm text-stone-700">عندك حساب؟ <a class="font-semibold text-primary underline" href="{{ route('login') }}">سجّل الدخول</a> لتتابع طلباتك، أو أكمل كضيف.</p>
                 @endguest
@@ -80,7 +80,7 @@
                 </section>
             </div>
 
-            <aside class="card h-fit space-y-3 p-4" aria-label="ملخص الطلب">
+            <aside class="card h-fit min-w-0 space-y-3 p-4" aria-label="ملخص الطلب">
                 <h2 class="font-bold">ملخص الطلب</h2>
                 <ul class="space-y-1.5 text-sm text-stone-700">
                     @foreach ($lines as $line)

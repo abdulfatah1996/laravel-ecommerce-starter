@@ -13,7 +13,7 @@
         </div>
     @else
         <div class="grid gap-5 md:grid-cols-3">
-            <div class="space-y-3 md:col-span-2">
+            <div class="min-w-0 space-y-3 md:col-span-2">
                 @foreach ($lines as $line)
                     @php($product = $line['product'])
                     <div class="card flex min-w-0 gap-3 p-3" data-cart-line>
@@ -36,7 +36,7 @@
                                     @csrf
                                     @method('PATCH')
                                     <label for="qty-{{ $loop->index }}" class="sr-only">الكمية</label>
-                                    <input id="qty-{{ $loop->index }}" type="number" name="quantity" value="{{ $line['quantity'] }}" min="1" max="{{ min(config('store.max_cart_quantity'), max(1, $line['stock'])) }}" inputmode="numeric" class="input w-20 text-center">
+                                    <input id="qty-{{ $loop->index }}" type="number" name="quantity" value="{{ $line['quantity'] }}" min="1" max="{{ min(config('store.max_cart_quantity'), max(1, $line['stock'])) }}" inputmode="numeric" class="input !w-20 min-w-0 text-center">
                                     <button type="submit" class="btn btn-outline">تحديث</button>
                                 </form>
                                 <form action="{{ route('cart.remove', $line['key']) }}" method="post">
@@ -51,7 +51,7 @@
                 @endforeach
             </div>
 
-            <aside class="card h-fit space-y-3 p-4" aria-label="ملخص الطلب">
+            <aside class="card h-fit min-w-0 space-y-3 p-4" aria-label="ملخص الطلب">
                 <h2 class="font-bold">ملخص الطلب</h2>
                 <dl class="space-y-2 text-sm">
                     <div class="flex justify-between"><dt>المجموع الفرعي</dt><dd><bdi>{{ $store->money($subtotal) }}</bdi></dd></div>
