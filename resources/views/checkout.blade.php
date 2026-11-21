@@ -22,7 +22,7 @@
             <details class="fold card md:hidden">
                 <summary class="px-4">
                     <span>ملخص الطلب <span class="t-small t-muted font-medium">(<bdi dir="ltr">{{ count($lines) }}</bdi>)</span></span>
-                    <span class="flex items-center gap-2"><x-price :amount="$total" size="md" /><x-icon name="chevron-down" class="fold-icon size-5" /></span>
+                    <span class="flex items-center gap-2"><x-price :amount="$total" size="md" /><x-ui-icon name="chevron-down" class="fold-icon size-5" /></span>
                 </summary>
                 <div class="border-t px-4 pb-4 pt-4" style="border-color: var(--line)">@include('partials.order-summary')</div>
             </details>
@@ -67,7 +67,7 @@
                             </span>
                         </label>
                     @endforeach
-                    @error('payment_method')<p class="field-error"><x-icon name="alert" class="mt-0.5 size-4 shrink-0" /> {{ $message }}</p>@enderror
+                    @error('payment_method')<p class="field-error"><x-ui-icon name="alert" class="mt-0.5 size-4 shrink-0" /> {{ $message }}</p>@enderror
                 </section>
             </div>
 

@@ -5,7 +5,7 @@
         @if ($product->primary_image_url)
             <img src="{{ $product->primary_image_url }}" alt="" @if (! $priority) loading="lazy" @endif @class(['opacity-60' => ! $inStock])>
         @else
-            <span class="flex size-full items-center justify-center text-primary/40"><x-icon name="image" class="size-12" /></span>
+            <span class="flex size-full items-center justify-center text-primary/40"><x-ui-icon name="image" class="size-12" /></span>
         @endif
         @if ($product->hasDiscount() && $inStock)
             <span class="badge badge-sale absolute start-2.5 top-2.5">خصم <bdi dir="ltr">{{ (int) round((1 - (float) $product->price / (float) $product->compare_at_price) * 100) }}%</bdi></span>
@@ -22,7 +22,7 @@
         <form action="{{ route('cart.add', $product->id) }}" method="post">
             @csrf
             <input type="hidden" name="quantity" value="1">
-            <button type="submit" class="btn btn-outline btn-sm btn-block"><x-icon name="cart" class="size-4" /> أضف للسلة</button>
+            <button type="submit" class="btn btn-outline btn-sm btn-block"><x-ui-icon name="cart" class="size-4" /> أضف للسلة</button>
         </form>
     @else
         <span class="btn btn-sm btn-block cursor-default bg-stone-100 text-stone-600" aria-disabled="true">غير متوفر حاليًا</span>

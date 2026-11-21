@@ -37,8 +37,8 @@
         {{-- الفلاتر: مطوية على الهاتف، ظاهرة كعمود جانبي على الشاشات الكبيرة --}}
         <details class="fold card self-start md:sticky md:top-24" data-filters open>
             <summary class="px-4 md:cursor-default md:pointer-events-none" data-filter-toggle>
-                <span class="inline-flex items-center gap-2"><x-icon name="filter" class="size-5" /> تصفية وترتيب @if ($activeCount > 0)<span class="badge badge-sale" dir="ltr">{{ $activeCount }}</span>@endif</span>
-                <x-icon name="chevron-down" class="fold-icon size-5 md:hidden" />
+                <span class="inline-flex items-center gap-2"><x-ui-icon name="filter" class="size-5" /> تصفية وترتيب @if ($activeCount > 0)<span class="badge badge-sale" dir="ltr">{{ $activeCount }}</span>@endif</span>
+                <x-ui-icon name="chevron-down" class="fold-icon size-5 md:hidden" />
             </summary>
             <script>if (window.matchMedia('(max-width: 767px)').matches) document.currentScript.closest('details').removeAttribute('open');</script>
             <form action="{{ route('products.index') }}" method="get" class="space-y-4 border-t px-4 pb-4 pt-4" style="border-color: var(--line)">
@@ -80,7 +80,7 @@
             @if ($chips)
                 <div class="mb-4 flex flex-wrap items-center gap-2">
                     @foreach ($chips as $key => $label)
-                        <a href="{{ request()->fullUrlWithoutQuery([$key, 'page']) }}" class="chip !min-h-10 gap-2 !px-3 text-sm" aria-label="إزالة الفلتر: {{ $label }}">{{ $label }} <x-icon name="close" class="size-4" /></a>
+                        <a href="{{ request()->fullUrlWithoutQuery([$key, 'page']) }}" class="chip !min-h-10 gap-2 !px-3 text-sm" aria-label="إزالة الفلتر: {{ $label }}">{{ $label }} <x-ui-icon name="close" class="size-4" /></a>
                     @endforeach
                     <a href="{{ route('products.index') }}" class="inline-flex min-h-10 items-center px-2 text-sm font-bold text-primary">مسح الكل</a>
                 </div>

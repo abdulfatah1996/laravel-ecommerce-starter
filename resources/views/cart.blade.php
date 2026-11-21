@@ -28,7 +28,7 @@
                             </div>
                             <p class="t-small t-muted">سعر الوحدة: <x-price :amount="$line['unit_price']" size="sm" class="!inline-flex" /></p>
                             @if ($line['exceeds_stock'])
-                                <p class="field-error !mt-0"><x-icon name="alert" class="mt-0.5 size-4 shrink-0" /> المتاح من هذا المنتج <bdi dir="ltr">{{ $product->stock }}</bdi> فقط — عدّل الكمية.</p>
+                                <p class="field-error !mt-0"><x-ui-icon name="alert" class="mt-0.5 size-4 shrink-0" /> المتاح من هذا المنتج <bdi dir="ltr">{{ $product->stock }}</bdi> فقط — عدّل الكمية.</p>
                             @endif
                             <div class="mt-auto flex flex-wrap items-center justify-between gap-2">
                                 <form action="{{ route('cart.update', $product->id) }}" method="post" class="flex items-center gap-2">
@@ -40,7 +40,7 @@
                                 <form action="{{ route('cart.remove', $product->id) }}" method="post">
                                     @csrf
                                     @method('DELETE')
-                                    <button type="submit" class="btn btn-danger btn-sm" aria-label="إزالة {{ $product->name }} من السلة"><x-icon name="trash" class="size-4" /> إزالة</button>
+                                    <button type="submit" class="btn btn-danger btn-sm" aria-label="إزالة {{ $product->name }} من السلة"><x-ui-icon name="trash" class="size-4" /> إزالة</button>
                                 </form>
                             </div>
                         </div>

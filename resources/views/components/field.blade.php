@@ -8,6 +8,6 @@
         <p id="{{ $for }}-hint" class="hint">{{ $hint }}</p>
     @endif
     @error($name)
-        <p id="{{ $for }}-error" class="field-error"><x-icon name="alert" class="mt-0.5 size-4 shrink-0" /><span>{{ $message }}</span></p>
+        <p id="{{ $for }}-error" class="field-error"><x-ui-icon name="alert" class="mt-0.5 size-4 shrink-0" /><span>{{ $message }}</span></p>
     @enderror
 </div>

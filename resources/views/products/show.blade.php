@@ -14,10 +14,10 @@
 @section('content')
     <nav class="mb-4 flex flex-wrap items-center gap-x-1 text-sm t-muted" aria-label="مسار التنقل">
         <a href="{{ route('home') }}" class="inline-flex min-h-11 items-center hover:text-primary md:min-h-8">الرئيسية</a>
-        <x-icon name="chevron-left" class="size-3.5" />
+        <x-ui-icon name="chevron-left" class="size-3.5" />
         <a href="{{ route('products.index') }}" class="inline-flex min-h-11 items-center hover:text-primary md:min-h-8">المنتجات</a>
         @if ($product->category)
-            <x-icon name="chevron-left" class="size-3.5" />
+            <x-ui-icon name="chevron-left" class="size-3.5" />
             <a href="{{ route('products.index', ['category' => $product->category->slug]) }}" class="inline-flex min-h-11 items-center hover:text-primary md:min-h-8">{{ $product->category->name }}</a>
         @endif
     </nav>
@@ -29,7 +29,7 @@
                 @if ($images)
                     <img data-gallery-main src="{{ $images[0] }}" alt="{{ $product->name }}" class="size-full object-cover" fetchpriority="high">
                 @else
-                    <div class="flex size-full flex-col items-center justify-center gap-2 text-primary/40"><x-icon name="image" class="size-14" /><span class="text-sm">لا توجد صورة</span></div>
+                    <div class="flex size-full flex-col items-center justify-center gap-2 text-primary/40"><x-ui-icon name="image" class="size-14" /><span class="text-sm">لا توجد صورة</span></div>
                 @endif
                 @if ($product->hasDiscount() && $inStock)
                     <span class="badge badge-sale absolute start-3 top-3 !px-3 !py-1 !text-sm">خصم <bdi dir="ltr">{{ (int) round((1 - (float) $product->price / (float) $product->compare_at_price) * 100) }}%</bdi></span>
@@ -81,7 +81,7 @@
                             <x-price :amount="$product->price" size="md" />
                         </div>
                         <x-button class="flex-1 md:!min-h-14 md:text-lg">
-                            <x-icon name="cart" class="size-5" /> أضف إلى السلة
+                            <x-ui-icon name="cart" class="size-5" /> أضف إلى السلة
                         </x-button>
                     </div>
                 </form>
@@ -96,7 +96,7 @@
             {{-- تفاصيل قابلة للطي (على نمط IKEA): معلومات حقيقية من المنتج والمتجر فقط --}}
             <div class="mt-6 divide-y border-y" style="border-color: var(--line); --tw-divide-color: var(--line)">
                 <details class="fold">
-                    <summary>تفاصيل المنتج <x-icon name="chevron-down" class="fold-icon size-5" /></summary>
+                    <summary>تفاصيل المنتج <x-ui-icon name="chevron-down" class="fold-icon size-5" /></summary>
                     <dl class="t-small grid grid-cols-[auto_1fr] gap-x-6 gap-y-2 pb-4">
                         @if ($product->sku)<dt class="t-muted">رمز المنتج</dt><dd><bdi dir="ltr">{{ $product->sku }}</bdi></dd>@endif
                         @if ($product->category)<dt class="t-muted">التصنيف</dt><dd>{{ $product->category->name }}</dd>@endif
@@ -104,7 +104,7 @@
                     </dl>
                 </details>
                 <details class="fold">
-                    <summary>الشحن والدفع <x-icon name="chevron-down" class="fold-icon size-5" /></summary>
+                    <summary>الشحن والدفع <x-ui-icon name="chevron-down" class="fold-icon size-5" /></summary>
                     <ul class="t-small space-y-1.5 pb-4">
                         <li>{{ (float) $store->shipping_fee > 0 ? 'رسوم الشحن: '.$store->money($store->shipping_fee).' لكل طلب.' : 'الشحن مجاني.' }}</li>
                         @if ($store->cod_enabled)<li>الدفع عند الاستلام متاح.</li>@endif

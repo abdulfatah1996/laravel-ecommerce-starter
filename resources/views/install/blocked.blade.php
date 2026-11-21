@@ -8,7 +8,7 @@
 <body class="min-h-screen py-10">
 <main class="mx-auto max-w-xl px-4">
     <div class="card card-pad space-y-4">
-        <span class="flex size-12 items-center justify-center rounded-full bg-primary-soft text-primary"><x-icon name="alert" class="size-6" /></span>
+        <span class="flex size-12 items-center justify-center rounded-full bg-primary-soft text-primary"><x-ui-icon name="alert" class="size-6" /></span>
         <h1 class="t-title">المتجر غير جاهز بعد</h1>
 
         @if ($reason === 'database')

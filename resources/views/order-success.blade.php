@@ -5,7 +5,7 @@
 @section('content')
     <div class="mx-auto max-w-xl space-y-5">
         <div class="card card-pad text-center">
-            <span class="mx-auto flex size-16 items-center justify-center rounded-full bg-primary text-on-primary"><x-icon name="check" class="size-8" /></span>
+            <span class="mx-auto flex size-16 items-center justify-center rounded-full bg-primary text-on-primary"><x-ui-icon name="check" class="size-8" /></span>
             <h1 class="t-title mt-4">شكرًا لك! تم استلام طلبك</h1>
             <p class="t-muted mt-1">سيتواصل معك المتجر لتأكيد التوصيل.</p>
 

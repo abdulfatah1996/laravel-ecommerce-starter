@@ -83,7 +83,7 @@
     <section class="section grid gap-3 {{ [1 => 'md:grid-cols-1', 2 => 'md:grid-cols-2'][count($perks)] ?? 'md:grid-cols-3' }}" aria-label="معلومات الشراء">
         @foreach ($perks as [$icon, $title, $text])
             <div class="card flex items-start gap-3 p-4">
-                <span class="flex size-11 shrink-0 items-center justify-center rounded-full bg-primary-soft text-primary"><x-icon :name="$icon" class="size-5" /></span>
+                <span class="flex size-11 shrink-0 items-center justify-center rounded-full bg-primary-soft text-primary"><x-ui-icon :name="$icon" class="size-5" /></span>
                 <div class="min-w-0">
                     <p class="font-bold">{{ $title }}</p>
                     <p class="t-small t-muted">{!! $icon === 'phone' ? '<bdi dir="ltr">'.e($text).'</bdi>' : e($text) !!}</p>
