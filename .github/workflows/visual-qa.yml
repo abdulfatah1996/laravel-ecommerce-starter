@@ -1,0 +1,88 @@
+# فحص بصري ووظيفي مؤقت (لا يُدمج): يشغّل المتجر على MariaDB حقيقية، ينفّذ رحلة شراء كاملة
+# بمتصفح Chromium على 360/768/1440، ويحفظ اللقطات في فرع qa-shots-<label>.
+name: Visual QA
+
+on:
+  push:
+    branches: ['qa/**']
+
+permissions:
+  contents: write
+
+jobs:
+  qa:
+    runs-on: ubuntu-latest
+    services:
+      mariadb:
+        image: mariadb:10.11
+        env:
+          MARIADB_ROOT_PASSWORD: root
+          MARIADB_DATABASE: store_qa
+        ports: ['3306:3306']
+        options: >-
+          --health-cmd="healthcheck.sh --connect --innodb_initialized"
+          --health-interval=5s --health-timeout=5s --health-retries=20
+    env:
+      QA_LABEL: ${{ github.ref_name }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: خطوط عربية للنظام (كما على هاتف حقيقي)
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq fonts-noto-core
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.3'
+          extensions: mbstring, intl, pdo_mysql, pdo_sqlite, zip, gd, xml, curl
+          coverage: none
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: بذّار الاختبار
+        run: cp .qa/QaSeeder.php database/seeders/QaSeeder.php
+      - run: composer install --no-interaction --prefer-dist
+      - name: Env
+        run: |
+          cp .env.example .env
+          sed -i 's|^APP_URL=.*|APP_URL=http://127.0.0.1:8000|' .env
+          sed -i 's|^DB_DATABASE=.*|DB_DATABASE=store_qa|; s|^DB_USERNAME=.*|DB_USERNAME=root|; s|^DB_PASSWORD=.*|DB_PASSWORD=root|' .env
+          sed -i 's|^SESSION_SECURE_COOKIE=.*|SESSION_SECURE_COOKIE=false|' .env
+          sed -i 's|^APP_ENV=.*|APP_ENV=local|' .env
+          php artisan key:generate
+      - run: php artisan migrate --force
+      - run: php artisan storage:link
+      - run: npm install && npm run build
+      - name: اختبارات المشروع (SQLite)
+        id: unit
+        continue-on-error: true
+        run: php artisan test 2>&1 | tee phpunit.txt
+      - name: تشغيل المتجر
+        run: |
+          nohup php artisan serve --host=127.0.0.1 --port=8000 > serve.log 2>&1 &
+          for i in $(seq 1 30); do curl -sf -o /dev/null http://127.0.0.1:8000/install && break || sleep 1; done
+      - run: npm install --no-save @playwright/test && npx playwright install --with-deps chromium
+      - name: رحلة الشراء في المتصفح
+        id: journey
+        continue-on-error: true
+        run: node .qa/run.mjs 2>&1 | tee qa-journey.txt
+        env:
+          BASE_URL: http://127.0.0.1:8000
+      - name: تجميع النتائج
+        if: always()
+        run: |
+          mkdir -p qa-output
+          cp storage/logs/laravel.log qa-output/laravel.log 2>/dev/null || true
+          cp serve.log phpunit.txt qa-journey.txt qa-output/ 2>/dev/null || true
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: qa-output
+          path: qa-output
+      - name: نشر اللقطات في فرع qa-shots
+        if: always()
+        run: |
+          LABEL="${QA_LABEL#qa/}"
+          rm -rf /tmp/pub && mkdir /tmp/pub && cp -r qa-output/. /tmp/pub/
+          cd /tmp/pub
+          git init -q -b "qa-shots-${LABEL}"
+          git config user.name "ci"; git config user.email "ci@users.noreply.github.com"
+          git add -A && git commit -qm "qa results for ${GITHUB_SHA}"
+          git push -f "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" "qa-shots-${LABEL}"
