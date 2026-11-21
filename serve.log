@@ -1,0 +1,435 @@
+
+   INFO  Server running on [http://127.0.0.1:8000].  
+
+  Press Ctrl+C to stop the server
+
+  2026-11-21 14:02:50 /install ................................... ~ 500.32ms
+  2026-11-21 14:03:09 / ............................................ ~ 0.09ms
+  2026-11-21 14:03:09 /install ..................................... ~ 0.02ms
+  2026-11-21 14:03:09 /build/assets/app-8ImlwVNe.css ............... ~ 0.03ms
+  2026-11-21 14:03:09 /build/assets/app-CKqux0FK.js ................ ~ 0.11ms
+  2026-11-21 14:03:10 /install ................................... ~ 500.31ms
+  2026-11-21 14:03:10 /admin ....................................... ~ 0.03ms
+  2026-11-21 14:03:10 /fonts/filament/filament/inter/index.css?v=5.11.4.0  ~ 0.06ms
+  2026-11-21 14:03:10 /fonts/filament/filament/inter/inter-latin-wght-normal-DIHYUR35.woff2  ~ 0.10ms
+  2026-11-21 14:03:10 /storage/branding/RnZTqgIYOJgVRwGGgh3ddOIQ8z77Pwr1peJYfHpo.png  ~ 0.14ms
+  2026-11-21 14:03:10 /js/filament/actions/actions.js?v=5.11.4.0 ... ~ 0.16ms
+  2026-11-21 14:03:10 /css/filament/filament/app.css?v=5.11.4.0 .... ~ 0.25ms
+  2026-11-21 14:03:10 /js/filament/notifications/notifications.js?v=5.11.4.0  ~ 0.02ms
+  2026-11-21 14:03:10 /js/filament/schemas/schemas.js?v=5.11.4.0 ... ~ 0.02ms
+  2026-11-21 14:03:10 /livewire-e9994ac1/livewire.min.js ........... ~ 0.02ms
+  2026-11-21 14:03:10 /js/filament/tables/tables.js?v=5.11.4.0 ..... ~ 0.10ms
+  2026-11-21 14:03:10 /js/filament/filament/echo.js?v=5.11.4.0 ..... ~ 0.15ms
+  2026-11-21 14:03:10 /js/filament/support/support.js?v=5.11.4.0 ... ~ 0.25ms
+  2026-11-21 14:03:10 /js/filament/filament/app.js?v=5.11.4.0 ...... ~ 0.23ms
+  2026-11-21 14:03:10 /livewire-e9994ac1/update .................... ~ 0.09ms
+  2026-11-21 14:03:11 /livewire-e9994ac1/update .................... ~ 0.02ms
+  2026-11-21 14:03:11 /fonts/filament/filament/inter/inter-latin-ext-wght-normal-ZIT2UBIY.woff2  ~ 0.02ms
+  2026-11-21 14:03:11 / .......................................... ~ 500.32ms
+  2026-11-21 14:03:11 /build/assets/app-8ImlwVNe.css ............... ~ 0.04ms
+  2026-11-21 14:03:11 /build/assets/app-CKqux0FK.js ................ ~ 0.12ms
+  2026-11-21 14:03:11 /storage/branding/RnZTqgIYOJgVRwGGgh3ddOIQ8z77Pwr1peJYfHpo.png  ~ 0.20ms
+  2026-11-21 14:03:11 /storage/products/qa-lamp.jpg ................ ~ 0.02ms
+  2026-11-21 14:03:11 /storage/products/qa-floor.jpg ............... ~ 0.13ms
+  2026-11-21 14:03:11 /storage/products/qa-pendant.jpg ............. ~ 0.04ms
+  2026-11-21 14:03:11 /storage/products/qa-cushion.jpg ............. ~ 0.12ms
+  2026-11-21 14:03:11 /storage/products/qa-candle.jpg .............. ~ 0.19ms
+  2026-11-21 14:03:11 /storage/products/qa-vase.jpg ................ ~ 0.26ms
+  2026-11-21 14:03:11 /storage/products/qa-mirror.jpg .............. ~ 0.34ms
+  2026-11-21 14:03:11 /storage/products/qa-tray.jpg ................ ~ 0.34ms
+  2026-11-21 14:03:12 /products .................................... ~ 0.09ms
+  2026-11-21 14:03:12 /build/assets/app-8ImlwVNe.css ............... ~ 0.03ms
+  2026-11-21 14:03:12 /build/assets/app-CKqux0FK.js ................ ~ 0.11ms
+  2026-11-21 14:03:12 /storage/branding/RnZTqgIYOJgVRwGGgh3ddOIQ8z77Pwr1peJYfHpo.png  ~ 0.22ms
+  2026-11-21 14:03:12 /storage/products/qa-lamp.jpg ................ ~ 0.02ms
+  2026-11-21 14:03:12 /storage/products/qa-floor.jpg ............... ~ 0.10ms
+  2026-11-21 14:03:13 /products .................................... ~ 0.09ms
+  2026-11-21 14:03:13 /build/assets/app-8ImlwVNe.css ............... ~ 0.03ms
+  2026-11-21 14:03:13 /build/assets/app-CKqux0FK.js ................ ~ 0.12ms
+  2026-11-21 14:03:13 /storage/branding/RnZTqgIYOJgVRwGGgh3ddOIQ8z77Pwr1peJYfHpo.png  ~ 0.20ms
+  2026-11-21 14:03:13 /storage/products/qa-tray.jpg ................ ~ 0.02ms
+  2026-11-21 14:03:13 /storage/products/qa-lamp.jpg ................ ~ 0.11ms
+  2026-11-21 14:03:13 /storage/products/qa-cushion.jpg ............. ~ 0.19ms
+  2026-11-21 14:03:13 /storage/products/qa-vase.jpg ................ ~ 0.04ms
+  2026-11-21 14:03:13 /storage/products/qa-candle.jpg .............. ~ 0.13ms
+  2026-11-21 14:03:13 /storage/products/qa-mirror.jpg .............. ~ 0.22ms
+  2026-11-21 14:03:13 /storage/products/qa-pendant.jpg ............. ~ 0.11ms
+  2026-11-21 14:03:14 /products .................................... ~ 0.08ms
+  2026-11-21 14:03:14 /build/assets/app-8ImlwVNe.css ............... ~ 0.03ms
+  2026-11-21 14:03:14 /build/assets/app-CKqux0FK.js ................ ~ 0.12ms
+  2026-11-21 14:03:14 /storage/branding/RnZTqgIYOJgVRwGGgh3ddOIQ8z77Pwr1peJYfHpo.png  ~ 0.20ms
+  2026-11-21 14:03:14 /storage/products/qa-candle.jpg .............. ~ 0.02ms
+  2026-11-21 14:03:14 /storage/products/qa-cushion.jpg ............. ~ 0.10ms
+  2026-11-21 14:03:14 /storage/products/qa-vase.jpg ................ ~ 0.04ms
+  2026-11-21 14:03:14 /storage/products/qa-lamp.jpg ................ ~ 0.12ms
+  2026-11-21 14:03:14 /storage/products/qa-tray.jpg ................ ~ 0.21ms
+  2026-11-21 14:03:14 /storage/products/qa-mirror.jpg .............. ~ 0.29ms
+  2026-11-21 14:03:14 /storage/products/qa-floor.jpg ............... ~ 0.37ms
+  2026-11-21 14:03:14 /storage/products/qa-pendant.jpg ............. ~ 0.46ms
+  2026-11-21 14:03:14 /products/مصباح-طاولة-سيراميك-يدوي-الصنع-بتصميم-عصري-مع-غطاء-كتان-طبيعي-المقاس-الكبير-1  ~ 0.01ms
+  2026-11-21 14:03:14 /build/assets/app-8ImlwVNe.css ............... ~ 0.03ms
+  2026-11-21 14:03:14 /build/assets/app-CKqux0FK.js ................ ~ 0.11ms
+  2026-11-21 14:03:14 /storage/branding/RnZTqgIYOJgVRwGGgh3ddOIQ8z77Pwr1peJYfHpo.png  ~ 0.20ms
+  2026-11-21 14:03:14 /storage/products/qa-lamp.jpg ................ ~ 0.22ms
+  2026-11-21 14:03:14 /storage/products/qa-floor.jpg ............... ~ 0.02ms
+  2026-11-21 14:03:14 /storage/products/qa-pendant.jpg ............. ~ 0.02ms
+  2026-11-21 14:03:14 /storage/products/qa-candle.jpg .............. ~ 0.09ms
+  2026-11-21 14:03:14 /products/وسادة-كتان-مطر-زة-5 ................ ~ 0.09ms
+  2026-11-21 14:03:15 /build/assets/app-8ImlwVNe.css ............... ~ 0.04ms
+  2026-11-21 14:03:15 /build/assets/app-CKqux0FK.js ................ ~ 0.12ms
+  2026-11-21 14:03:15 /storage/branding/RnZTqgIYOJgVRwGGgh3ddOIQ8z77Pwr1peJYfHpo.png  ~ 0.21ms
+  2026-11-21 14:03:15 /storage/products/qa-cushion.jpg ............. ~ 0.23ms
+  2026-11-21 14:03:15 /storage/products/qa-vase.jpg ................ ~ 0.02ms
+  2026-11-21 14:03:15 /storage/products/qa-mirror.jpg .............. ~ 0.11ms
+  2026-11-21 14:03:15 /products/ثريا-سقف-نحاسية-3 .................. ~ 0.07ms
+  2026-11-21 14:03:15 /build/assets/app-8ImlwVNe.css ............... ~ 0.04ms
+  2026-11-21 14:03:15 /build/assets/app-CKqux0FK.js ................ ~ 0.12ms
+  2026-11-21 14:03:15 /storage/branding/RnZTqgIYOJgVRwGGgh3ddOIQ8z77Pwr1peJYfHpo.png  ~ 0.21ms
+  2026-11-21 14:03:15 /storage/products/qa-pendant.jpg ............. ~ 0.24ms
+  2026-11-21 14:03:15 /storage/products/qa-lamp.jpg ................ ~ 0.03ms
+  2026-11-21 14:03:15 /storage/products/qa-floor.jpg ............... ~ 0.11ms
+  2026-11-21 14:03:15 /storage/products/qa-candle.jpg .............. ~ 0.19ms
+  2026-11-21 14:03:15 /products/مصباح-أرضي-قنديل-2 ................. ~ 0.01ms
+  2026-11-21 14:03:15 /build/assets/app-8ImlwVNe.css ............... ~ 0.03ms
+  2026-11-21 14:03:15 /build/assets/app-CKqux0FK.js ................ ~ 0.11ms
+  2026-11-21 14:03:15 /storage/branding/RnZTqgIYOJgVRwGGgh3ddOIQ8z77Pwr1peJYfHpo.png  ~ 0.20ms
+  2026-11-21 14:03:15 /storage/products/qa-floor.jpg ............... ~ 0.22ms
+  2026-11-21 14:03:15 /storage/products/qa-lamp.jpg ................ ~ 0.02ms
+  2026-11-21 14:03:15 /storage/products/qa-pendant.jpg ............. ~ 0.11ms
+  2026-11-21 14:03:15 /storage/products/qa-candle.jpg .............. ~ 0.18ms
+  2026-11-21 14:03:15 /cart/add/2 .................................. ~ 0.01ms
+  2026-11-21 14:03:15 /products/مصباح-أرضي-قنديل-2 ............... ~ 500.38ms
+  2026-11-21 14:03:15 /build/assets/app-8ImlwVNe.css ............... ~ 0.04ms
+  2026-11-21 14:03:15 /build/assets/app-CKqux0FK.js ................ ~ 0.13ms
+  2026-11-21 14:03:15 /storage/branding/RnZTqgIYOJgVRwGGgh3ddOIQ8z77Pwr1peJYfHpo.png  ~ 0.21ms
+  2026-11-21 14:03:15 /storage/products/qa-floor.jpg ............... ~ 0.25ms
+  2026-11-21 14:03:15 /storage/products/qa-lamp.jpg ................ ~ 0.03ms
+  2026-11-21 14:03:15 /storage/products/qa-pendant.jpg ............. ~ 0.11ms
+  2026-11-21 14:03:15 /storage/products/qa-candle.jpg .............. ~ 0.18ms
+  2026-11-21 14:03:16 /products/مصباح-طاولة-سيراميك-يدوي-الصنع-بتصميم-عصري-مع-غطاء-كتان-طبيعي-المقاس-الكبير-1  ~ 0.01ms
+  2026-11-21 14:03:16 /build/assets/app-8ImlwVNe.css ............... ~ 0.03ms
+  2026-11-21 14:03:16 /build/assets/app-CKqux0FK.js ................ ~ 0.11ms
+  2026-11-21 14:03:16 /storage/branding/RnZTqgIYOJgVRwGGgh3ddOIQ8z77Pwr1peJYfHpo.png  ~ 0.20ms
+  2026-11-21 14:03:16 /storage/products/qa-lamp.jpg ................ ~ 0.22ms
+  2026-11-21 14:03:16 /storage/products/qa-floor.jpg ............... ~ 0.03ms
+  2026-11-21 14:03:16 /storage/products/qa-pendant.jpg ............. ~ 0.11ms
+  2026-11-21 14:03:16 /storage/products/qa-candle.jpg .............. ~ 0.19ms
+  2026-11-21 14:03:16 /cart/add/1 .................................. ~ 0.01ms
+  2026-11-21 14:03:16 /products/مصباح-طاولة-سيراميك-يدوي-الصنع-بتصميم-عصري-مع-غطاء-كتان-طبيعي-المقاس-الكبير-1  ~ 0.01ms
+  2026-11-21 14:03:16 /build/assets/app-8ImlwVNe.css ............... ~ 0.03ms
+  2026-11-21 14:03:16 /build/assets/app-CKqux0FK.js ................ ~ 0.14ms
+  2026-11-21 14:03:16 /storage/branding/RnZTqgIYOJgVRwGGgh3ddOIQ8z77Pwr1peJYfHpo.png  ~ 0.22ms
+  2026-11-21 14:03:16 /storage/products/qa-lamp.jpg ................ ~ 0.25ms
+  2026-11-21 14:03:16 /storage/products/qa-floor.jpg ............... ~ 0.03ms
+  2026-11-21 14:03:16 /storage/products/qa-pendant.jpg ............. ~ 0.11ms
+  2026-11-21 14:03:16 /storage/products/qa-candle.jpg .............. ~ 0.18ms
+  2026-11-21 14:03:16 /cart ........................................ ~ 0.01ms
+  2026-11-21 14:03:16 /build/assets/app-8ImlwVNe.css ............... ~ 0.04ms
+  2026-11-21 14:03:16 /build/assets/app-CKqux0FK.js ................ ~ 0.12ms
+  2026-11-21 14:03:16 /storage/branding/RnZTqgIYOJgVRwGGgh3ddOIQ8z77Pwr1peJYfHpo.png  ~ 0.20ms
+  2026-11-21 14:03:16 /storage/products/qa-floor.jpg ............... ~ 0.22ms
+  2026-11-21 14:03:16 /storage/products/qa-lamp.jpg ................ ~ 0.31ms
+  2026-11-21 14:03:16 /cart/2 ...................................... ~ 0.08ms
+  2026-11-21 14:03:16 /cart ........................................ ~ 0.02ms
+  2026-11-21 14:03:17 /build/assets/app-8ImlwVNe.css ............... ~ 0.04ms
+  2026-11-21 14:03:17 /build/assets/app-CKqux0FK.js ................ ~ 0.13ms
+  2026-11-21 14:03:17 /storage/branding/RnZTqgIYOJgVRwGGgh3ddOIQ8z77Pwr1peJYfHpo.png  ~ 0.21ms
+  2026-11-21 14:03:17 /storage/products/qa-floor.jpg ............... ~ 0.24ms
+  2026-11-21 14:03:17 /storage/products/qa-lamp.jpg ................ ~ 0.32ms
+  2026-11-21 14:03:17 /checkout .................................... ~ 0.09ms
+  2026-11-21 14:03:17 /build/assets/app-8ImlwVNe.css ............... ~ 0.04ms
+  2026-11-21 14:03:17 /build/assets/app-CKqux0FK.js ................ ~ 0.12ms
+  2026-11-21 14:03:17 /storage/branding/RnZTqgIYOJgVRwGGgh3ddOIQ8z77Pwr1peJYfHpo.png  ~ 0.24ms
+  2026-11-21 14:03:18 /checkout .................................. ~ 500.34ms
+  2026-11-21 14:03:18 /checkout .................................... ~ 0.02ms
+  2026-11-21 14:03:18 /build/assets/app-8ImlwVNe.css ............... ~ 0.03ms
+  2026-11-21 14:03:18 /build/assets/app-CKqux0FK.js ................ ~ 0.11ms
+  2026-11-21 14:03:18 /storage/branding/RnZTqgIYOJgVRwGGgh3ddOIQ8z77Pwr1peJYfHpo.png  ~ 0.19ms
+  2026-11-21 14:03:18 /checkout .................................... ~ 0.01ms
+  2026-11-21 14:03:18 /order/success ............................... ~ 0.01ms
+  2026-11-21 14:03:18 /build/assets/app-8ImlwVNe.css ............... ~ 0.03ms
+  2026-11-21 14:03:18 /build/assets/app-CKqux0FK.js ................ ~ 0.12ms
+  2026-11-21 14:03:18 /storage/branding/RnZTqgIYOJgVRwGGgh3ddOIQ8z77Pwr1peJYfHpo.png  ~ 0.21ms
+  2026-11-21 14:03:19 / ............................................ ~ 0.12ms
+  2026-11-21 14:03:19 /build/assets/app-8ImlwVNe.css ............... ~ 0.05ms
+  2026-11-21 14:03:19 /build/assets/app-CKqux0FK.js ................ ~ 0.19ms
+  2026-11-21 14:03:19 /storage/branding/RnZTqgIYOJgVRwGGgh3ddOIQ8z77Pwr1peJYfHpo.png  ~ 0.33ms
+  2026-11-21 14:03:19 /storage/products/qa-lamp.jpg ................ ~ 0.03ms
+  2026-11-21 14:03:19 /storage/products/qa-floor.jpg ............... ~ 0.17ms
+  2026-11-21 14:03:19 /storage/products/qa-pendant.jpg ............. ~ 0.09ms
+  2026-11-21 14:03:19 /storage/products/qa-cushion.jpg ............. ~ 0.21ms
+  2026-11-21 14:03:19 /storage/products/qa-candle.jpg .............. ~ 0.33ms
+  2026-11-21 14:03:19 /storage/products/qa-vase.jpg ................ ~ 0.46ms
+  2026-11-21 14:03:19 /storage/products/qa-mirror.jpg .............. ~ 0.60ms
+  2026-11-21 14:03:19 /storage/products/qa-tray.jpg ................ ~ 0.72ms
+  2026-11-21 14:03:20 /products .................................... ~ 0.08ms
+  2026-11-21 14:03:20 /build/assets/app-8ImlwVNe.css ............... ~ 0.03ms
+  2026-11-21 14:03:20 /build/assets/app-CKqux0FK.js ................ ~ 0.11ms
+  2026-11-21 14:03:20 /storage/branding/RnZTqgIYOJgVRwGGgh3ddOIQ8z77Pwr1peJYfHpo.png  ~ 0.20ms
+  2026-11-21 14:03:20 /storage/products/qa-tray.jpg ................ ~ 0.03ms
+  2026-11-21 14:03:20 /storage/products/qa-lamp.jpg ................ ~ 0.12ms
+  2026-11-21 14:03:20 /storage/products/qa-cushion.jpg ............. ~ 0.21ms
+  2026-11-21 14:03:20 /storage/products/qa-candle.jpg .............. ~ 0.19ms
+  2026-11-21 14:03:20 /storage/products/qa-vase.jpg ................ ~ 0.39ms
+  2026-11-21 14:03:20 /storage/products/qa-mirror.jpg .............. ~ 0.28ms
+  2026-11-21 14:03:20 /storage/products/qa-pendant.jpg ............. ~ 0.28ms
+  2026-11-21 14:03:21 /products/مصباح-طاولة-سيراميك-يدوي-الصنع-بتصميم-عصري-مع-غطاء-كتان-طبيعي-المقاس-الكبير-1  ~ 0.09ms
+  2026-11-21 14:03:21 /build/assets/app-8ImlwVNe.css ............... ~ 0.04ms
+  2026-11-21 14:03:21 /build/assets/app-CKqux0FK.js ................ ~ 0.16ms
+  2026-11-21 14:03:21 /storage/branding/RnZTqgIYOJgVRwGGgh3ddOIQ8z77Pwr1peJYfHpo.png  ~ 0.24ms
+  2026-11-21 14:03:21 /storage/products/qa-lamp.jpg ................ ~ 0.27ms
+  2026-11-21 14:03:21 /storage/products/qa-floor.jpg ............... ~ 0.02ms
+  2026-11-21 14:03:21 /storage/products/qa-pendant.jpg ............. ~ 0.10ms
+  2026-11-21 14:03:21 /storage/products/qa-candle.jpg .............. ~ 0.01ms
+  2026-11-21 14:03:21 /cart/add/1 .................................. ~ 0.08ms
+  2026-11-21 14:03:21 /products/مصباح-طاولة-سيراميك-يدوي-الصنع-بتصميم-عصري-مع-غطاء-كتان-طبيعي-المقاس-الكبير-1  ~ 0.02ms
+  2026-11-21 14:03:21 /build/assets/app-8ImlwVNe.css ............... ~ 0.04ms
+  2026-11-21 14:03:21 /build/assets/app-CKqux0FK.js ................ ~ 0.12ms
+  2026-11-21 14:03:21 /storage/branding/RnZTqgIYOJgVRwGGgh3ddOIQ8z77Pwr1peJYfHpo.png  ~ 0.20ms
+  2026-11-21 14:03:21 /storage/products/qa-lamp.jpg ................ ~ 0.23ms
+  2026-11-21 14:03:21 /products/مصباح-أرضي-قنديل-2 ................. ~ 0.09ms
+  2026-11-21 14:03:21 /storage/products/qa-floor.jpg ............... ~ 0.03ms
+  2026-11-21 14:03:21 /storage/products/qa-pendant.jpg ............. ~ 0.12ms
+  2026-11-21 14:03:21 /storage/products/qa-candle.jpg .............. ~ 0.19ms
+  2026-11-21 14:03:21 /build/assets/app-8ImlwVNe.css ............... ~ 0.03ms
+  2026-11-21 14:03:21 /build/assets/app-CKqux0FK.js ................ ~ 0.11ms
+  2026-11-21 14:03:21 /storage/branding/RnZTqgIYOJgVRwGGgh3ddOIQ8z77Pwr1peJYfHpo.png  ~ 0.19ms
+  2026-11-21 14:03:21 /storage/products/qa-floor.jpg ............... ~ 0.22ms
+  2026-11-21 14:03:21 /storage/products/qa-lamp.jpg ................ ~ 0.03ms
+  2026-11-21 14:03:21 /storage/products/qa-pendant.jpg ............. ~ 0.14ms
+  2026-11-21 14:03:21 /storage/products/qa-candle.jpg .............. ~ 0.23ms
+  2026-11-21 14:03:22 /cart/add/2 .................................. ~ 0.01ms
+  2026-11-21 14:03:22 /products/مصباح-أرضي-قنديل-2 ................. ~ 0.01ms
+  2026-11-21 14:03:22 /build/assets/app-8ImlwVNe.css ............... ~ 0.03ms
+  2026-11-21 14:03:22 /build/assets/app-CKqux0FK.js ................ ~ 0.11ms
+  2026-11-21 14:03:22 /storage/branding/RnZTqgIYOJgVRwGGgh3ddOIQ8z77Pwr1peJYfHpo.png  ~ 0.20ms
+  2026-11-21 14:03:22 /storage/products/qa-floor.jpg ............... ~ 0.22ms
+  2026-11-21 14:03:22 /storage/products/qa-lamp.jpg ................ ~ 0.03ms
+  2026-11-21 14:03:22 /storage/products/qa-pendant.jpg ............. ~ 0.11ms
+  2026-11-21 14:03:22 /storage/products/qa-candle.jpg .............. ~ 0.18ms
+  2026-11-21 14:03:22 /cart ........................................ ~ 0.01ms
+  2026-11-21 14:03:22 /build/assets/app-8ImlwVNe.css ............... ~ 0.03ms
+  2026-11-21 14:03:22 /build/assets/app-CKqux0FK.js ................ ~ 0.11ms
+  2026-11-21 14:03:22 /storage/branding/RnZTqgIYOJgVRwGGgh3ddOIQ8z77Pwr1peJYfHpo.png  ~ 0.20ms
+  2026-11-21 14:03:22 /storage/products/qa-lamp.jpg ................ ~ 0.22ms
+  2026-11-21 14:03:22 /storage/products/qa-floor.jpg ............... ~ 0.01ms
+  2026-11-21 14:03:22 /checkout .................................... ~ 0.08ms
+  2026-11-21 14:03:22 /build/assets/app-8ImlwVNe.css ............... ~ 0.03ms
+  2026-11-21 14:03:22 /build/assets/app-CKqux0FK.js ................ ~ 0.11ms
+  2026-11-21 14:03:22 /storage/branding/RnZTqgIYOJgVRwGGgh3ddOIQ8z77Pwr1peJYfHpo.png  ~ 0.20ms
+  2026-11-21 14:03:23 /about ....................................... ~ 0.10ms
+  2026-11-21 14:03:23 /build/assets/app-8ImlwVNe.css ............. ~ 500.89ms
+  2026-11-21 14:03:23 /build/assets/app-CKqux0FK.js .............. ~ 501.00ms
+  2026-11-21 14:03:23 /storage/branding/RnZTqgIYOJgVRwGGgh3ddOIQ8z77Pwr1peJYfHpo.png  ~ 501.08ms
+  2026-11-21 14:03:23 / ............................................ ~ 0.02ms
+  2026-11-21 14:03:23 /build/assets/app-8ImlwVNe.css ............... ~ 0.03ms
+  2026-11-21 14:03:23 /build/assets/app-CKqux0FK.js ................ ~ 0.11ms
+  2026-11-21 14:03:23 /storage/branding/RnZTqgIYOJgVRwGGgh3ddOIQ8z77Pwr1peJYfHpo.png  ~ 0.20ms
+  2026-11-21 14:03:23 /storage/products/qa-lamp.jpg ................ ~ 0.04ms
+  2026-11-21 14:03:23 /storage/products/qa-floor.jpg ............... ~ 0.13ms
+  2026-11-21 14:03:23 /storage/products/qa-pendant.jpg ............. ~ 0.21ms
+  2026-11-21 14:03:23 /storage/products/qa-cushion.jpg ............. ~ 0.30ms
+  2026-11-21 14:03:23 /storage/products/qa-candle.jpg .............. ~ 0.39ms
+  2026-11-21 14:03:23 /storage/products/qa-vase.jpg ................ ~ 0.37ms
+  2026-11-21 14:03:23 /storage/products/qa-mirror.jpg .............. ~ 0.20ms
+  2026-11-21 14:03:23 /storage/products/qa-tray.jpg ................ ~ 0.10ms
+  2026-11-21 14:03:24 /products .................................... ~ 0.09ms
+  2026-11-21 14:03:24 /build/assets/app-8ImlwVNe.css ............... ~ 0.03ms
+  2026-11-21 14:03:24 /build/assets/app-CKqux0FK.js ................ ~ 0.11ms
+  2026-11-21 14:03:24 /storage/branding/RnZTqgIYOJgVRwGGgh3ddOIQ8z77Pwr1peJYfHpo.png  ~ 0.02ms
+  2026-11-21 14:03:24 /storage/products/qa-tray.jpg ................ ~ 0.02ms
+  2026-11-21 14:03:24 /storage/products/qa-lamp.jpg ................ ~ 0.04ms
+  2026-11-21 14:03:24 /storage/products/qa-cushion.jpg ............. ~ 0.13ms
+  2026-11-21 14:03:24 /storage/products/qa-vase.jpg ................ ~ 0.21ms
+  2026-11-21 14:03:24 /storage/products/qa-candle.jpg .............. ~ 0.29ms
+  2026-11-21 14:03:24 /storage/products/qa-mirror.jpg .............. ~ 0.37ms
+  2026-11-21 14:03:24 /storage/products/qa-pendant.jpg ............. ~ 0.35ms
+  2026-11-21 14:03:25 /products/مصباح-طاولة-سيراميك-يدوي-الصنع-بتصميم-عصري-مع-غطاء-كتان-طبيعي-المقاس-الكبير-1  ~ 0.09ms
+  2026-11-21 14:03:25 /build/assets/app-8ImlwVNe.css ............... ~ 0.04ms
+  2026-11-21 14:03:25 /build/assets/app-CKqux0FK.js ................ ~ 0.14ms
+  2026-11-21 14:03:25 /storage/branding/RnZTqgIYOJgVRwGGgh3ddOIQ8z77Pwr1peJYfHpo.png  ~ 0.22ms
+  2026-11-21 14:03:25 /storage/products/qa-lamp.jpg ................ ~ 0.26ms
+  2026-11-21 14:03:25 /storage/products/qa-floor.jpg ............... ~ 0.03ms
+  2026-11-21 14:03:25 /storage/products/qa-pendant.jpg ............. ~ 0.11ms
+  2026-11-21 14:03:25 /storage/products/qa-candle.jpg .............. ~ 0.18ms
+  2026-11-21 14:03:25 /cart/add/1 ................................ ~ 500.36ms
+  2026-11-21 14:03:25 /products/مصباح-طاولة-سيراميك-يدوي-الصنع-بتصميم-عصري-مع-غطاء-كتان-طبيعي-المقاس-الكبير-1  ~ 0.02ms
+  2026-11-21 14:03:25 /build/assets/app-8ImlwVNe.css ............... ~ 0.03ms
+  2026-11-21 14:03:25 /build/assets/app-CKqux0FK.js ................ ~ 0.12ms
+  2026-11-21 14:03:25 /storage/branding/RnZTqgIYOJgVRwGGgh3ddOIQ8z77Pwr1peJYfHpo.png  ~ 0.20ms
+  2026-11-21 14:03:25 /storage/products/qa-lamp.jpg ................ ~ 0.22ms
+  2026-11-21 14:03:25 /storage/products/qa-floor.jpg ............... ~ 0.03ms
+  2026-11-21 14:03:25 /storage/products/qa-pendant.jpg ............. ~ 0.11ms
+  2026-11-21 14:03:25 /storage/products/qa-candle.jpg .............. ~ 0.18ms
+  2026-11-21 14:03:25 /products/مصباح-أرضي-قنديل-2 ................. ~ 0.25ms
+  2026-11-21 14:03:26 /build/assets/app-8ImlwVNe.css ............... ~ 0.03ms
+  2026-11-21 14:03:26 /build/assets/app-CKqux0FK.js ................ ~ 0.12ms
+  2026-11-21 14:03:26 /storage/branding/RnZTqgIYOJgVRwGGgh3ddOIQ8z77Pwr1peJYfHpo.png  ~ 0.23ms
+  2026-11-21 14:03:26 /storage/products/qa-floor.jpg ............... ~ 0.26ms
+  2026-11-21 14:03:26 /storage/products/qa-lamp.jpg ................ ~ 0.03ms
+  2026-11-21 14:03:26 /storage/products/qa-pendant.jpg ............. ~ 0.11ms
+  2026-11-21 14:03:26 /storage/products/qa-candle.jpg .............. ~ 0.18ms
+  2026-11-21 14:03:26 /cart/add/2 .................................. ~ 0.01ms
+  2026-11-21 14:03:26 /products/مصباح-أرضي-قنديل-2 ................. ~ 0.01ms
+  2026-11-21 14:03:26 /build/assets/app-8ImlwVNe.css ............... ~ 0.02ms
+  2026-11-21 14:03:26 /build/assets/app-CKqux0FK.js ................ ~ 0.10ms
+  2026-11-21 14:03:26 /storage/branding/RnZTqgIYOJgVRwGGgh3ddOIQ8z77Pwr1peJYfHpo.png  ~ 0.02ms
+  2026-11-21 14:03:26 /storage/products/qa-floor.jpg ............... ~ 0.05ms
+  2026-11-21 14:03:26 /storage/products/qa-lamp.jpg ................ ~ 0.03ms
+  2026-11-21 14:03:26 /storage/products/qa-pendant.jpg ............. ~ 0.11ms
+  2026-11-21 14:03:26 /storage/products/qa-candle.jpg .............. ~ 0.19ms
+  2026-11-21 14:03:26 /cart ........................................ ~ 0.01ms
+  2026-11-21 14:03:26 /build/assets/app-8ImlwVNe.css ............... ~ 0.03ms
+  2026-11-21 14:03:26 /build/assets/app-CKqux0FK.js ................ ~ 0.11ms
+  2026-11-21 14:03:26 /storage/branding/RnZTqgIYOJgVRwGGgh3ddOIQ8z77Pwr1peJYfHpo.png  ~ 0.20ms
+  2026-11-21 14:03:26 /storage/products/qa-lamp.jpg ................ ~ 0.22ms
+  2026-11-21 14:03:26 /storage/products/qa-floor.jpg ............... ~ 0.30ms
+  2026-11-21 14:03:26 /checkout .................................... ~ 0.09ms
+  2026-11-21 14:03:26 /build/assets/app-8ImlwVNe.css ............... ~ 0.03ms
+  2026-11-21 14:03:26 /build/assets/app-CKqux0FK.js ................ ~ 0.12ms
+  2026-11-21 14:03:26 /storage/branding/RnZTqgIYOJgVRwGGgh3ddOIQ8z77Pwr1peJYfHpo.png  ~ 0.20ms
+  2026-11-21 14:03:27 /about ....................................... ~ 0.08ms
+  2026-11-21 14:03:27 /build/assets/app-8ImlwVNe.css ............... ~ 0.03ms
+  2026-11-21 14:03:27 /build/assets/app-CKqux0FK.js ................ ~ 0.13ms
+  2026-11-21 14:03:27 /storage/branding/RnZTqgIYOJgVRwGGgh3ddOIQ8z77Pwr1peJYfHpo.png  ~ 0.21ms
+  2026-11-21 14:03:27 /admin/login ................................. ~ 0.01ms
+  2026-11-21 14:03:27 /fonts/filament/filament/inter/index.css?v=5.11.4.0  ~ 0.04ms
+  2026-11-21 14:03:27 /fonts/filament/filament/inter/inter-latin-wght-normal-DIHYUR35.woff2  ~ 0.06ms
+  2026-11-21 14:03:27 /storage/branding/RnZTqgIYOJgVRwGGgh3ddOIQ8z77Pwr1peJYfHpo.png  ~ 0.12ms
+  2026-11-21 14:03:27 /js/filament/actions/actions.js?v=5.11.4.0 ... ~ 0.14ms
+  2026-11-21 14:03:27 /css/filament/filament/app.css?v=5.11.4.0 .... ~ 0.21ms
+  2026-11-21 14:03:27 /js/filament/notifications/notifications.js?v=5.11.4.0  ~ 0.02ms
+  2026-11-21 14:03:27 /js/filament/schemas/schemas.js?v=5.11.4.0 ... ~ 0.05ms
+  2026-11-21 14:03:27 /livewire-e9994ac1/livewire.min.js ........... ~ 0.02ms
+  2026-11-21 14:03:27 /js/filament/tables/tables.js?v=5.11.4.0 ..... ~ 0.10ms
+  2026-11-21 14:03:27 /js/filament/filament/echo.js?v=5.11.4.0 ..... ~ 0.15ms
+  2026-11-21 14:03:27 /js/filament/filament/app.js?v=5.11.4.0 ...... ~ 0.19ms
+  2026-11-21 14:03:27 /js/filament/support/support.js?v=5.11.4.0 ... ~ 0.25ms
+  2026-11-21 14:03:27 /js/filament/forms/components/text-input/password-reveal.js?v=5.11.4.0  ~ 0.01ms
+  2026-11-21 14:03:27 /admin/login ................................. ~ 0.01ms
+  2026-11-21 14:03:27 /fonts/filament/filament/inter/index.css?v=5.11.4.0  ~ 0.03ms
+  2026-11-21 14:03:27 /fonts/filament/filament/inter/inter-latin-wght-normal-DIHYUR35.woff2  ~ 0.06ms
+  2026-11-21 14:03:27 /storage/branding/RnZTqgIYOJgVRwGGgh3ddOIQ8z77Pwr1peJYfHpo.png  ~ 0.08ms
+  2026-11-21 14:03:27 /js/filament/actions/actions.js?v=5.11.4.0 ... ~ 0.10ms
+  2026-11-21 14:03:27 /css/filament/filament/app.css?v=5.11.4.0 .... ~ 0.15ms
+  2026-11-21 14:03:27 /js/filament/notifications/notifications.js?v=5.11.4.0  ~ 0.01ms
+  2026-11-21 14:03:27 /js/filament/schemas/schemas.js?v=5.11.4.0 ... ~ 0.06ms
+  2026-11-21 14:03:27 /js/filament/tables/tables.js?v=5.11.4.0 ..... ~ 0.11ms
+  2026-11-21 14:03:27 /js/filament/filament/echo.js?v=5.11.4.0 ..... ~ 0.15ms
+  2026-11-21 14:03:27 /js/filament/filament/app.js?v=5.11.4.0 ...... ~ 0.21ms
+  2026-11-21 14:03:27 /js/filament/support/support.js?v=5.11.4.0 ... ~ 0.28ms
+  2026-11-21 14:03:27 /js/filament/forms/components/text-input/password-reveal.js?v=5.11.4.0  ~ 0.02ms
+  2026-11-21 14:03:27 /livewire-e9994ac1/update ..................... ~ ثانية
+  2026-11-21 14:03:28 /admin ....................................... ~ 0.02ms
+  2026-11-21 14:03:28 /fonts/filament/filament/inter/index.css?v=5.11.4.0  ~ 0.04ms
+  2026-11-21 14:03:28 /fonts/filament/filament/inter/inter-latin-wght-normal-DIHYUR35.woff2  ~ 0.06ms
+  2026-11-21 14:03:28 /storage/branding/RnZTqgIYOJgVRwGGgh3ddOIQ8z77Pwr1peJYfHpo.png  ~ 0.10ms
+  2026-11-21 14:03:28 /js/filament/actions/actions.js?v=5.11.4.0 ... ~ 0.13ms
+  2026-11-21 14:03:28 /css/filament/filament/app.css?v=5.11.4.0 .... ~ 0.19ms
+  2026-11-21 14:03:28 /js/filament/notifications/notifications.js?v=5.11.4.0  ~ 0.02ms
+  2026-11-21 14:03:28 /js/filament/schemas/schemas.js?v=5.11.4.0 ... ~ 0.04ms
+  2026-11-21 14:03:28 /js/filament/tables/tables.js?v=5.11.4.0 ..... ~ 0.07ms
+  2026-11-21 14:03:28 /js/filament/filament/echo.js?v=5.11.4.0 ..... ~ 0.11ms
+  2026-11-21 14:03:28 /js/filament/filament/app.js?v=5.11.4.0 ...... ~ 0.16ms
+  2026-11-21 14:03:28 /js/filament/support/support.js?v=5.11.4.0 ... ~ 0.22ms
+  2026-11-21 14:03:28 /livewire-e9994ac1/update .................... ~ 0.02ms
+  2026-11-21 14:03:28 /livewire-e9994ac1/update .................... ~ 0.12ms
+  2026-11-21 14:03:28 /fonts/filament/filament/inter/inter-latin-ext-wght-normal-ZIT2UBIY.woff2  ~ 0.01ms
+  2026-11-21 14:03:29 /admin/orders .............................. ~ 500.35ms
+  2026-11-21 14:03:29 /fonts/filament/filament/inter/index.css?v=5.11.4.0  ~ 0.05ms
+  2026-11-21 14:03:29 /fonts/filament/filament/inter/inter-latin-wght-normal-DIHYUR35.woff2  ~ 0.07ms
+  2026-11-21 14:03:29 /storage/branding/RnZTqgIYOJgVRwGGgh3ddOIQ8z77Pwr1peJYfHpo.png  ~ 0.09ms
+  2026-11-21 14:03:29 /js/filament/actions/actions.js?v=5.11.4.0 ... ~ 0.12ms
+  2026-11-21 14:03:29 /css/filament/filament/app.css?v=5.11.4.0 .... ~ 0.17ms
+  2026-11-21 14:03:29 /js/filament/notifications/notifications.js?v=5.11.4.0  ~ 0.02ms
+  2026-11-21 14:03:29 /js/filament/schemas/schemas.js?v=5.11.4.0 ... ~ 0.05ms
+  2026-11-21 14:03:29 /js/filament/support/support.js?v=5.11.4.0 ... ~ 0.10ms
+  2026-11-21 14:03:29 /js/filament/tables/tables.js?v=5.11.4.0 ..... ~ 0.07ms
+  2026-11-21 14:03:29 /js/filament/filament/echo.js?v=5.11.4.0 ..... ~ 0.11ms
+  2026-11-21 14:03:29 /js/filament/filament/app.js?v=5.11.4.0 ...... ~ 0.17ms
+  2026-11-21 14:03:29 /fonts/filament/filament/inter/inter-latin-ext-wght-normal-ZIT2UBIY.woff2  ~ 0.02ms
+  2026-11-21 14:03:30 /admin/products .............................. ~ 0.09ms
+  2026-11-21 14:03:30 /fonts/filament/filament/inter/index.css?v=5.11.4.0  ~ 0.09ms
+  2026-11-21 14:03:30 /fonts/filament/filament/inter/inter-latin-wght-normal-DIHYUR35.woff2  ~ 0.14ms
+  2026-11-21 14:03:30 /storage/products/qa-tray.jpg ................ ~ 0.18ms
+  2026-11-21 14:03:30 /storage/branding/RnZTqgIYOJgVRwGGgh3ddOIQ8z77Pwr1peJYfHpo.png  ~ 0.35ms
+  2026-11-21 14:03:30 /css/filament/filament/app.css?v=5.11.4.0 .... ~ 0.42ms
+  2026-11-21 14:03:30 /storage/products/qa-lamp.jpg ................ ~ 0.11ms
+  2026-11-21 14:03:30 /storage/products/qa-cushion.jpg ............. ~ 0.23ms
+  2026-11-21 14:03:30 /js/filament/actions/actions.js?v=5.11.4.0 ... ~ 0.33ms
+  2026-11-21 14:03:30 /js/filament/notifications/notifications.js?v=5.11.4.0  ~ 0.08ms
+  2026-11-21 14:03:30 /js/filament/schemas/schemas.js?v=5.11.4.0 ... ~ 0.11ms
+  2026-11-21 14:03:30 /js/filament/support/support.js?v=5.11.4.0 ... ~ 0.15ms
+  2026-11-21 14:03:30 /js/filament/tables/tables.js?v=5.11.4.0 ..... ~ 0.15ms
+  2026-11-21 14:03:30 /js/filament/filament/echo.js?v=5.11.4.0 ..... ~ 0.19ms
+  2026-11-21 14:03:30 /js/filament/filament/app.js?v=5.11.4.0 ...... ~ 0.13ms
+  2026-11-21 14:03:30 /storage/products/qa-vase.jpg ................ ~ 0.18ms
+  2026-11-21 14:03:30 /storage/products/qa-candle.jpg .............. ~ 0.16ms
+  2026-11-21 14:03:30 /storage/products/qa-mirror.jpg .............. ~ 0.24ms
+  2026-11-21 14:03:30 /fonts/filament/filament/inter/inter-latin-ext-wght-normal-ZIT2UBIY.woff2  ~ 0.02ms
+  2026-11-21 14:03:30 /js/filament/tables/components/columns/toggle.js?v=5.11.4.0  ~ 0.01ms
+  2026-11-21 14:03:31 /admin/products/1/edit ....................... ~ 0.12ms
+  2026-11-21 14:03:31 /fonts/filament/filament/inter/index.css?v=5.11.4.0  ~ 0.07ms
+  2026-11-21 14:03:31 /fonts/filament/filament/inter/inter-latin-wght-normal-DIHYUR35.woff2  ~ 0.11ms
+  2026-11-21 14:03:31 /storage/branding/RnZTqgIYOJgVRwGGgh3ddOIQ8z77Pwr1peJYfHpo.png  ~ 0.17ms
+  2026-11-21 14:03:31 /js/filament/actions/actions.js?v=5.11.4.0 ... ~ 0.22ms
+  2026-11-21 14:03:31 /css/filament/filament/app.css?v=5.11.4.0 .... ~ 0.30ms
+  2026-11-21 14:03:31 /js/filament/notifications/notifications.js?v=5.11.4.0  ~ 0.04ms
+  2026-11-21 14:03:31 /js/filament/schemas/schemas.js?v=5.11.4.0 ... ~ 0.07ms
+  2026-11-21 14:03:31 /js/filament/support/support.js?v=5.11.4.0 ... ~ 0.05ms
+  2026-11-21 14:03:31 /js/filament/tables/tables.js?v=5.11.4.0 ..... ~ 0.11ms
+  2026-11-21 14:03:31 /js/filament/filament/echo.js?v=5.11.4.0 ..... ~ 0.18ms
+  2026-11-21 14:03:31 /js/filament/filament/app.js?v=5.11.4.0 ...... ~ 0.24ms
+  2026-11-21 14:03:31 /js/filament/forms/components/select.js?v=5.11.4.0  ~ 0.03ms
+  2026-11-21 14:03:31 /js/filament/forms/components/textarea.js?v=5.11.4.0  ~ 0.07ms
+  2026-11-21 14:03:31 /js/filament/forms/components/file-upload.js?v=5.11.4.0  ~ 0.06ms
+  2026-11-21 14:03:31 /livewire-e9994ac1/update .................... ~ 0.02ms
+  2026-11-21 14:03:31 /storage/products/qa-lamp.jpg ................ ~ 0.03ms
+  2026-11-21 14:03:32 /admin/store-settings ........................ ~ 0.11ms
+  2026-11-21 14:03:32 /fonts/filament/filament/inter/index.css?v=5.11.4.0  ~ 0.08ms
+  2026-11-21 14:03:32 /fonts/filament/filament/inter/inter-latin-wght-normal-DIHYUR35.woff2  ~ 0.12ms
+  2026-11-21 14:03:32 /storage/branding/RnZTqgIYOJgVRwGGgh3ddOIQ8z77Pwr1peJYfHpo.png  ~ 0.16ms
+  2026-11-21 14:03:32 /js/filament/actions/actions.js?v=5.11.4.0 ... ~ 0.19ms
+  2026-11-21 14:03:32 /css/filament/filament/app.css?v=5.11.4.0 .... ~ 0.29ms
+  2026-11-21 14:03:32 /js/filament/notifications/notifications.js?v=5.11.4.0  ~ 0.03ms
+  2026-11-21 14:03:32 /js/filament/schemas/schemas.js?v=5.11.4.0 ... ~ 0.06ms
+  2026-11-21 14:03:32 /js/filament/tables/tables.js?v=5.11.4.0 ..... ~ 0.13ms
+  2026-11-21 14:03:32 /js/filament/filament/echo.js?v=5.11.4.0 ..... ~ 0.22ms
+  2026-11-21 14:03:32 /js/filament/filament/app.js?v=5.11.4.0 ...... ~ 0.30ms
+  2026-11-21 14:03:32 /js/filament/support/support.js?v=5.11.4.0 ... ~ 0.42ms
+  2026-11-21 14:03:32 /js/filament/forms/components/textarea.js?v=5.11.4.0  ~ 0.04ms
+  2026-11-21 14:03:32 /js/filament/forms/components/color-picker.js?v=5.11.4.0  ~ 500.36ms
+  2026-11-21 14:03:32 /js/filament/forms/components/select.js?v=5.11.4.0  ~ 500.41ms
+  2026-11-21 14:03:32 /js/filament/forms/components/file-upload.js?v=5.11.4.0  ~ 500.45ms
+  2026-11-21 14:03:32 /fonts/filament/filament/inter/inter-latin-ext-wght-normal-ZIT2UBIY.woff2  ~ 0.02ms
+  2026-11-21 14:03:32 /livewire-e9994ac1/update .................... ~ 0.01ms
+  2026-11-21 14:03:32 /storage/branding/RnZTqgIYOJgVRwGGgh3ddOIQ8z77Pwr1peJYfHpo.png  ~ 0.02ms
+  2026-11-21 14:03:33 /admin/login ................................. ~ 0.10ms
+  2026-11-21 14:03:33 /fonts/filament/filament/inter/index.css?v=5.11.4.0  ~ 0.07ms
+  2026-11-21 14:03:33 /fonts/filament/filament/inter/inter-latin-wght-normal-DIHYUR35.woff2  ~ 0.13ms
+  2026-11-21 14:03:33 /storage/branding/RnZTqgIYOJgVRwGGgh3ddOIQ8z77Pwr1peJYfHpo.png  ~ 0.17ms
+  2026-11-21 14:03:33 /js/filament/actions/actions.js?v=5.11.4.0 ... ~ 0.20ms
+  2026-11-21 14:03:33 /css/filament/filament/app.css?v=5.11.4.0 .... ~ 0.30ms
+  2026-11-21 14:03:33 /js/filament/notifications/notifications.js?v=5.11.4.0  ~ 0.11ms
+  2026-11-21 14:03:33 /js/filament/schemas/schemas.js?v=5.11.4.0 ... ~ 0.17ms
+  2026-11-21 14:03:33 /livewire-e9994ac1/livewire.min.js ........... ~ 0.03ms
+  2026-11-21 14:03:33 /js/filament/support/support.js?v=5.11.4.0 ... ~ 0.16ms
+  2026-11-21 14:03:33 /js/filament/tables/tables.js?v=5.11.4.0 ..... ~ 0.21ms
+  2026-11-21 14:03:33 /js/filament/filament/echo.js?v=5.11.4.0 ..... ~ 0.26ms
+  2026-11-21 14:03:33 /js/filament/filament/app.js?v=5.11.4.0 ...... ~ 0.32ms
+  2026-11-21 14:03:33 /js/filament/forms/components/text-input/password-reveal.js?v=5.11.4.0  ~ 0.02ms
+  2026-11-21 14:03:33 /livewire-e9994ac1/update .................. ~ 500.31ms
+  2026-11-21 14:03:34 /admin ....................................... ~ 0.02ms
+  2026-11-21 14:03:34 /fonts/filament/filament/inter/index.css?v=5.11.4.0  ~ 0.03ms
+  2026-11-21 14:03:34 /fonts/filament/filament/inter/inter-latin-wght-normal-DIHYUR35.woff2  ~ 0.05ms
+  2026-11-21 14:03:34 /css/filament/filament/app.css?v=5.11.4.0 .... ~ 0.09ms
+  2026-11-21 14:03:34 /storage/branding/RnZTqgIYOJgVRwGGgh3ddOIQ8z77Pwr1peJYfHpo.png  ~ 0.02ms
+  2026-11-21 14:03:34 /js/filament/actions/actions.js?v=5.11.4.0 ... ~ 0.05ms
+  2026-11-21 14:03:34 /js/filament/notifications/notifications.js?v=5.11.4.0  ~ 0.02ms
+  2026-11-21 14:03:34 /js/filament/schemas/schemas.js?v=5.11.4.0 ... ~ 0.05ms
+  2026-11-21 14:03:34 /js/filament/tables/tables.js?v=5.11.4.0 ..... ~ 0.03ms
+  2026-11-21 14:03:34 /js/filament/filament/echo.js?v=5.11.4.0 ..... ~ 0.11ms
+  2026-11-21 14:03:34 /js/filament/filament/app.js?v=5.11.4.0 ...... ~ 0.16ms
+  2026-11-21 14:03:34 /js/filament/support/support.js?v=5.11.4.0 ... ~ 0.22ms
+  2026-11-21 14:03:34 /admin/orders ................................ ~ 0.01ms
+  2026-11-21 14:03:34 /livewire-e9994ac1/update .................... ~ 0.02ms

@@ -1,0 +1,279 @@
+{
+  "checks": [
+    {
+      "name": "صفحة التثبيت @360: لا تمرير أفقي",
+      "ok": true,
+      "detail": "scrollWidth=360"
+    },
+    {
+      "name": "التثبيت الأول ينجح ويحوّل إلى لوحة الإدارة",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "الرئيسية @360: لا تمرير أفقي",
+      "ok": true,
+      "detail": "scrollWidth=360"
+    },
+    {
+      "name": "الرئيسية 360: أهداف اللمس ≥ 40px",
+      "ok": false,
+      "detail": "a \"نقوة\" 134x36"
+    },
+    {
+      "name": "ألوان المتجر المحقونة (المتوقع #17483D #FAF6EC #AD603D)",
+      "ok": false,
+      "detail": "#0f766e #e7e5e4 #f59e0b"
+    },
+    {
+      "name": "الرئيسية: اسم المتجر ووصفه ظاهران",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "الرئيسية: منتج (صورة) ظاهر في أول شاشة على الهاتف",
+      "ok": true,
+      "detail": "{\"imgs\":3,\"prices\":0}"
+    },
+    {
+      "name": "نتائج البحث @360: لا تمرير أفقي",
+      "ok": true,
+      "detail": "scrollWidth=360"
+    },
+    {
+      "name": "الكتالوج 360: أهداف اللمس ≥ 40px",
+      "ok": false,
+      "detail": "a \"نقوة\" 134x36 | input \"q\" 294x38 | input \"min_price\" 143x38 | input \"max_price\" 143x38"
+    },
+    {
+      "name": "الكتالوج على 360: بطاقتان في الصف الأول",
+      "ok": true,
+      "detail": "عدد البطاقات في الصف: 2"
+    },
+    {
+      "name": "الكتالوج: الاسم العربي الطويل ظاهر دون كسر الصفحة",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "الفلاتر الحالية (الترتيب) تعمل وقابلة للوصول على الهاتف",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "صفحة المنتج (اسم طويل) @360: لا تمرير أفقي",
+      "ok": true,
+      "detail": "scrollWidth=360"
+    },
+    {
+      "name": "المنتج 360: أهداف اللمس ≥ 40px",
+      "ok": false,
+      "detail": "a \"نقوة\" 134x36 | a \"الرئيسية\" 45x29 | a \"المنتجات\" 52x29 | a \"إضاءة\" 31x29"
+    },
+    {
+      "name": "المنتج: زر الشراء ظاهر وقابل للضغط",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "المنتج: السعر بالأرقام والرمز ظاهر (129.00)",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "المنتج النافد: يظهر «غير متوفر» دون زر شراء رئيسي",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "السلة @360: لا تمرير أفقي",
+      "ok": false,
+      "detail": "scrollWidth=370"
+    },
+    {
+      "name": "السلة 360: أهداف اللمس ≥ 40px",
+      "ok": false,
+      "detail": "a \"نقوة\" 134x36 | input \"quantity\" 80x38 | button \"إزالة\" 22x20 | input \"quantity\" 80x38"
+    },
+    {
+      "name": "السلة: تعديل الكمية يغيّر الإجمالي",
+      "ok": true,
+      "detail": "المتوقع ظهور 498.00 (2 × 249)"
+    },
+    {
+      "name": "السلة: تفصيل التكلفة (المجموع الفرعي والشحن والإجمالي) ظاهر",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "إتمام الطلب @360: لا تمرير أفقي",
+      "ok": true,
+      "detail": "scrollWidth=360"
+    },
+    {
+      "name": "الدفع 360: أهداف اللمس ≥ 40px",
+      "ok": false,
+      "detail": "a \"نقوة\" 134x36 | input \"name\" 294x38 | input \"phone\" 294x38 | input \"email\" 294x38"
+    },
+    {
+      "name": "الخطأ: رسالة الهاتف بجانب الحقل المعني (≤ 80px)",
+      "ok": false,
+      "detail": "المسافة 290px"
+    },
+    {
+      "name": "الخطأ: بيانات الزبون محفوظة بعد التصحيح",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "نجاح الطلب @360: لا تمرير أفقي",
+      "ok": true,
+      "detail": "scrollWidth=360"
+    },
+    {
+      "name": "إتمام الطلب: ظهر رقم الطلب",
+      "ok": true,
+      "detail": "XRD-268828-GXSDV"
+    },
+    {
+      "name": "الرئيسية @768: لا تمرير أفقي",
+      "ok": true,
+      "detail": "scrollWidth=768"
+    },
+    {
+      "name": "الكتالوج @768: لا تمرير أفقي",
+      "ok": true,
+      "detail": "scrollWidth=768"
+    },
+    {
+      "name": "صفحة المنتج @768: لا تمرير أفقي",
+      "ok": true,
+      "detail": "scrollWidth=768"
+    },
+    {
+      "name": "السلة @768: لا تمرير أفقي",
+      "ok": true,
+      "detail": "scrollWidth=768"
+    },
+    {
+      "name": "إتمام الطلب @768: لا تمرير أفقي",
+      "ok": true,
+      "detail": "scrollWidth=768"
+    },
+    {
+      "name": "الرئيسية @1440: لا تمرير أفقي",
+      "ok": true,
+      "detail": "scrollWidth=1440"
+    },
+    {
+      "name": "الكتالوج @1440: لا تمرير أفقي",
+      "ok": true,
+      "detail": "scrollWidth=1440"
+    },
+    {
+      "name": "صفحة المنتج @1440: لا تمرير أفقي",
+      "ok": true,
+      "detail": "scrollWidth=1440"
+    },
+    {
+      "name": "السلة @1440: لا تمرير أفقي",
+      "ok": true,
+      "detail": "scrollWidth=1440"
+    },
+    {
+      "name": "إتمام الطلب @1440: لا تمرير أفقي",
+      "ok": true,
+      "detail": "scrollWidth=1440"
+    },
+    {
+      "name": "الطلب ظهر في لوحة الإدارة",
+      "ok": true,
+      "detail": "XRD-268828-GXSDV"
+    },
+    {
+      "name": "admin-mobile (استثناء)",
+      "ok": false,
+      "detail": "page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:8000/admin/products"
+    }
+  ],
+  "touchOffenders": [
+    "الرئيسية 360: a \"نقوة\" 134x36",
+    "الكتالوج 360: a \"نقوة\" 134x36",
+    "الكتالوج 360: input \"q\" 294x38",
+    "الكتالوج 360: input \"min_price\" 143x38",
+    "الكتالوج 360: input \"max_price\" 143x38",
+    "المنتج 360: a \"نقوة\" 134x36",
+    "المنتج 360: a \"الرئيسية\" 45x29",
+    "المنتج 360: a \"المنتجات\" 52x29",
+    "المنتج 360: a \"إضاءة\" 31x29",
+    "المنتج 360: input \"quantity\" 96x38",
+    "السلة 360: a \"نقوة\" 134x36",
+    "السلة 360: input \"quantity\" 80x38",
+    "السلة 360: button \"إزالة\" 22x20",
+    "السلة 360: input \"quantity\" 80x38",
+    "السلة 360: button \"إزالة\" 22x20",
+    "الدفع 360: a \"نقوة\" 134x36",
+    "الدفع 360: input \"name\" 294x38",
+    "الدفع 360: input \"phone\" 294x38",
+    "الدفع 360: input \"email\" 294x38",
+    "الدفع 360: input \"city\" 294x38",
+    "الدفع 360: input \"address\" 294x38"
+  ],
+  "pageErrors": [
+    "[a] Failed to execute 'writeText' on 'Clipboard': Write permission denied.",
+    "[am] Cannot read properties of undefined (reading 'isOpenMobile')",
+    "[am] filamentSidebarBackground is not defined",
+    "[am] Cannot read properties of undefined (reading 'isOpenMobile')",
+    "[am] Cannot read properties of undefined (reading 'isOpen')",
+    "[am] Cannot read properties of undefined (reading 'isOpen')",
+    "[am] Cannot read properties of undefined (reading 'isOpen')",
+    "[am] Cannot read properties of undefined (reading 'isOpen')",
+    "[am] filamentGlobalSearch is not defined",
+    "[am] isOpen is not defined",
+    "[am] isOpen is not defined",
+    "[am] isOpen is not defined",
+    "[am] filamentDropdown is not defined",
+    "[am] filamentActionModals is not defined",
+    "[am] Cannot read properties of undefined (reading 'isOpen')",
+    "[am] filamentSidebar is not defined",
+    "[am] Cannot read properties of undefined (reading 'isOpen')",
+    "[am] isHidden is not defined",
+    "[am] focusInitialNavigation is not defined",
+    "[am] Cannot read properties of undefined (reading 'groupIsCollapsed')",
+    "[am] Cannot read properties of undefined (reading 'groupIsCollapsed')",
+    "[am] Cannot read properties of undefined (reading 'groupIsCollapsed')",
+    "[am] Cannot read properties of undefined (reading 'groupIsCollapsed')",
+    "[am] Cannot read properties of undefined (reading 'groupIsCollapsed')",
+    "[am] Cannot read properties of undefined (reading 'groupIsCollapsed')",
+    "[am] Cannot read properties of undefined (reading 'groupIsCollapsed')",
+    "[am] Cannot read properties of undefined (reading 'groupIsCollapsed')",
+    "[am] Cannot read properties of undefined (reading 'groupIsCollapsed')",
+    "[am] Cannot read properties of undefined (reading 'groupIsCollapsed')",
+    "[am] Cannot read properties of undefined (reading 'groupIsCollapsed')",
+    "[am] Cannot read properties of undefined (reading 'groupIsCollapsed')",
+    "[am] Cannot read properties of undefined (reading 'groupIsCollapsed')",
+    "[am] filamentActionModals is not defined",
+    "[am] filamentSidebarBackground is not defined",
+    "[am] Cannot read properties of undefined (reading 'isOpenMobile')",
+    "[am] filamentSchema is not defined",
+    "[am] filamentSchemaComponent is not defined",
+    "[am] filamentSchemaComponent is not defined",
+    "[am] filamentTable is not defined",
+    "[am] filamentDropdown is not defined",
+    "[am] filamentTableFilters is not defined",
+    "[am] filamentSchema is not defined",
+    "[am] filamentSchemaComponent is not defined",
+    "[am] filamentSchemaComponent is not defined",
+    "[am] filamentSchemaComponent is not defined",
+    "[am] filamentSchemaComponent is not defined",
+    "[am] filamentCopyable is not defined",
+    "[am] bindings is not defined",
+    "[am] isStandalone is not defined",
+    "[am] filamentActionModals is not defined",
+    "[am] filamentSchemaComponent is not defined",
+    "[am] notificationsComponent is not defined",
+    "[am] Cannot convert undefined or null to object",
+    "[am] navigationCompleted is not defined"
+  ],
+  "notes": []
+}

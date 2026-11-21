@@ -1,0 +1,90 @@
+# QA qa/before
+
+النتيجة: 30/39 نجح
+
+- ✅ صفحة التثبيت @360: لا تمرير أفقي — scrollWidth=360
+- ✅ التثبيت الأول ينجح ويحوّل إلى لوحة الإدارة
+- ✅ الرئيسية @360: لا تمرير أفقي — scrollWidth=360
+- ❌ الرئيسية 360: أهداف اللمس ≥ 40px — a "نقوة" 134x36
+- ❌ ألوان المتجر المحقونة (المتوقع #17483D #FAF6EC #AD603D) — #0f766e #e7e5e4 #f59e0b
+- ✅ الرئيسية: اسم المتجر ووصفه ظاهران
+- ✅ الرئيسية: منتج (صورة) ظاهر في أول شاشة على الهاتف — {"imgs":3,"prices":0}
+- ✅ نتائج البحث @360: لا تمرير أفقي — scrollWidth=360
+- ❌ الكتالوج 360: أهداف اللمس ≥ 40px — a "نقوة" 134x36 | input "q" 294x38 | input "min_price" 143x38 | input "max_price" 143x38
+- ✅ الكتالوج على 360: بطاقتان في الصف الأول — عدد البطاقات في الصف: 2
+- ✅ الكتالوج: الاسم العربي الطويل ظاهر دون كسر الصفحة
+- ✅ الفلاتر الحالية (الترتيب) تعمل وقابلة للوصول على الهاتف
+- ✅ صفحة المنتج (اسم طويل) @360: لا تمرير أفقي — scrollWidth=360
+- ❌ المنتج 360: أهداف اللمس ≥ 40px — a "نقوة" 134x36 | a "الرئيسية" 45x29 | a "المنتجات" 52x29 | a "إضاءة" 31x29
+- ✅ المنتج: زر الشراء ظاهر وقابل للضغط
+- ✅ المنتج: السعر بالأرقام والرمز ظاهر (129.00)
+- ✅ المنتج النافد: يظهر «غير متوفر» دون زر شراء رئيسي
+- ❌ السلة @360: لا تمرير أفقي — scrollWidth=370
+- ❌ السلة 360: أهداف اللمس ≥ 40px — a "نقوة" 134x36 | input "quantity" 80x38 | button "إزالة" 22x20 | input "quantity" 80x38
+- ✅ السلة: تعديل الكمية يغيّر الإجمالي — المتوقع ظهور 498.00 (2 × 249)
+- ✅ السلة: تفصيل التكلفة (المجموع الفرعي والشحن والإجمالي) ظاهر
+- ✅ إتمام الطلب @360: لا تمرير أفقي — scrollWidth=360
+- ❌ الدفع 360: أهداف اللمس ≥ 40px — a "نقوة" 134x36 | input "name" 294x38 | input "phone" 294x38 | input "email" 294x38
+- ❌ الخطأ: رسالة الهاتف بجانب الحقل المعني (≤ 80px) — المسافة 290px
+- ✅ الخطأ: بيانات الزبون محفوظة بعد التصحيح
+- ✅ نجاح الطلب @360: لا تمرير أفقي — scrollWidth=360
+- ✅ إتمام الطلب: ظهر رقم الطلب — XRD-268828-GXSDV
+- ✅ الرئيسية @768: لا تمرير أفقي — scrollWidth=768
+- ✅ الكتالوج @768: لا تمرير أفقي — scrollWidth=768
+- ✅ صفحة المنتج @768: لا تمرير أفقي — scrollWidth=768
+- ✅ السلة @768: لا تمرير أفقي — scrollWidth=768
+- ✅ إتمام الطلب @768: لا تمرير أفقي — scrollWidth=768
+- ✅ الرئيسية @1440: لا تمرير أفقي — scrollWidth=1440
+- ✅ الكتالوج @1440: لا تمرير أفقي — scrollWidth=1440
+- ✅ صفحة المنتج @1440: لا تمرير أفقي — scrollWidth=1440
+- ✅ السلة @1440: لا تمرير أفقي — scrollWidth=1440
+- ✅ إتمام الطلب @1440: لا تمرير أفقي — scrollWidth=1440
+- ✅ الطلب ظهر في لوحة الإدارة — XRD-268828-GXSDV
+- ❌ admin-mobile (استثناء) — page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:8000/admin/products
+
+## أهداف لمس أصغر من 40px
+- الرئيسية 360: a "نقوة" 134x36
+- الكتالوج 360: a "نقوة" 134x36
+- الكتالوج 360: input "q" 294x38
+- الكتالوج 360: input "min_price" 143x38
+- الكتالوج 360: input "max_price" 143x38
+- المنتج 360: a "نقوة" 134x36
+- المنتج 360: a "الرئيسية" 45x29
+- المنتج 360: a "المنتجات" 52x29
+- المنتج 360: a "إضاءة" 31x29
+- المنتج 360: input "quantity" 96x38
+- السلة 360: a "نقوة" 134x36
+- السلة 360: input "quantity" 80x38
+- السلة 360: button "إزالة" 22x20
+- السلة 360: input "quantity" 80x38
+- السلة 360: button "إزالة" 22x20
+- الدفع 360: a "نقوة" 134x36
+- الدفع 360: input "name" 294x38
+- الدفع 360: input "phone" 294x38
+- الدفع 360: input "email" 294x38
+- الدفع 360: input "city" 294x38
+- الدفع 360: input "address" 294x38
+
+## أخطاء صفحات/طلبات
+- [a] Failed to execute 'writeText' on 'Clipboard': Write permission denied.
+- [am] Cannot read properties of undefined (reading 'isOpenMobile')
+- [am] filamentSidebarBackground is not defined
+- [am] Cannot read properties of undefined (reading 'isOpen')
+- [am] filamentGlobalSearch is not defined
+- [am] isOpen is not defined
+- [am] filamentDropdown is not defined
+- [am] filamentActionModals is not defined
+- [am] filamentSidebar is not defined
+- [am] isHidden is not defined
+- [am] focusInitialNavigation is not defined
+- [am] Cannot read properties of undefined (reading 'groupIsCollapsed')
+- [am] filamentSchema is not defined
+- [am] filamentSchemaComponent is not defined
+- [am] filamentTable is not defined
+- [am] filamentTableFilters is not defined
+- [am] filamentCopyable is not defined
+- [am] bindings is not defined
+- [am] isStandalone is not defined
+- [am] notificationsComponent is not defined
+- [am] Cannot convert undefined or null to object
+- [am] navigationCompleted is not defined

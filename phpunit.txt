@@ -1,0 +1,44 @@
+
+  [30;42;1m PASS [39;49;22m[39m Tests\Unit\SupportTest[39m
+  [32;1m✓[39;22m[90m [39m[90mslug keeps arabic letters and normalises separators[39m
+  [32;1m✓[39;22m[90m [39m[90mhex validation[39m
+  [32;1m✓[39;22m[90m [39m[90mon color picks readable text[39m
+
+  [30;42;1m PASS [39;49;22m[39m Tests\Feature\AdminAccessTest[39m
+  [32;1m✓[39;22m[90m [39m[90mguests are redirected to admin login[39m[90m                                [39m [90m0.22s[39m  
+  [32;1m✓[39;22m[90m [39m[90madmin can open dashboard and users[39m[90m                                  [39m [90m0.45s[39m  
+  [32;1m✓[39;22m[90m [39m[90mstaff cannot manage users or settings[39m[90m                               [39m [90m0.06s[39m  
+  [32;1m✓[39;22m[90m [39m[90minactive user cannot access panel[39m[90m                                   [39m [90m0.02s[39m  
+  [32;1m✓[39;22m[90m [39m[90mpolicies by role[39m[90m                                                    [39m [90m0.02s[39m  
+
+  [30;42;1m PASS [39;49;22m[39m Tests\Feature\CheckoutTest[39m
+  [32;1m✓[39;22m[90m [39m[90morder is created with server side prices and stock decrements[39m[90m       [39m [90m0.05s[39m  
+  [32;1m✓[39;22m[90m [39m[90mcannot order more than stock[39m[90m                                        [39m [90m0.03s[39m  
+  [32;1m✓[39;22m[90m [39m[90mout of stock product cannot be added[39m[90m                                [39m [90m0.02s[39m  
+  [32;1m✓[39;22m[90m [39m[90mdouble submit does not create two orders[39m[90m                            [39m [90m0.03s[39m  
+  [32;1m✓[39;22m[90m [39m[90minvalid checkout token creates no order[39m[90m                             [39m [90m0.02s[39m  
+  [32;1m✓[39;22m[90m [39m[90mhoneypot blocks bots[39m[90m                                                [39m [90m0.02s[39m  
+  [32;1m✓[39;22m[90m [39m[90mdisabled payment method is rejected[39m[90m                                 [39m [90m0.02s[39m  
+  [32;1m✓[39;22m[90m [39m[90msuccess page does not expose other customers orders[39m[90m                 [39m [90m0.02s[39m  
+  [32;1m✓[39;22m[90m [39m[90mcancelling an order restores stock[39m[90m                                  [39m [90m0.03s[39m  
+
+  [30;42;1m PASS [39;49;22m[39m Tests\Feature\InstallerTest[39m
+  [32;1m✓[39;22m[90m [39m[90mstorefront redirects to install before setup[39m[90m                        [39m [90m0.02s[39m  
+  [32;1m✓[39;22m[90m [39m[90minstall form is shown before setup[39m[90m                                  [39m [90m0.02s[39m  
+  [32;1m✓[39;22m[90m [39m[90minstallation creates settings admin and default pages[39m[90m               [39m [90m0.02s[39m  
+  [32;1m✓[39;22m[90m [39m[90minstall page is disabled after installation[39m[90m                         [39m [90m0.03s[39m  
+  [32;1m✓[39;22m[90m [39m[90minstall is blocked when lock file exists[39m[90m                            [39m [90m0.02s[39m  
+  [32;1m✓[39;22m[90m [39m[90minvalid input is rejected and nothing is created[39m[90m                    [39m [90m0.02s[39m  
+  [32;1m✓[39;22m[90m [39m[90minstall token is enforced when configured[39m[90m                           [39m [90m0.03s[39m  
+
+  [30;42;1m PASS [39;49;22m[39m Tests\Feature\StorefrontTest[39m
+  [32;1m✓[39;22m[90m [39m[90mhome page renders rtl with store name and colors[39m[90m                    [39m [90m0.03s[39m  
+  [32;1m✓[39;22m[90m [39m[90mproduct listing filters by search category price and stock[39m[90m          [39m [90m0.04s[39m  
+  [32;1m✓[39;22m[90m [39m[90minactive products are hidden[39m[90m                                        [39m [90m0.02s[39m  
+  [32;1m✓[39;22m[90m [39m[90mproduct page shows price and availability[39m[90m                           [39m [90m0.02s[39m  
+  [32;1m✓[39;22m[90m [39m[90mstatic pages render markdown and strip raw html[39m[90m                     [39m [90m0.03s[39m  
+  [32;1m✓[39;22m[90m [39m[90munpublished page is not found[39m[90m                                       [39m [90m0.02s[39m  
+
+  [90mTests:[39m    [32;1m30 passed[39;22m[90m (124 assertions)[39m
+  [90mDuration:[39m [39m1.39s[39m
+
