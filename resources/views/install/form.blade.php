@@ -1,171 +1,140 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="robots" content="noindex, nofollow">
-    <title>تجهيز المتجر</title>
     @php
         // نقبل القيم القديمة فقط إن كانت لونًا صحيحًا (حماية من حقن CSS داخل <style>)
         $pick = fn (string $key) => \App\Support\Colors::isHex(old($key.'_color')) ? old($key.'_color') : $defaults[$key];
     @endphp
-    <style>
-        :root {
-            --store-primary: {{ $pick('primary') }};
-            --store-secondary: {{ $pick('secondary') }};
-            --store-accent: {{ $pick('accent') }};
-            --store-on-primary: #ffffff;
-            --store-on-accent: #1c1917;
-        }
-    </style>
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    @include('layouts.head', ['primary' => $pick('primary'), 'secondary' => $pick('secondary'), 'accent' => $pick('accent'), 'onPrimary' => '#ffffff', 'onAccent' => '#1c1917', 'themeColor' => $pick('primary')])
+    <meta name="robots" content="noindex, nofollow">
+    <title>تجهيز المتجر</title>
 </head>
-<body class="min-h-screen bg-stone-50 py-8 text-stone-800 antialiased">
+<body class="min-h-screen pb-28 pt-8 md:pb-12">
 <main class="mx-auto max-w-3xl px-4">
-    <h1 class="mb-1 text-2xl font-extrabold">تجهيز المتجر</h1>
-    <p class="mb-6 text-sm text-stone-600">
-        هذه الصفحة تعمل <strong>مرة واحدة فقط</strong> وتُغلق تلقائيًا بعد الحفظ. بيانات قاعدة البيانات لا تُدخل هنا
-        بل في ملف <code dir="ltr">.env</code> على الخادم.
-    </p>
+    <header class="mb-6">
+        <p class="mb-1 text-sm font-bold text-primary">الخطوة الأخيرة قبل الافتتاح</p>
+        <h1 class="t-title">تجهيز المتجر</h1>
+        <p class="t-muted mt-2 text-[0.95rem] leading-7">
+            هذه الصفحة تعمل <strong>مرة واحدة فقط</strong> وتُغلق تلقائيًا بعد الحفظ. بيانات قاعدة البيانات لا تُدخل هنا
+            بل في ملف <code dir="ltr">.env</code> على الخادم.
+        </p>
+    </header>
 
     @if ($errors->any())
-        <div role="alert" class="mb-4 rounded-lg border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-800">
-            <ul class="list-disc ps-5">
-                @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                @endforeach
-            </ul>
-        </div>
+        <x-alert type="error" class="mb-5">
+            <p class="font-bold">يرجى مراجعة الحقول المعلَّمة بالأحمر.</p>
+            @foreach ($errors->get('install') as $message)<p>{{ $message }}</p>@endforeach
+        </x-alert>
     @endif
 
-    <form action="{{ route('install.store') }}" method="post" enctype="multipart/form-data" class="space-y-6" data-once>
+    <form action="{{ route('install.store') }}" method="post" enctype="multipart/form-data" class="space-y-5" data-once>
         @csrf
 
         @if ($tokenRequired)
-            <section class="card space-y-3 p-4">
-                <h2 class="font-bold">رمز التثبيت</h2>
-                <p class="text-xs text-stone-500">القيمة الموجودة في <code dir="ltr">INSTALL_TOKEN</code> داخل ملف <code dir="ltr">.env</code>.</p>
-                <input name="install_token" type="password" required autocomplete="off" dir="ltr" class="input text-start" aria-label="رمز التثبيت">
+            <section class="card card-pad space-y-3">
+                <h2 class="t-heading">رمز التثبيت</h2>
+                <x-field name="install_token" label="القيمة الموجودة في INSTALL_TOKEN داخل ملف .env" required>
+                    <input id="install_token" name="install_token" type="password" required autocomplete="off" dir="ltr" class="input text-start" @error('install_token') aria-invalid="true" @enderror>
+                </x-field>
             </section>
         @endif
 
-        <section class="card space-y-4 p-4">
-            <h2 class="font-bold">بيانات المتجر</h2>
-            <div>
-                <label for="store_name" class="label">اسم المتجر *</label>
-                <input id="store_name" name="store_name" value="{{ old('store_name') }}" required maxlength="100" class="input">
-            </div>
-            <div>
-                <label for="description" class="label">وصف المتجر</label>
-                <textarea id="description" name="description" rows="3" maxlength="500" class="input">{{ old('description') }}</textarea>
-            </div>
-            <div>
-                <label for="logo" class="label">الشعار (PNG / JPG / WebP، حتى 2MB)</label>
-                <input id="logo" type="file" name="logo" accept="image/png,image/jpeg,image/webp" class="input">
-            </div>
+        <section class="card card-pad space-y-4">
+            <h2 class="t-heading">بيانات المتجر</h2>
+            <x-field name="store_name" label="اسم المتجر" required>
+                <input id="store_name" name="store_name" value="{{ old('store_name') }}" required maxlength="100" class="input" @error('store_name') aria-invalid="true" @enderror>
+            </x-field>
+            <x-field name="description" label="وصف المتجر" hint="جملة قصيرة تظهر في أول شاشة من الرئيسية: ماذا تبيع؟">
+                <textarea id="description" name="description" rows="3" maxlength="500" class="input" @error('description') aria-invalid="true" @enderror>{{ old('description') }}</textarea>
+            </x-field>
+            <x-field name="logo" label="الشعار (PNG / JPG / WebP، حتى 2MB)">
+                <input id="logo" type="file" name="logo" accept="image/png,image/jpeg,image/webp" class="input !py-2.5 file:me-3 file:rounded-lg file:border-0 file:bg-primary-soft file:px-3 file:py-1.5 file:font-bold file:text-primary" @error('logo') aria-invalid="true" @enderror>
+            </x-field>
             <div class="grid gap-4 sm:grid-cols-2">
-                <div>
-                    <label for="email" class="label">بريد المتجر</label>
-                    <input id="email" type="email" name="email" value="{{ old('email') }}" dir="ltr" class="input text-start">
-                </div>
-                <div>
-                    <label for="phone" class="label">هاتف المتجر</label>
-                    <input id="phone" name="phone" value="{{ old('phone') }}" dir="ltr" class="input text-start">
-                </div>
+                <x-field name="email" label="بريد المتجر">
+                    <input id="email" type="email" name="email" value="{{ old('email') }}" dir="ltr" class="input text-start" @error('email') aria-invalid="true" @enderror>
+                </x-field>
+                <x-field name="phone" label="هاتف المتجر">
+                    <input id="phone" name="phone" value="{{ old('phone') }}" dir="ltr" class="input text-start" @error('phone') aria-invalid="true" @enderror>
+                </x-field>
             </div>
             <div class="grid gap-4 sm:grid-cols-3">
-                <div>
-                    <label for="country" class="label">الدولة</label>
-                    <input id="country" name="country" value="{{ old('country') }}" class="input">
-                </div>
-                <div>
-                    <label for="city" class="label">المدينة</label>
-                    <input id="city" name="city" value="{{ old('city') }}" class="input">
-                </div>
-                <div>
-                    <label for="address" class="label">العنوان</label>
-                    <input id="address" name="address" value="{{ old('address') }}" class="input">
-                </div>
+                <x-field name="country" label="الدولة"><input id="country" name="country" value="{{ old('country') }}" class="input"></x-field>
+                <x-field name="city" label="المدينة"><input id="city" name="city" value="{{ old('city') }}" class="input"></x-field>
+                <x-field name="address" label="العنوان"><input id="address" name="address" value="{{ old('address') }}" class="input"></x-field>
             </div>
         </section>
 
-        <section class="card space-y-4 p-4">
-            <h2 class="font-bold">العملة والمنطقة الزمنية واللغة</h2>
+        <section class="card card-pad space-y-4">
+            <h2 class="t-heading">العملة والمنطقة الزمنية واللغة</h2>
             <div class="grid gap-4 sm:grid-cols-3">
-                <div>
-                    <label for="currency_code" class="label">العملة *</label>
+                <x-field name="currency_code" label="العملة" required>
                     <select id="currency_code" name="currency_code" required class="input">
                         @foreach ($currencies as $code => $currency)
                             <option value="{{ $code }}" @selected(old('currency_code', 'USD') === $code)>{{ $currency['name'] }} ({{ $currency['symbol'] }})</option>
                         @endforeach
                     </select>
-                </div>
-                <div>
-                    <label for="timezone" class="label">المنطقة الزمنية *</label>
+                </x-field>
+                <x-field name="timezone" label="المنطقة الزمنية" required>
                     <select id="timezone" name="timezone" required class="input" dir="ltr">
                         @foreach ($timezones as $tz)
                             <option value="{{ $tz }}" @selected(old('timezone', config('app.timezone')) === $tz)>{{ $tz }}</option>
                         @endforeach
                     </select>
-                </div>
-                <div>
-                    <label for="locale" class="label">اللغة *</label>
-                    <select id="locale" name="locale" required class="input">
-                        <option value="ar" selected>العربية (RTL)</option>
-                    </select>
-                </div>
+                </x-field>
+                <x-field name="locale" label="اللغة" required>
+                    <select id="locale" name="locale" required class="input"><option value="ar" selected>العربية (RTL)</option></select>
+                </x-field>
             </div>
-            <p class="text-xs text-stone-500">يُنصح باختيار المنطقة الزمنية الصحيحة الآن وعدم تغييرها لاحقًا بعد بدء الطلبات.</p>
+            <p class="hint">يُنصح باختيار المنطقة الزمنية الصحيحة الآن وعدم تغييرها لاحقًا بعد بدء الطلبات.</p>
         </section>
 
-        <section class="card space-y-4 p-4">
-            <h2 class="font-bold">ألوان المتجر</h2>
+        <section class="card card-pad space-y-4">
+            <h2 class="t-heading">ألوان المتجر</h2>
+            <p class="hint !mt-0">تُطبَّق على المتجر كله، ويمكنك تغييرها لاحقًا من لوحة الإدارة.</p>
             <div class="grid gap-4 sm:grid-cols-3">
-                @foreach (['primary_color' => ['اللون الأساسي', 'primary'], 'secondary_color' => ['اللون المساعد', 'secondary'], 'accent_color' => ['لون الإبراز', 'accent']] as $field => [$label, $key])
-                    <div>
-                        <label for="{{ $field }}" class="label">{{ $label }}</label>
-                        <input id="{{ $field }}" type="color" name="{{ $field }}" value="{{ old($field, $defaults[$key]) }}" data-color-input="{{ $key }}" class="h-11 w-full cursor-pointer rounded-lg border border-stone-300 bg-white p-1">
-                    </div>
+                @foreach (['primary_color' => ['اللون الأساسي (الأزرار والروابط)', 'primary'], 'secondary_color' => ['اللون المساعد (الخلفيات الهادئة)', 'secondary'], 'accent_color' => ['لون الإبراز (الشارات)', 'accent']] as $field => [$label, $key])
+                    <x-field :name="$field" :label="$label">
+                        <input id="{{ $field }}" type="color" name="{{ $field }}" value="{{ old($field, $defaults[$key]) }}" data-color-input="{{ $key }}" class="h-12 w-full cursor-pointer rounded-xl border bg-white p-1" style="border-color: var(--line)">
+                    </x-field>
                 @endforeach
             </div>
 
             {{-- معاينة فورية للألوان قبل الحفظ --}}
-            <div class="rounded-xl border border-stone-200 p-4" aria-label="معاينة الألوان">
-                <p class="mb-3 text-xs text-stone-500">معاينة فورية:</p>
-                <div class="rounded-lg px-4 py-3" id="preview-bar" style="background: var(--store-primary); color: var(--store-on-primary)">
+            <div class="rounded-2xl border p-4" style="border-color: var(--line); background: var(--tint)" aria-label="معاينة الألوان">
+                <p class="t-small t-muted mb-3">معاينة فورية:</p>
+                <div class="rounded-xl px-4 py-3" id="preview-bar" style="background: var(--store-primary); color: var(--store-on-primary)">
                     <span class="font-bold" id="preview-name">اسم متجرك</span>
                 </div>
                 <div class="mt-3 flex flex-wrap items-center gap-3">
-                    <button type="button" class="btn btn-primary">زر أساسي</button>
-                    <button type="button" class="btn btn-accent">زر إبراز</button>
-                    <span class="rounded-full px-3 py-1 text-xs" style="background: var(--store-secondary)">لون مساعد</span>
+                    <button type="button" class="btn btn-primary btn-sm">زر أساسي</button>
+                    <span class="badge badge-sale">شارة خصم</span>
+                    <span class="badge" style="background: var(--tint); box-shadow: inset 0 0 0 1px var(--line)">لون مساعد</span>
                 </div>
             </div>
         </section>
 
-        <section class="card space-y-4 p-4">
-            <h2 class="font-bold">حساب مدير المتجر الأول</h2>
+        <section class="card card-pad space-y-4">
+            <h2 class="t-heading">حساب مدير المتجر الأول</h2>
             <div class="grid gap-4 sm:grid-cols-2">
-                <div>
-                    <label for="owner_name" class="label">الاسم *</label>
-                    <input id="owner_name" name="owner_name" value="{{ old('owner_name') }}" required maxlength="120" autocomplete="name" class="input">
-                </div>
-                <div>
-                    <label for="owner_email" class="label">البريد الإلكتروني *</label>
-                    <input id="owner_email" type="email" name="owner_email" value="{{ old('owner_email') }}" required dir="ltr" autocomplete="email" class="input text-start">
-                </div>
-                <div>
-                    <label for="owner_password" class="label">كلمة المرور * (10 أحرف على الأقل، حروف وأرقام)</label>
-                    <input id="owner_password" type="password" name="owner_password" required minlength="10" autocomplete="new-password" dir="ltr" class="input text-start">
-                </div>
-                <div>
-                    <label for="owner_password_confirmation" class="label">تأكيد كلمة المرور *</label>
+                <x-field name="owner_name" label="الاسم" required>
+                    <input id="owner_name" name="owner_name" value="{{ old('owner_name') }}" required maxlength="120" autocomplete="name" class="input" @error('owner_name') aria-invalid="true" @enderror>
+                </x-field>
+                <x-field name="owner_email" label="البريد الإلكتروني" required>
+                    <input id="owner_email" type="email" name="owner_email" value="{{ old('owner_email') }}" required dir="ltr" autocomplete="email" class="input text-start" @error('owner_email') aria-invalid="true" @enderror>
+                </x-field>
+                <x-field name="owner_password" label="كلمة المرور" hint="10 أحرف على الأقل، حروف وأرقام" required>
+                    <input id="owner_password" type="password" name="owner_password" required minlength="10" autocomplete="new-password" dir="ltr" class="input text-start" @error('owner_password') aria-invalid="true" @enderror>
+                </x-field>
+                <x-field name="owner_password_confirmation" label="تأكيد كلمة المرور" required>
                     <input id="owner_password_confirmation" type="password" name="owner_password_confirmation" required minlength="10" autocomplete="new-password" dir="ltr" class="input text-start">
-                </div>
+                </x-field>
             </div>
         </section>
 
-        <button type="submit" class="btn btn-primary w-full">حفظ وتجهيز المتجر</button>
+        <div class="sticky-bar md:static md:border-0 md:bg-transparent md:p-0 md:backdrop-blur-none">
+            <x-button variant="primary" block class="md:!min-h-14 md:text-lg">حفظ وتجهيز المتجر</x-button>
+        </div>
     </form>
 </main>
 
