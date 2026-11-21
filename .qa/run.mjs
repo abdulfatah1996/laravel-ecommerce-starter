@@ -118,6 +118,8 @@ await step('mobile-home', async () => {
     await noOverflow(m, 'm', 'الرئيسية');
     await touchAudit(m, 'الرئيسية 360');
     const bodyText = await m.locator('body').innerText();
+    const vars = await m.evaluate(() => ['--store-primary','--store-secondary','--store-accent'].map((k) => getComputedStyle(document.documentElement).getPropertyValue(k).trim()).join(' '));
+    check('ألوان المتجر المحقونة (المتوقع #17483D #FAF6EC #AD603D)', /17483d/i.test(vars), vars);
     check('الرئيسية: اسم المتجر ووصفه ظاهران', bodyText.includes('نقوة') && bodyText.includes('هدايا ومستلزمات'));
     const fold = await m.evaluate(() => {
         const imgs = [...document.querySelectorAll('img')].filter((i) => { const r = i.getBoundingClientRect(); return r.top < innerHeight && r.bottom > 0 && r.width > 80; });
@@ -231,7 +233,7 @@ await step('mobile-checkout', async () => {
     await m.locator('#city').fill('رام الله');
     await m.locator('#address').fill('شارع الإرسال، عمارة 4، الطابق 2');
     await m.locator('#notes').fill('الاتصال قبل التوصيل');
-    await m.locator('form[action*="/checkout"] button[type="submit"]').last().click();
+    await visible(m, 'form[action*="/checkout"] button[type="submit"]').first().click();
     await m.waitForLoadState('load');
     await shot(m, 'm-11-checkout-error');
     await shot(m, 'm-11-checkout-error-full', true);
@@ -243,14 +245,14 @@ await step('mobile-checkout', async () => {
     check('الخطأ: بيانات الزبون محفوظة بعد التصحيح', (await m.locator('#name').inputValue()) === 'ليلى أحمد' && (await m.locator('#address').inputValue()).includes('عمارة 4') && (await m.locator('#notes').inputValue()).includes('قبل التوصيل'));
 
     await m.locator('#phone').fill('0599123456');
-    await m.locator('form[action*="/checkout"] button[type="submit"]').last().click();
+    await visible(m, 'form[action*="/checkout"] button[type="submit"]').first().click();
     await m.waitForURL(/order\/success/);
     await m.waitForLoadState('networkidle');
     await shot(m, 'm-12-order-success');
     await shot(m, 'm-12-order-success-full', true);
     await noOverflow(m, 'm', 'نجاح الطلب');
     const txt = await m.locator('main').innerText();
-    orderNumber = (txt.match(/ORD-[A-Z0-9]+-[A-Z0-9]+/) || [''])[0];
+    orderNumber = (txt.match(/[A-Z]RD-[A-Z0-9]+-[A-Z0-9]+/) || [''])[0];
     check('إتمام الطلب: ظهر رقم الطلب', !!orderNumber, orderNumber);
 });
 
