@@ -3,16 +3,16 @@
 @section('title', $page->title)
 
 @section('content')
-    <article class="card mx-auto max-w-3xl p-6">
-        <h1 class="mb-4 text-2xl font-extrabold">{{ $page->title }}</h1>
+    <article class="mx-auto max-w-3xl">
+        <h1 class="t-title mb-6">{{ $page->title }}</h1>
         {{-- المحتوى Markdown يُحوَّل إلى HTML بعد إزالة أي HTML خام --}}
-        <div class="prose-ar">{!! $page->renderedBody() !!}</div>
+        <div class="card card-pad"><div class="prose-ar !mt-0 [&>*:first-child]:mt-0">{!! $page->renderedBody() !!}</div></div>
 
         @if ($showContact)
-            <dl class="mt-6 space-y-2 border-t border-stone-200 pt-4 text-sm">
-                @if ($settings->phone)<div class="flex gap-2"><dt class="font-semibold">الهاتف:</dt><dd dir="ltr">{{ $settings->phone }}</dd></div>@endif
-                @if ($settings->email)<div class="flex gap-2"><dt class="font-semibold">البريد:</dt><dd>{{ $settings->email }}</dd></div>@endif
-                @if ($settings->fullAddress())<div class="flex gap-2"><dt class="font-semibold">العنوان:</dt><dd>{{ $settings->fullAddress() }}</dd></div>@endif
+            <dl class="card card-pad mt-5 space-y-3 text-[0.95rem]">
+                @if ($settings->phone)<div class="flex flex-wrap gap-x-3"><dt class="font-bold">الهاتف</dt><dd><bdi dir="ltr">{{ $settings->phone }}</bdi></dd></div>@endif
+                @if ($settings->email)<div class="flex flex-wrap gap-x-3"><dt class="font-bold">البريد</dt><dd><bdi dir="ltr">{{ $settings->email }}</bdi></dd></div>@endif
+                @if ($settings->fullAddress())<div class="flex flex-wrap gap-x-3"><dt class="font-bold">العنوان</dt><dd>{{ $settings->fullAddress() }}</dd></div>@endif
             </dl>
         @endif
     </article>

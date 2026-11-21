@@ -1,0 +1,80 @@
+@import '../../../../vendor/filament/filament/resources/css/theme.css';
+@import "@fontsource/ibm-plex-sans-arabic/arabic-400.css";
+@import "@fontsource/ibm-plex-sans-arabic/arabic-500.css";
+@import "@fontsource/ibm-plex-sans-arabic/arabic-700.css";
+@import "@fontsource/ibm-plex-sans-arabic/latin-400.css";
+@import "@fontsource/ibm-plex-sans-arabic/latin-500.css";
+@import "@fontsource/ibm-plex-sans-arabic/latin-700.css";
+
+@source '../../../../app/Filament/**/*';
+@source '../../../../resources/views/filament/**/*';
+
+/*
+ * ثيم لوحة الإدارة — الأولوية لوضوح الجداول والنماذج.
+ * اللون الأساسي يأتي من إعدادات المتجر عبر لوحة Filament نفسها (->colors)،
+ * لذا نشتق منه ولا نكتب ألوانًا ثابتة.
+ */
+:root {
+    --font-family: 'IBM Plex Sans Arabic', 'Noto Sans Arabic', 'Segoe UI', Tahoma, sans-serif;
+}
+
+html,
+body,
+.fi-body {
+    font-family: 'IBM Plex Sans Arabic', 'Noto Sans Arabic', 'Segoe UI', Tahoma, sans-serif;
+    line-height: 1.7;
+}
+
+/* الأرقام والتواريخ والأسعار في الجداول: أرقام متناسقة العرض */
+.fi-ta-table td,
+.fi-ta-table th {
+    font-variant-numeric: tabular-nums;
+}
+
+/* رؤوس الجداول: أوضح وأثقل قليلًا */
+.fi-ta-table thead tr {
+    background: color-mix(in srgb, var(--primary-600, #0f766e) 6%, #ffffff);
+}
+
+.fi-ta-header-cell {
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.fi-ta-table tbody tr:hover {
+    background: color-mix(in srgb, var(--primary-600, #0f766e) 4%, transparent);
+}
+
+/* خلايا أوسع (مساحة لمس وقراءة أفضل) */
+.fi-ta-cell {
+    padding-block: 0.15rem;
+}
+
+/* النماذج: أقسام بحدود أوضح وتسميات أثقل */
+.fi-section {
+    border-radius: 1rem;
+}
+
+.fi-fo-field-label,
+.fi-fo-field-wrp-label,
+.fi-fo-field-label-content {
+    font-weight: 700;
+}
+
+/* حقول أطول على الشاشات الصغيرة لسهولة اللمس */
+@media (max-width: 767px) {
+    .fi-input,
+    .fi-select-input {
+        min-height: 2.75rem;
+        font-size: 1rem;
+    }
+
+    .fi-btn {
+        min-height: 2.75rem;
+    }
+}
+
+/* شعار صفحة الدخول */
+.fi-simple-header {
+    margin-bottom: 0.5rem;
+}
