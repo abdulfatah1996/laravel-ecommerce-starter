@@ -150,7 +150,7 @@
     .price-sm .price-was { @apply text-xs; }
 
     /* ---- الشارات ---- */
-    .badge { @apply inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-bold leading-5; }
+    .badge { @apply inline-flex items-center gap-1 rounded-full px-2.5 py-0.5 text-xs font-bold leading-5; }
     .badge-sale { background: var(--store-accent); color: var(--store-on-accent); }
     .badge-ok { background: var(--ok-soft); color: var(--ok); }
     .badge-muted { @apply bg-stone-100 text-stone-700; }

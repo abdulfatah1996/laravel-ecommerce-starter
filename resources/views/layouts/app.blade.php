@@ -29,9 +29,11 @@
         <div class="mx-auto flex h-16 max-w-6xl items-center gap-2 px-4 md:gap-6 md:px-6">
             <a href="{{ route('home') }}" class="flex min-h-11 min-w-0 items-center gap-2.5 text-primary" aria-label="{{ $store->name }} — الرئيسية">
                 @if ($store->logo_url)
-                    <img src="{{ $store->logo_url }}" alt="" class="h-9 w-auto max-w-28 object-contain">
+                    <img src="{{ $store->logo_url }}" alt="" class="h-10 w-auto max-w-40 object-contain">
+                    <span class="sr-only">{{ $store->name }}</span>
+                @else
+                    <span class="truncate text-xl font-bold">{{ $store->name }}</span>
                 @endif
-                <span class="truncate text-xl font-bold">{{ $store->name }}</span>
             </a>
 
             <nav class="hidden items-center gap-1 md:flex" aria-label="التنقل الرئيسي">

@@ -13,12 +13,12 @@
 
 @section('content')
     <nav class="mb-4 flex flex-wrap items-center gap-x-1 text-sm t-muted" aria-label="مسار التنقل">
-        <a href="{{ route('home') }}" class="inline-flex min-h-11 items-center hover:text-primary md:min-h-8">الرئيسية</a>
+        <a href="{{ route('home') }}" class="inline-flex min-h-11 min-w-11 items-center justify-center px-1 hover:text-primary md:min-h-8">الرئيسية</a>
         <x-ui-icon name="chevron-left" class="size-3.5" />
-        <a href="{{ route('products.index') }}" class="inline-flex min-h-11 items-center hover:text-primary md:min-h-8">المنتجات</a>
+        <a href="{{ route('products.index') }}" class="inline-flex min-h-11 min-w-11 items-center justify-center px-1 hover:text-primary md:min-h-8">المنتجات</a>
         @if ($product->category)
             <x-ui-icon name="chevron-left" class="size-3.5" />
-            <a href="{{ route('products.index', ['category' => $product->category->slug]) }}" class="inline-flex min-h-11 items-center hover:text-primary md:min-h-8">{{ $product->category->name }}</a>
+            <a href="{{ route('products.index', ['category' => $product->category->slug]) }}" class="inline-flex min-h-11 min-w-11 items-center justify-center px-1 hover:text-primary md:min-h-8">{{ $product->category->name }}</a>
         @endif
     </nav>
 

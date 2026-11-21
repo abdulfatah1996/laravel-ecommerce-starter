@@ -40,7 +40,7 @@
                                 <form action="{{ route('cart.remove', $product->id) }}" method="post">
                                     @csrf
                                     @method('DELETE')
-                                    <button type="submit" class="btn btn-danger btn-sm" aria-label="إزالة {{ $product->name }} من السلة"><x-ui-icon name="trash" class="size-4" /> إزالة</button>
+                                    <button type="submit" class="btn btn-danger btn-sm !px-3" aria-label="إزالة {{ $product->name }} من السلة" title="إزالة"><x-ui-icon name="trash" class="size-5" /></button>
                                 </form>
                             </div>
                         </div>
